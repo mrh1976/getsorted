@@ -93,8 +93,8 @@ a{text-decoration:none}
   padding:0 var(--pad);
   display:flex;align-items:center;justify-content:space-between;
 }
-.header-logo{display:flex;align-items:center;height:44px}
-.header-logo img{height:40px;width:auto}
+.header-logo{display:flex;align-items:center;height:130px}
+.header-logo img{height:129px;width:auto}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{
   font-family:var(--semi);font-weight:600;
