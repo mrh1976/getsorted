@@ -81,32 +81,45 @@ body{
 ───────────────────────────────────────── */
 
 #site-header{
-  position:sticky;top:0;z-index:200;
+  position:sticky;
+  top:0;
+  z-index:200;
   background:var(--navy);
-  height:80px;
-  display:flex;align-items:center;
+  height:90px;
+  display:flex;
+  align-items:center;
   border-bottom:1px solid rgba(255,255,255,.06);
 }
+
 .header-inner{
-  max-width:var(--max);
-  margin:0 auto;
   width:100%;
-  padding:0 0px;
-  display:flex;align-items:center;justify-content:space-between;
+  max-width:none;
+  padding:10px 40px 0 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
+
 .header-logo{
-  display:flex;align-items:center;
+  display:flex;
+  align-items:center;
   text-decoration:none;
-  height:100px;
+  height:72px;
+  flex-shrink:0;
 }
+
 .header-logo img{
-  height:100px;
+  height:72px;
   width:auto;
   display:block;
 }
+
 .header-nav{
-  display:flex;align-items:center;gap:28px;
+  display:flex;
+  align-items:center;
+  gap:28px;
 }
+
 .header-nav a{
   font-family:'Barlow Semi Condensed',sans-serif;
   font-weight:600;
@@ -117,7 +130,11 @@ body{
   text-decoration:none;
   transition:color .2s;
 }
-.header-nav a:hover{color:var(--white)}
+
+.header-nav a:hover{
+  color:var(--white);
+}
+
 .header-cta{
   background:var(--orange) !important;
   color:#fff !important;
@@ -125,92 +142,10 @@ body{
   transition:background .2s !important;
   letter-spacing:1px;
 }
-.header-cta:hover{background:var(--orange-lt) !important}
 
-/* ─────────────────────────────────────────
-   GLOBAL FOOTER
-───────────────────────────────────────── */
-
-#site-footer{
-  background:var(--navy);
-  border-top:1px solid rgba(255,255,255,.07);
+.header-cta:hover{
+  background:var(--orange-lt) !important;
 }
-.footer-main{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:64px 40px 48px;
-  display:grid;
-  grid-template-columns:1.4fr 1fr 1fr 1fr;
-  gap:48px;
-}
-.footer-brand{}
-.footer-logo-wrap{
-  display:flex;align-items:center;
-  margin-bottom:20px;
-}
-.footer-logo-wrap img{
-  height:32px;width:auto;display:block;
-}
-.footer-tagline{
-  font-size:14px;
-  color:var(--gray);
-  line-height:1.65;
-  max-width:240px;
-  margin-bottom:24px;
-}
-.footer-contact a{
-  display:block;
-  font-size:13px;
-  color:var(--gray);
-  text-decoration:none;
-  margin-bottom:6px;
-  transition:color .2s;
-}
-.footer-contact a:hover{color:var(--orange)}
-.footer-col-label{
-  font-family:'Barlow Semi Condensed',sans-serif;
-  font-weight:700;
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--white);
-  margin-bottom:18px;
-}
-.footer-col a{
-  display:block;
-  font-size:13px;
-  color:var(--gray);
-  text-decoration:none;
-  margin-bottom:10px;
-  line-height:1.4;
-  transition:color .2s;
-}
-.footer-col a:hover{color:var(--orange)}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.07);
-  padding:20px 40px;
-  max-width:var(--max);
-  margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;
-}
-.footer-legal{
-  font-size:12px;color:rgba(138,154,176,.6);
-}
-.footer-legal a{color:rgba(138,154,176,.6);text-decoration:none;margin-left:16px;transition:color .2s}
-.footer-legal a:hover{color:var(--gray)}
-.footer-social{
-  display:flex;gap:16px;
-}
-.footer-social a{
-  width:32px;height:32px;
-  border:1px solid rgba(255,255,255,.12);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--gray);text-decoration:none;
-  font-size:13px;font-weight:700;
-  transition:border-color .2s,color .2s;
-}
-.footer-social a:hover{border-color:var(--orange);color:var(--orange)}
 
 /* ─────────────────────────────────────────
    SHARED SECTION UTILITIES
@@ -795,7 +730,9 @@ body{
   .lead-form{flex-direction:column}
   .footer-main{grid-template-columns:1fr;padding:48px 24px 32px}
   .footer-bottom{padding:16px 24px}
-  #site-header .header-inner{padding:0 24px}
+ #site-header .header-inner{
+  padding:8px 24px 0;
+}
 }
 @media(prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important}
