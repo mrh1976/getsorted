@@ -198,139 +198,84 @@ a{text-decoration:none}
 .stat-num em{color:var(--orange);font-style:normal}
 .stat-label{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;max-width:120px}
 
-/* ── Single large card flip ── */
+/* ── Hero right: animated stat grid ── */
 .hero-right{
   display:flex;align-items:center;justify-content:center;
-  padding:60px 0 60px 40px;
+  padding:60px 0 60px 48px;
 }
 
-.big-card{
-  width:340px;
-  height:480px;
-  perspective:1200px;
-  flex-shrink:0;
-  transform-style:preserve-3d;
+.hero-stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3px;
+  width:100%;
 }
 
-.big-card-inner{
+.hstat{
+  background:var(--navy-mid);
+  padding:36px 28px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 0.5s ease, transform 0.5s ease;
   position:relative;
-  width:100%;height:100%;
-  transform-style:preserve-3d;
-  transition:transform 0.9s cubic-bezier(.4,0,.2,1);
-  border-radius:16px;
-}
-
-.big-card.flipped .big-card-inner{
-  transform:rotateY(180deg);
-}
-
-/* Debug helper — remove after confirming flip works */
-.big-card-inner{
-  will-change:transform;
-}
-
-.big-card-back,
-.big-card-front{
-  position:absolute;inset:0;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
-  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 32px 80px rgba(0,0,0,.6),0 8px 24px rgba(0,0,0,.4);
+}
+.hstat::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:var(--orange);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.6s ease 0.3s;
+}
+.hstat-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.hstat-visible::before{
+  transform:scaleX(1);
 }
 
-/* Back: full bleed card image */
-.big-card-back{
-  background:var(--navy);
-}
-.big-card-back img{
-  width:100%;height:100%;
-  object-fit:cover;
-  display:block;
-}
-
-/* Front: dealer intel list */
-.big-card-front{
-  background:var(--white);
-  transform:rotateY(180deg);
-  display:flex;
-  flex-direction:column;
-  padding:28px 28px 24px;
-}
-
-.big-card-header{
-  margin-bottom:16px;
-}
-.big-card-title{
-  font-family:var(--semi);font-weight:700;
-  font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--navy);line-height:1.5;
-}
-
-.big-card-divider{
-  height:1.5px;
-  background:var(--gray-lt);
-  margin:4px 0 16px;
-  flex-shrink:0;
-}
-
-.big-card-items{
-  flex:1;
-  display:flex;flex-direction:column;
-  justify-content:space-around;
-  gap:4px;
-}
-
-.big-card-item{
-  display:flex;align-items:center;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px solid var(--gray-lt);
-}
-.big-card-item:last-child{border-bottom:none}
-
-.bci-left{
-  display:flex;align-items:center;gap:10px;
-}
-.bci-suit{
-  font-size:20px;line-height:1;
-  flex-shrink:0;
-}
-.bci-suit.red{color:#cc2200}
-.bci-suit.blk{color:var(--navy)}
-
-.bci-label{
-  font-family:var(--semi);font-weight:700;
-  font-size:13px;letter-spacing:.5px;
-  text-transform:uppercase;color:var(--navy);
-}
-
-.bci-val{
+.hstat-num{
   font-family:var(--impact);
-  font-size:22px;color:var(--orange);
-  letter-spacing:.3px;
+  font-size:clamp(44px,5vw,64px);
+  color:var(--orange);
+  line-height:1;
+  margin-bottom:12px;
+  letter-spacing:-1px;
 }
-.bci-val-highlight{
-  color:var(--navy);
-}
-
-.big-card-footer{
-  display:flex;align-items:center;
-  justify-content:space-between;
-  padding-top:14px;
-  margin-top:4px;
-  border-top:2px solid var(--navy);
-}
-.big-card-gap-label{
-  font-family:var(--semi);font-weight:700;
-  font-size:11px;letter-spacing:1px;
-  text-transform:uppercase;color:var(--navy);
-  max-width:160px;line-height:1.4;
-}
-.big-card-gap-val{
+.hstat-prefix{
   font-family:var(--impact);
-  font-size:28px;color:var(--orange);
-  letter-spacing:.3px;
+  font-size:clamp(28px,3vw,40px);
+  color:var(--orange);
+  vertical-align:top;
+  margin-top:6px;
+  display:inline-block;
+}
+.hstat-suffix{
+  font-family:var(--impact);
+  font-size:clamp(28px,3vw,40px);
+  color:var(--orange);
+  vertical-align:top;
+  margin-top:6px;
+  display:inline-block;
+}
+.hstat-label{
+  font-size:14px;
+  color:var(--white);
+  line-height:1.5;
+  margin-bottom:10px;
+  font-weight:500;
+}
+.hstat-source{
+  font-family:var(--semi);
+  font-weight:600;
+  font-size:10px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--gray);
 }
 
 /* ============================================================
