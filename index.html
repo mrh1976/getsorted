@@ -65,88 +65,66 @@
     </div>
 
     <div class="hero-right">
-      <div class="card-hand" id="cardHand">
+      <div class="big-card" id="bigCard">
+        <div class="big-card-inner">
 
-        <!-- Each card starts stacked center, deals out, then flips -->
-        <!-- data-r=final rotation, data-tx/ty=final translate position -->
+          <!-- BACK: branded card back image -->
+          <div class="big-card-back">
+            <img src="images/back_blue.png" alt="GetSorted card back">
+          </div>
 
-        <div class="deal-card" id="dc0" data-r="-26" data-tx="-190" data-ty="36">
-          <div class="deal-card-inner">
-            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
-            <div class="deal-front">
-              <div class="card-corner tl"><span class="cs blk">♠</span></div>
-              <div class="card-center">
-                <div class="card-suit-lg blk">♠</div>
-                <div class="card-name">Invoice Price</div>
-                <div class="card-val">$46,500</div>
+          <!-- FRONT: all five dealer secrets -->
+          <div class="big-card-front">
+            <div class="big-card-header">
+              <span class="big-card-title">What the dealer knows<br>before you say a word.</span>
+            </div>
+            <div class="big-card-divider"></div>
+            <div class="big-card-items">
+              <div class="big-card-item">
+                <div class="bci-left">
+                  <span class="bci-suit blk">♠</span>
+                  <span class="bci-label">Invoice Price</span>
+                </div>
+                <span class="bci-val">$46,500</span>
               </div>
-              <div class="card-corner br"><span class="cs blk">♠</span></div>
+              <div class="big-card-item">
+                <div class="bci-left">
+                  <span class="bci-suit red">♦</span>
+                  <span class="bci-label">Holdback</span>
+                </div>
+                <span class="bci-val">$1,200</span>
+              </div>
+              <div class="big-card-item">
+                <div class="bci-left">
+                  <span class="bci-suit blk">♣</span>
+                  <span class="bci-label">Dealer Cash</span>
+                </div>
+                <span class="bci-val">$2,000</span>
+              </div>
+              <div class="big-card-item">
+                <div class="bci-left">
+                  <span class="bci-suit red">♥</span>
+                  <span class="bci-label">Money Factor</span>
+                </div>
+                <span class="bci-val">.00189</span>
+              </div>
+              <div class="big-card-item">
+                <div class="bci-left">
+                  <span class="bci-suit blk">♠</span>
+                  <span class="bci-label">True Cost</span>
+                </div>
+                <span class="bci-val bci-val-highlight">$42,800</span>
+              </div>
+            </div>
+            <div class="big-card-divider"></div>
+            <div class="big-card-footer">
+              <span class="big-card-gap-label">Gap between MSRP and true cost</span>
+              <span class="big-card-gap-val">$6,000+</span>
             </div>
           </div>
-        </div>
 
-        <div class="deal-card" id="dc1" data-r="-13" data-tx="-95" data-ty="12">
-          <div class="deal-card-inner">
-            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
-            <div class="deal-front">
-              <div class="card-corner tl"><span class="cs red">♦</span></div>
-              <div class="card-center">
-                <div class="card-suit-lg red">♦</div>
-                <div class="card-name">Holdback</div>
-                <div class="card-val">$1,200</div>
-              </div>
-              <div class="card-corner br"><span class="cs red">♦</span></div>
-            </div>
-          </div>
         </div>
-
-        <div class="deal-card" id="dc2" data-r="0" data-tx="0" data-ty="0">
-          <div class="deal-card-inner">
-            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
-            <div class="deal-front">
-              <div class="card-corner tl"><span class="cs blk">♣</span></div>
-              <div class="card-center">
-                <div class="card-suit-lg blk">♣</div>
-                <div class="card-name">Dealer Cash</div>
-                <div class="card-val">$2,000</div>
-              </div>
-              <div class="card-corner br"><span class="cs blk">♣</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="deal-card" id="dc3" data-r="13" data-tx="95" data-ty="12">
-          <div class="deal-card-inner">
-            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
-            <div class="deal-front">
-              <div class="card-corner tl"><span class="cs red">♥</span></div>
-              <div class="card-center">
-                <div class="card-suit-lg red">♥</div>
-                <div class="card-name">Money Factor</div>
-                <div class="card-val">.00189</div>
-              </div>
-              <div class="card-corner br"><span class="cs red">♥</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="deal-card" id="dc4" data-r="26" data-tx="190" data-ty="36">
-          <div class="deal-card-inner">
-            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
-            <div class="deal-front">
-              <div class="card-corner tl"><span class="cs blk">♠</span></div>
-              <div class="card-center">
-                <div class="card-suit-lg blk">♠</div>
-                <div class="card-name">True Cost</div>
-                <div class="card-val">$42,800</div>
-              </div>
-              <div class="card-corner br"><span class="cs blk">♠</span></div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /card-hand -->
-      <p class="card-caption" id="cardCaption">What the dealer knows before you say a word.</p>
+      </div>
     </div><!-- /hero-right -->
   </div><!-- /hero-inner -->
 </section>
@@ -640,57 +618,11 @@
 </footer>
 
 <script>
+<script>
   document.addEventListener('DOMContentLoaded', function() {
-    const cards   = document.querySelectorAll('.deal-card');
-    const caption = document.getElementById('cardCaption');
-
-    // Final z-index for fanned display — center card on top, outer cards behind
-    // Fan order: 1, 2, 5, 2, 1 (center highest)
-    const fanZ = [1, 2, 5, 2, 1];
-
-    // Timing (ms)
-    const DEAL_START = 500;
-    const DEAL_GAP   = 200;
-    const DEAL_HOLD  = 600;
-    const FLIP_GAP   = 280;
-    const FLIP_DUR   = 650;  // matches CSS transition duration
-
-    // Init: all cards stacked, z-index high so they appear above content
-    cards.forEach(function(card) { card.style.zIndex = 10; });
-
-    // Phase 1: deal cards out one by one
-    // Each card slides to its fanned position; set correct fan z-index after it arrives
-    cards.forEach(function(card, i) {
-      setTimeout(function() {
-        card.classList.add('dealt');
-        // After deal transition completes, restore fan z-index
-        setTimeout(function() {
-          card.style.zIndex = fanZ[i];
-        }, 500); // matches deal transition duration
-      }, DEAL_START + i * DEAL_GAP);
-    });
-
-    // Phase 2: flip cards one by one
-    // Temporarily raise z-index while flipping so the card clears its neighbors
-    const flipStart = DEAL_START + cards.length * DEAL_GAP + DEAL_HOLD;
-
-    cards.forEach(function(card, i) {
-      setTimeout(function() {
-        // Raise above everything while flipping
-        card.style.zIndex = 20;
-        card.classList.add('flipped');
-        // After flip completes, restore fan z-index
-        setTimeout(function() {
-          card.style.zIndex = fanZ[i];
-        }, FLIP_DUR + 50);
-      }, flipStart + i * FLIP_GAP);
-    });
-
-    // Phase 3: caption
-    const captionTime = flipStart + cards.length * FLIP_GAP + FLIP_DUR + 200;
     setTimeout(function() {
-      caption.classList.add('visible');
-    }, captionTime);
+      document.getElementById('bigCard').classList.add('flipped');
+    }, 900);
   });
 </script>
 </body>
