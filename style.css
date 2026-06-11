@@ -4,10 +4,10 @@
    Colors: --navy / --orange / --white / --gray
    Max site width: 1140px via --max
 ============================================================ */
- 
+
 /* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
- 
+
 /* ── Tokens ── */
 :root{
   --navy:    #0B1F3A;
@@ -27,13 +27,13 @@
   --semi:    'Barlow Semi Condensed',sans-serif;
   --body:    'Barlow',sans-serif;
 }
- 
+
 /* ── Base ── */
 html{scroll-behavior:smooth}
 body{font-family:var(--body);background:var(--white);color:var(--text);overflow-x:hidden}
 img{display:block;max-width:100%}
 a{text-decoration:none}
- 
+
 /* ── Layout helpers ── */
 .wrap{
   max-width:var(--max);
@@ -42,7 +42,7 @@ a{text-decoration:none}
 }
 .section  {padding:100px 0}
 .section-sm{padding:72px 0}
- 
+
 /* ── Typography utilities ── */
 .eyebrow{
   font-family:var(--semi);font-weight:700;
@@ -61,7 +61,7 @@ a{text-decoration:none}
 }
 .light{color:var(--white)}
 .light-body{color:var(--gray)}
- 
+
 /* ── Buttons ── */
 .btn{
   display:inline-block;
@@ -78,7 +78,7 @@ a{text-decoration:none}
 .btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .btn-navy{background:var(--navy);color:#fff}
 .btn-navy:hover{background:var(--navy-lt)}
- 
+
 /* ============================================================
    GLOBAL HEADER
 ============================================================ */
@@ -105,7 +105,7 @@ a{text-decoration:none}
 .header-nav .btn-primary{
   font-size:12px;padding:10px 22px;letter-spacing:1px;
 }
- 
+
 /* ============================================================
    GLOBAL FOOTER
 ============================================================ */
@@ -148,14 +148,13 @@ a{text-decoration:none}
   transition:border-color .2s,color .2s;
 }
 .footer-social a:hover{border-color:var(--orange);color:var(--orange)}
- 
+
 /* ============================================================
    HERO
 ============================================================ */
 .hero{
   background:var(--navy);
   min-height:calc(100vh - 68px);
-  display:grid;grid-template-columns:1fr 1fr;
   position:relative;overflow:hidden;
 }
 .hero-glow{
@@ -164,11 +163,18 @@ a{text-decoration:none}
     radial-gradient(ellipse 55% 70% at 72% 50%,rgba(30,61,110,.6) 0%,transparent 65%),
     radial-gradient(ellipse 28% 38% at 12% 88%,rgba(232,100,12,.07) 0%,transparent 55%);
 }
-.hero-left{
+.hero-inner{
   max-width:var(--max);
-  padding:80px var(--pad) 80px var(--pad);
-  display:flex;flex-direction:column;justify-content:center;
+  margin:0 auto;
+  padding:0 var(--pad);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:calc(100vh - 68px);
   position:relative;z-index:2;
+}
+.hero-left{
+  padding:80px 0;
+  display:flex;flex-direction:column;justify-content:center;
 }
 .hero-hed{
   font-family:var(--impact);
@@ -190,11 +196,11 @@ a{text-decoration:none}
 .stat-num{font-family:var(--impact);font-size:38px;color:var(--white);line-height:1}
 .stat-num em{color:var(--orange);font-style:normal}
 .stat-label{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;max-width:120px}
- 
+
 /* Card hand */
 .hero-right{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  position:relative;z-index:2;padding:80px var(--pad);
+  padding:80px 0;
 }
 .card-hand{position:relative;width:340px;height:290px}
 .card{
@@ -223,7 +229,7 @@ a{text-decoration:none}
   font-size:11px;letter-spacing:2px;text-transform:uppercase;
   color:rgba(138,154,176,.55);max-width:280px;line-height:1.6;
 }
- 
+
 /* ============================================================
    PROOF BAND (stats)
 ============================================================ */
@@ -241,7 +247,7 @@ a{text-decoration:none}
   color:#fff;line-height:1;
 }
 .proof-label{font-size:13px;color:rgba(255,255,255,.8);margin-top:4px;line-height:1.4;max-width:180px}
- 
+
 /* ============================================================
    MARK BAND
 ============================================================ */
@@ -259,7 +265,7 @@ a{text-decoration:none}
 .mark-quote em{color:var(--orange);font-style:normal}
 .mark-body{font-size:17px;color:var(--gray);max-width:580px;margin:0 auto;line-height:1.7}
 .mark-body strong{color:var(--white)}
- 
+
 /* ============================================================
    STACKED DECK
 ============================================================ */
@@ -280,7 +286,7 @@ a{text-decoration:none}
 .dc-title{font-family:var(--impact);font-size:28px;color:var(--white);margin-bottom:14px;line-height:1.05;letter-spacing:.3px}
 .dc-body{font-size:14px;line-height:1.7;color:var(--gray)}
 .dc-body strong{color:var(--white)}
- 
+
 /* ============================================================
    PRICE STACK
 ============================================================ */
@@ -306,7 +312,7 @@ a{text-decoration:none}
 }
 .stack-callout p{font-family:var(--impact);font-size:18px;color:var(--orange);letter-spacing:.3px}
 .stack-callout span{font-size:13px;color:var(--mid);display:block;margin-top:4px}
- 
+
 /* ============================================================
    WHERE MONEY HIDES
 ============================================================ */
@@ -330,7 +336,7 @@ a{text-decoration:none}
 .htrap{display:flex;gap:10px;margin-bottom:7px}
 .htrap::before{content:'▸';color:var(--orange);font-size:11px;flex-shrink:0;margin-top:1px}
 .htrap p{font-size:13px;color:var(--mid);line-height:1.5}
- 
+
 /* ============================================================
    SITUATIONS
 ============================================================ */
@@ -353,7 +359,7 @@ a{text-decoration:none}
 .sstake-l{font-family:var(--semi);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:5px;transition:color .2s}
 .sstake{font-size:13px;color:var(--mid);line-height:1.5;transition:color .2s}
 .sarrow{display:block;margin-top:20px;font-family:var(--semi);font-weight:700;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);transition:color .2s}
- 
+
 /* ============================================================
    HOW IT WORKS
 ============================================================ */
@@ -363,7 +369,7 @@ a{text-decoration:none}
 .step-n{font-family:var(--impact);font-size:60px;color:var(--orange);opacity:.22;line-height:1;margin-bottom:16px}
 .step-t{font-family:var(--impact);font-size:22px;color:var(--white);margin-bottom:10px;line-height:1.05;letter-spacing:.3px}
 .step-b{font-size:13px;color:var(--gray);line-height:1.65}
- 
+
 /* ============================================================
    SERVICES
 ============================================================ */
@@ -395,7 +401,7 @@ a{text-decoration:none}
 .svc-btn:hover{background:var(--navy-lt)}
 .svc.feat .svc-btn{background:var(--orange)}
 .svc.feat .svc-btn:hover{background:var(--orange-lt)}
- 
+
 /* ============================================================
    LEAD MAGNET
 ============================================================ */
@@ -439,7 +445,7 @@ a{text-decoration:none}
 .pdf-foot-logo{font-family:var(--impact);font-size:14px;color:var(--white);letter-spacing:.5px}
 .pdf-foot-logo em{color:var(--orange);font-style:normal}
 .pdf-foot-tag{font-family:var(--semi);font-weight:700;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--orange)}
- 
+
 /* ============================================================
    TESTIMONIALS
 ============================================================ */
@@ -457,7 +463,7 @@ a{text-decoration:none}
 .tbody{font-size:14px;line-height:1.7;color:var(--text);font-style:italic;margin-bottom:20px}
 .tname{font-family:var(--impact);font-size:17px;color:var(--navy);letter-spacing:.5px}
 .tdetail{font-size:11px;color:var(--gray);margin-top:2px}
- 
+
 /* ============================================================
    ABOUT
 ============================================================ */
@@ -469,7 +475,7 @@ a{text-decoration:none}
 .cred-n{font-family:var(--impact);font-size:13px;letter-spacing:2px;color:var(--orange);min-width:32px;padding-top:2px}
 .cred-t{font-size:14px;color:var(--gray);line-height:1.6}
 .cred-t strong{display:block;font-family:var(--impact);font-size:17px;letter-spacing:.3px;color:var(--white);margin-bottom:2px}
- 
+
 /* ============================================================
    CTA CLOSE
 ============================================================ */
@@ -511,102 +517,102 @@ a{text-decoration:none}
 }
 .cal-cta:hover{transform:translateY(-1px)}
 .cal-reassure{font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin-top:10px}
- 
+
 /* ============================================================
    RESPONSIVE
 ============================================================ */
- 
+
 /* Tablet — 960px */
 @media(max-width:960px){
   :root{--pad:32px}
- 
+
   /* Header */
   .header-nav a:not(.btn-primary){display:none}
- 
+
   /* Hero */
-  .hero{grid-template-columns:1fr}
+  .hero-inner{grid-template-columns:1fr}
   .hero-right{display:none}
-  .hero-left{padding:64px var(--pad)}
- 
+  .hero-left{padding:64px 0}
+
   /* Sections */
   .section{padding:72px 0}
   .section-sm{padding:56px 0}
- 
+
   /* Grids collapse to 1 col */
   .dealer-cards,
   .hide-grid,
   .svc-grid,
   .t-grid{grid-template-columns:1fr}
- 
+
   /* Sit grid stays 2 col on tablet */
   .sit-grid{grid-template-columns:1fr 1fr}
- 
+
   /* Steps 2 col */
   .steps{grid-template-columns:repeat(2,1fr)}
- 
+
   /* Lead magnet */
   .lead-inner{grid-template-columns:1fr}
   .pdf-preview{display:none}
- 
+
   /* About */
   .about-inner{grid-template-columns:1fr;gap:40px}
- 
+
   /* CTA close */
   .cta-close{grid-template-columns:1fr;padding:72px 0}
   .cta-close-left,.cta-close-right{max-width:100%;padding:0 var(--pad);margin:0 auto;max-width:var(--max)}
   .cta-close-left{margin-bottom:48px}
- 
+
   /* Footer */
   .footer-main{grid-template-columns:1fr 1fr}
- 
+
   /* Proof band */
   .proof-inner{gap:32px}
 }
- 
+
 /* Mobile — 600px */
 @media(max-width:600px){
   :root{--pad:20px}
- 
+
   .section{padding:56px 0}
   .section-sm{padding:44px 0}
- 
+
   /* Hero */
   .hero-hed{font-size:clamp(56px,14vw,80px)}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
   .hero-stats{gap:24px}
- 
+
   /* Sit grid single col on mobile */
   .sit-grid{grid-template-columns:1fr}
   .scard{padding:32px 24px}
- 
+
   /* Steps single col */
   .steps{grid-template-columns:1fr}
- 
+
   /* Lead form stack */
   .lead-form{flex-direction:column}
   .lead-submit{padding:14px}
- 
+
   /* Proof band stack */
   .proof-inner{flex-direction:column;gap:20px;text-align:center}
- 
+
   /* CTA close */
   .cta-close-hed{font-size:clamp(48px,12vw,72px)}
- 
+
   /* Footer single col */
   .footer-main{grid-template-columns:1fr;padding:48px var(--pad) 32px}
   .footer-bottom{flex-direction:column;text-align:center;padding:16px var(--pad)}
   .footer-social{justify-content:center}
- 
+
   /* Mark band */
   .mark-band{padding:48px var(--pad)}
- 
+
   /* Stack callout */
   .stack-wrap{max-width:100%}
   .srow{height:auto;min-height:56px}
   .sbar{font-size:13px;padding:0 12px}
 }
- 
+
 /* Accessibility */
 @media(prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important}
