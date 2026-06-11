@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -50,40 +50,16 @@
     </div>
 
     <div class="hero-right" style="display:flex;align-items:center;justify-content:center;padding:60px 0 60px 32px;">
-      <div class="hero-stat-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3px;width:100%">
-
-        <div class="hstat" data-val="87" data-suffix="%" data-prefix="" style="background:#142d52;padding:32px 24px;opacity:1;position:relative;overflow:hidden;">
-          <div class="hstat-num" style="font-family:Impact,sans-serif;font-size:clamp(36px,4.5vw,58px);color:#E8640C;line-height:1;margin-bottom:10px;">
-            <span class="hstat-count">87</span><span class="hstat-suffix" style="font-family:Impact,sans-serif;font-size:clamp(24px,3vw,36px);color:#E8640C;">%</span>
-          </div>
-          <div class="hstat-label" style="font-size:13px;color:#F8F7F4;line-height:1.5;margin-bottom:8px;">of Americans dislike the car buying process</div>
-          <div class="hstat-source" style="font-size:10px;color:#8a9ab0;letter-spacing:1px;text-transform:uppercase;">Gallup / Harris Poll</div>
+      <div class="stat-cycler" id="statCycler">
+        <div class="sc-num" id="scNum"></div>
+        <div class="sc-label" id="scLabel"></div>
+        <div class="sc-source" id="scSource"></div>
+        <div class="sc-dots" id="scDots">
+          <span class="sc-dot active"></span>
+          <span class="sc-dot"></span>
+          <span class="sc-dot"></span>
+          <span class="sc-dot"></span>
         </div>
-
-        <div class="hstat" data-val="61" data-suffix="%" data-prefix="" style="background:#142d52;padding:32px 24px;opacity:1;position:relative;overflow:hidden;">
-          <div class="hstat-num" style="font-family:Impact,sans-serif;font-size:clamp(36px,4.5vw,58px);color:#E8640C;line-height:1;margin-bottom:10px;">
-            <span class="hstat-count">61</span><span class="hstat-suffix" style="font-family:Impact,sans-serif;font-size:clamp(24px,3vw,36px);color:#E8640C;">%</span>
-          </div>
-          <div class="hstat-label" style="font-size:13px;color:#F8F7F4;line-height:1.5;margin-bottom:8px;">felt taken advantage of by their dealership</div>
-          <div class="hstat-source" style="font-size:10px;color:#8a9ab0;letter-spacing:1px;text-transform:uppercase;">Harris Poll</div>
-        </div>
-
-        <div class="hstat" data-val="1117" data-suffix="" data-prefix="$" style="background:#142d52;padding:32px 24px;opacity:1;position:relative;overflow:hidden;">
-          <div class="hstat-num" style="font-family:Impact,sans-serif;font-size:clamp(36px,4.5vw,58px);color:#E8640C;line-height:1;margin-bottom:10px;">
-            <span class="hstat-prefix" style="font-family:Impact,sans-serif;font-size:clamp(24px,3vw,36px);color:#E8640C;">$</span><span class="hstat-count">1,117</span>
-          </div>
-          <div class="hstat-label" style="font-size:13px;color:#F8F7F4;line-height:1.5;margin-bottom:8px;">average overpaid just to avoid negotiating</div>
-          <div class="hstat-source" style="font-size:10px;color:#8a9ab0;letter-spacing:1px;text-transform:uppercase;">Indiana University / Cornell</div>
-        </div>
-
-        <div class="hstat" data-val="95" data-suffix="%" data-prefix="" style="background:#142d52;padding:32px 24px;opacity:1;position:relative;overflow:hidden;">
-          <div class="hstat-num" style="font-family:Impact,sans-serif;font-size:clamp(36px,4.5vw,58px);color:#E8640C;line-height:1;margin-bottom:10px;">
-            <span class="hstat-count">95</span><span class="hstat-suffix" style="font-family:Impact,sans-serif;font-size:clamp(24px,3vw,36px);color:#E8640C;">%</span>
-          </div>
-          <div class="hstat-label" style="font-size:13px;color:#F8F7F4;line-height:1.5;margin-bottom:8px;">of buyers choose not to negotiate at all</div>
-          <div class="hstat-source" style="font-size:10px;color:#8a9ab0;letter-spacing:1px;text-transform:uppercase;">Indiana University / Cornell</div>
-        </div>
-
       </div>
     </div>
   </div><!-- /hero-inner -->
@@ -578,70 +554,102 @@
 </footer>
 
 <script>
-  function easeOutQuart(t) {
-    return 1 - Math.pow(1 - t, 4);
-  }
+  var stats = [
+    { val: 87,   prefix: '',  suffix: '%', label: 'of Americans dislike the car buying process',         source: 'Gallup / Harris Poll' },
+    { val: 61,   prefix: '',  suffix: '%', label: 'felt taken advantage of by their dealership',          source: 'Harris Poll' },
+    { val: 1117, prefix: '$', suffix: '',  label: 'average amount overpaid just to avoid negotiating',    source: 'Indiana University / Cornell' },
+    { val: 95,   prefix: '',  suffix: '%', label: 'of buyers choose not to negotiate at all',             source: 'Indiana University / Cornell' }
+  ];
 
-  function countUp(el, target, duration, isPrice) {
+  var current  = 0;
+  var numEl    = document.getElementById('scNum');
+  var labelEl  = document.getElementById('scLabel');
+  var sourceEl = document.getElementById('scSource');
+  var dots     = document.querySelectorAll('.sc-dot');
+
+  // Timing
+  var COUNT_DUR  = 1400;  // count-up duration ms
+  var HOLD       = 1800;  // hold after count finishes
+  var FADE_OUT   = 500;   // fade out duration (matches CSS)
+  var FADE_IN    = 400;   // fade in duration (matches CSS)
+
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function countUp(target, prefix, suffix, done) {
     var start = null;
-    var countEl = el.querySelector('.hstat-count');
+    // For large numbers count from a nearby value for speed
+    var from = target > 100 ? Math.floor(target * 0.4) : 0;
+
     function step(ts) {
       if (!start) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = easeOutQuart(progress);
-      var current = Math.floor(eased * target);
-      if (isPrice) {
-        countEl.textContent = current.toLocaleString();
-      } else {
-        countEl.textContent = current;
-      }
-      if (progress < 1) {
+      var p = Math.min((ts - start) / COUNT_DUR, 1);
+      var val = Math.floor(from + easeOut(p) * (target - from));
+      numEl.textContent = prefix + val.toLocaleString() + suffix;
+      if (p < 1) {
         requestAnimationFrame(step);
       } else {
-        countEl.textContent = isPrice ? target.toLocaleString() : target;
+        numEl.textContent = prefix + target.toLocaleString() + suffix;
+        if (done) done();
       }
     }
     requestAnimationFrame(step);
   }
 
-  var statsAnimated = false;
-
-  function animateStats() {
-    if (statsAnimated) return;
-    statsAnimated = true;
-    var stats = document.querySelectorAll('.hstat');
-    stats.forEach(function(stat, i) {
-      setTimeout(function() {
-        stat.classList.add('hstat-visible');
-        var target = parseInt(stat.dataset.val, 10);
-        var isPrice = stat.dataset.prefix === '$';
-        var duration = isPrice ? 1800 : 1200;
-        countUp(stat, target, duration, isPrice);
-      }, i * 200);
+  function setDot(i) {
+    dots.forEach(function(d, idx) {
+      d.classList.toggle('active', idx === i);
     });
   }
 
-  // Trigger when hero stats scroll into view
-  var statsObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        animateStats();
-        statsObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.1 });
+  function showStat(i) {
+    var s = stats[i];
+    setDot(i);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var grid = document.querySelector('.hero-stat-grid');
-    if (grid) {
-      statsObserver.observe(grid);
-      // Also fire after a short delay as fallback
-      // in case IntersectionObserver doesn't trigger
+    // Reset: make number visible immediately, label hidden
+    numEl.style.opacity    = '0';
+    labelEl.style.opacity  = '0';
+    sourceEl.style.opacity = '0';
+    numEl.textContent      = s.prefix + '0' + s.suffix;
+    labelEl.textContent    = s.label;
+    sourceEl.textContent   = s.source;
+
+    // Fade number in
+    requestAnimationFrame(function() {
+      numEl.style.transition    = 'opacity ' + FADE_IN + 'ms ease';
+      labelEl.style.transition  = 'opacity ' + FADE_IN + 'ms ease';
+      sourceEl.style.transition = 'opacity ' + FADE_IN + 'ms ease';
+      numEl.style.opacity = '1';
+
+      // Start count-up
       setTimeout(function() {
-        animateStats();
-        statsObserver.disconnect();
-      }, 800);
-    }
+        countUp(s.val, s.prefix, s.suffix, function() {
+          // Count done — fade in label
+          labelEl.style.opacity  = '1';
+          sourceEl.style.opacity = '1';
+
+          // Hold, then fade everything out and move to next
+          setTimeout(function() {
+            numEl.style.transition    = 'opacity ' + FADE_OUT + 'ms ease';
+            labelEl.style.transition  = 'opacity ' + FADE_OUT + 'ms ease';
+            sourceEl.style.transition = 'opacity ' + FADE_OUT + 'ms ease';
+            numEl.style.opacity    = '0';
+            labelEl.style.opacity  = '0';
+            sourceEl.style.opacity = '0';
+
+            setTimeout(function() {
+              current = (i + 1) % stats.length;
+              showStat(current);
+            }, FADE_OUT + 80);
+
+          }, HOLD);
+        });
+      }, FADE_IN + 100);
+    });
+  }
+
+  // Kick off on load
+  window.addEventListener('load', function() {
+    setTimeout(function() { showStat(0); }, 400);
   });
 </script>
 </body>
