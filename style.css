@@ -104,7 +104,7 @@ a{text-decoration:none}
 }
 .header-nav a:hover{color:var(--white)}
 .header-nav .btn-primary{
-  font-size:12px;padding:10px 22px;letter-spacing:1px;
+  font-size:12px;padding:10px 22px;letter-spacing:1px; color:#ffffff !important;
 }
 
 /* ============================================================
