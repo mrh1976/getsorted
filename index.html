@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -41,92 +40,52 @@
 
     <div class="hero-left">
       <p class="eyebrow">Chicago Area Car Buying Concierge</p>
-      <h1 class="hero-hed">Face it, <br><em>Car Buying</em><br>sucks.<br></h1>
+      <h1 class="hero-hed">The<br><em>Car Buying</em><br>game is<br>rigged.</h1>
       <p class="hero-subhed">We even the score.</p>
       <p class="hero-body">GetSorted is a Chicago car buying concierge. We handle the research, the negotiation, and the dealer conversation on your behalf — for new cars, leases, used vehicles, and trade-ins. Flat fee. No surprises.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Book a Free 15-Min Call</a>
         <a href="#guide" class="btn btn-secondary">Get the Free Guide</a>
       </div>
-      <hr class="hero-divider">
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num"><em>$4,200</em></div>
-          <div class="stat-label">average savings per deal</div>
-        </div>
-        <div>
-          <div class="stat-num">30<em>+</em></div>
-          <div class="stat-label">cars personally bought and sold</div>
-        </div>
-        <div>
-          <div class="stat-num">25<em>yrs</em></div>
-          <div class="stat-label">inside the automotive world</div>
-        </div>
-      </div>
     </div>
 
     <div class="hero-right">
-      <div class="big-card" id="bigCard">
-        <div class="big-card-inner">
+      <div class="hero-stat-grid">
 
-          <!-- BACK: branded card back image -->
-          <div class="big-card-back">
-            <img src="images/back_blue.png" alt="GetSorted card back">
+        <div class="hstat" data-val="87" data-suffix="%" data-prefix="">
+          <div class="hstat-num">
+            <span class="hstat-count">0</span><span class="hstat-suffix">%</span>
           </div>
-
-          <!-- FRONT: all five dealer secrets -->
-          <div class="big-card-front">
-            <div class="big-card-header">
-              <span class="big-card-title">What the dealer knows<br>before you say a word.</span>
-            </div>
-            <div class="big-card-divider"></div>
-            <div class="big-card-items">
-              <div class="big-card-item">
-                <div class="bci-left">
-                  <span class="bci-suit blk">♠</span>
-                  <span class="bci-label">Invoice Price</span>
-                </div>
-                <span class="bci-val">$46,500</span>
-              </div>
-              <div class="big-card-item">
-                <div class="bci-left">
-                  <span class="bci-suit red">♦</span>
-                  <span class="bci-label">Holdback</span>
-                </div>
-                <span class="bci-val">$1,200</span>
-              </div>
-              <div class="big-card-item">
-                <div class="bci-left">
-                  <span class="bci-suit blk">♣</span>
-                  <span class="bci-label">Dealer Cash</span>
-                </div>
-                <span class="bci-val">$2,000</span>
-              </div>
-              <div class="big-card-item">
-                <div class="bci-left">
-                  <span class="bci-suit red">♥</span>
-                  <span class="bci-label">Money Factor</span>
-                </div>
-                <span class="bci-val">.00189</span>
-              </div>
-              <div class="big-card-item">
-                <div class="bci-left">
-                  <span class="bci-suit blk">♠</span>
-                  <span class="bci-label">True Cost</span>
-                </div>
-                <span class="bci-val bci-val-highlight">$42,800</span>
-              </div>
-            </div>
-            <div class="big-card-divider"></div>
-            <div class="big-card-footer">
-              <span class="big-card-gap-label">Gap between MSRP and true cost</span>
-              <span class="big-card-gap-val">$6,000+</span>
-            </div>
-          </div>
-
+          <div class="hstat-label">of Americans dislike the car buying process</div>
+          <div class="hstat-source">Gallup / Harris Poll</div>
         </div>
+
+        <div class="hstat" data-val="61" data-suffix="%" data-prefix="">
+          <div class="hstat-num">
+            <span class="hstat-count">0</span><span class="hstat-suffix">%</span>
+          </div>
+          <div class="hstat-label">felt taken advantage of by their dealership</div>
+          <div class="hstat-source">Harris Poll</div>
+        </div>
+
+        <div class="hstat" data-val="1117" data-suffix="" data-prefix="$">
+          <div class="hstat-num">
+            <span class="hstat-prefix">$</span><span class="hstat-count">0</span>
+          </div>
+          <div class="hstat-label">the average amount people overpay just to avoid negotiating</div>
+          <div class="hstat-source">Indiana University / Cornell Research</div>
+        </div>
+
+        <div class="hstat" data-val="95" data-suffix="%" data-prefix="">
+          <div class="hstat-num">
+            <span class="hstat-count">0</span><span class="hstat-suffix">%</span>
+          </div>
+          <div class="hstat-label">of buyers choose not to negotiate at all</div>
+          <div class="hstat-source">Indiana University / Cornell Research</div>
+        </div>
+
       </div>
-    </div><!-- /hero-right -->
+    </div>
   </div><!-- /hero-inner -->
 </section>
 
@@ -619,21 +578,59 @@
 </footer>
 
 <script>
-  function flipCard() {
-    var card = document.getElementById('bigCard');
-    if (card) {
-      card.classList.add('flipped');
-    }
+<script>
+  function easeOutQuart(t) {
+    return 1 - Math.pow(1 - t, 4);
   }
 
-  // Try on DOMContentLoaded
-  document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(flipCard, 900);
-  });
+  function countUp(el, target, duration, isPrice) {
+    var start = null;
+    var countEl = el.querySelector('.hstat-count');
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = easeOutQuart(progress);
+      var current = Math.floor(eased * target);
+      if (isPrice) {
+        countEl.textContent = current.toLocaleString();
+      } else {
+        countEl.textContent = current;
+      }
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        countEl.textContent = isPrice ? target.toLocaleString() : target;
+      }
+    }
+    requestAnimationFrame(step);
+  }
 
-  // Fallback: also try on full page load in case DOMContentLoaded already fired
-  window.addEventListener('load', function() {
-    setTimeout(flipCard, 900);
+  function animateStats() {
+    var stats = document.querySelectorAll('.hstat');
+    stats.forEach(function(stat, i) {
+      setTimeout(function() {
+        stat.classList.add('hstat-visible');
+        var target = parseInt(stat.dataset.val, 10);
+        var isPrice = stat.dataset.prefix === '$';
+        var duration = isPrice ? 1800 : 1200;
+        countUp(stat, target, duration, isPrice);
+      }, i * 200);
+    });
+  }
+
+  // Trigger when hero stats scroll into view
+  var statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        animateStats();
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var grid = document.querySelector('.hero-stat-grid');
+    if (grid) statsObserver.observe(grid);
   });
 </script>
 </body>
