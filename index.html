@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -577,8 +577,9 @@
 
   function countUp(target, prefix, suffix, done) {
     var start = null;
-    // For large numbers count from a nearby value for speed
-    var from = target > 100 ? Math.floor(target * 0.4) : 0;
+    // Start from a value with same digit count as target to prevent width shifting
+    var digits = target.toString().length;
+    var from = Math.pow(10, digits - 1); // e.g. 1000 for 1117, 10 for 87, 10 for 95
 
     function step(ts) {
       if (!start) start = ts;
