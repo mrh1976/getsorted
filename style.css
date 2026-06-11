@@ -93,8 +93,8 @@ a{text-decoration:none}
   padding:0 var(--pad);
   display:flex;align-items:center;justify-content:space-between;
 }
-.header-logo{display:flex;align-items:center;height:150px}
-.header-logo img{height:149px;width:auto}
+.header-logo{display:flex;align-items:center;height:44px}
+.header-logo img{height:40px;width:auto}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{
   font-family:var(--semi);font-weight:600;
@@ -119,7 +119,7 @@ a{text-decoration:none}
   display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;
 }
 .footer-logo-wrap{margin-bottom:18px}
-.footer-logo-wrap img{height:80px;width:auto}
+.footer-logo-wrap img{height:30px;width:auto}
 .footer-tagline{font-size:14px;color:var(--gray);line-height:1.65;max-width:240px;margin-bottom:20px}
 .footer-contact a,.footer-col a{
   display:block;font-size:13px;color:var(--gray);
@@ -202,30 +202,120 @@ a{text-decoration:none}
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:80px 0;
 }
-.card-hand{position:relative;width:340px;height:290px}
-.card{
-  position:absolute;width:110px;height:160px;
-  background:var(--white);border-radius:8px;
-  box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 8px rgba(0,0,0,.3);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;
+.card-hand{
+  position:relative;
+  width:380px;height:360px;
 }
-.card:nth-child(1){transform:rotate(-20deg) translate(-128px,22px);z-index:1}
-.card:nth-child(2){transform:rotate(-10deg) translate(-62px,8px);z-index:2}
-.card:nth-child(3){transform:rotate(0deg);z-index:5}
-.card:nth-child(4){transform:rotate(10deg) translate(62px,8px);z-index:2}
-.card:nth-child(5){transform:rotate(20deg) translate(128px,22px);z-index:1}
-.card-suit{font-size:20px;margin-bottom:6px}
-.card-suit.red{color:#cc2200}
-.card-suit.blk{color:var(--navy)}
+
+/* ── Flip card shell ── */
+.flip-card{
+  position:absolute;
+  width:130px;height:190px;
+  top:50%;left:50%;
+  margin-top:-95px;margin-left:-65px;
+  transform:rotate(var(--r)) translate(var(--tx),var(--ty));
+  perspective:800px;
+  z-index:2;
+}
+.flip-card:nth-child(1){z-index:1}
+.flip-card:nth-child(2){z-index:2}
+.flip-card:nth-child(3){z-index:5}
+.flip-card:nth-child(4){z-index:2}
+.flip-card:nth-child(5){z-index:1}
+
+.flip-card-inner{
+  position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;
+  transition:transform 0.7s cubic-bezier(.4,0,.2,1);
+  /* Start showing back face */
+}
+.flip-card.flipped .flip-card-inner{
+  transform:rotateY(180deg);
+}
+
+/* Back and front share absolute positioning */
+.flip-card-back,
+.flip-card-front{
+  position:absolute;inset:0;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  border-radius:10px;
+  box-shadow:0 16px 48px rgba(0,0,0,.5),0 4px 12px rgba(0,0,0,.3);
+}
+
+/* ── Card back: branded GetSorted design ── */
+.flip-card-back{
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  /* front of the 3D card before flip — shows back design */
+}
+.card-back-border{
+  position:absolute;inset:7px;
+  border:1.5px solid rgba(232,100,12,.35);
+  border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  background:repeating-linear-gradient(
+    45deg,
+    rgba(232,100,12,.03),
+    rgba(232,100,12,.03) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+}
+.card-back-inner{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;
+}
+.card-back-wheel{
+  width:68px;height:68px;
+  opacity:.9;
+}
+.card-back-logo{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:13px;letter-spacing:1px;
+  color:var(--white);
+}
+.card-back-logo em{color:var(--orange);font-style:normal}
+
+/* ── Card front: dealer intel ── */
+.flip-card-front{
+  background:var(--white);
+  transform:rotateY(180deg);
+  display:flex;flex-direction:column;
+  padding:10px;
+  overflow:hidden;
+}
+.card-corner{
+  display:flex;flex-direction:column;align-items:center;line-height:1;
+}
+.card-corner.top-left{align-self:flex-start}
+.card-corner.bottom-right{align-self:flex-end;margin-top:auto}
+.rot180{transform:rotate(180deg)}
+.cs{font-size:15px;font-weight:700}
+.cs.red{color:#cc2200}
+.cs.blk{color:var(--navy)}
+.card-center{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+}
+.card-suit-lg{font-size:24px;margin-bottom:6px;line-height:1}
+.card-suit-lg.red{color:#cc2200}
+.card-suit-lg.blk{color:var(--navy)}
 .card-name{
-  font-family:var(--semi);font-weight:700;font-size:11px;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:11px;
   color:var(--navy);text-align:center;
   line-height:1.2;text-transform:uppercase;letter-spacing:.3px;
+  margin-bottom:4px;
 }
-.card-val{font-family:var(--impact);font-size:20px;color:var(--orange);margin-top:5px}
+.card-val{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:20px;color:var(--orange);
+}
 .card-caption{
-  margin-top:28px;text-align:center;
-  font-family:var(--semi);font-weight:600;
+  margin-top:32px;text-align:center;
+  font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;
   font-size:11px;letter-spacing:2px;text-transform:uppercase;
   color:rgba(138,154,176,.55);max-width:280px;line-height:1.6;
 }
