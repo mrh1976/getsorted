@@ -342,29 +342,140 @@ a{text-decoration:none}
 /* ============================================================
    PRICE STACK
 ============================================================ */
-.pricestack{background:var(--off)}
-.stack-wrap{max-width:700px;margin-top:56px}
-.srow{display:flex;align-items:stretch;margin-bottom:3px;height:68px}
-.sbar{
-  display:flex;align-items:center;padding:0 20px;
-  font-family:var(--impact);font-size:17px;
-  color:#fff;flex-shrink:0;letter-spacing:.5px;
-}
-.sbar.w100{width:100%;background:#8a9ab0}
-.sbar.w87 {width:87%; background:#5a7090}
-.sbar.w76 {width:76%; background:#2a4870}
-.sbar.w65 {width:65%; background:var(--navy-mid)}
-.sbar.w52 {width:52%; background:var(--orange)}
-.slabel{display:flex;flex-direction:column;justify-content:center;padding-left:18px;flex:1}
-.slabel-t{font-family:var(--semi);font-weight:700;font-size:14px;color:var(--navy)}
-.slabel-d{font-size:12px;color:var(--mid);margin-top:2px;line-height:1.4}
-.stack-callout{
-  margin-top:20px;padding:18px 24px;
-  border:1.5px dashed var(--orange);background:rgba(232,100,12,.06);
-}
-.stack-callout p{font-family:var(--impact);font-size:18px;color:var(--orange);letter-spacing:.3px}
-.stack-callout span{font-size:13px;color:var(--mid);display:block;margin-top:4px}
 
+.pricestack{
+  background:var(--off);
+}
+
+.stack-wrap{
+  max-width:1100px;
+  margin-top:56px;
+}
+
+.srow{
+  display:grid;
+  grid-template-columns:760px 1fr;
+  gap:20px;
+  align-items:center;
+  margin-bottom:6px;
+}
+
+.sbar{
+  height:72px;
+  display:flex;
+  align-items:center;
+  padding:0 24px;
+  font-family:var(--impact);
+  font-size:18px;
+  color:#fff;
+  letter-spacing:.3px;
+  flex-shrink:0;
+}
+
+.sbar.w100{
+  width:100%;
+  background:#97a6bb;
+}
+
+.sbar.w87{
+  width:87%;
+  background:#627b9f;
+}
+
+.sbar.w76{
+  width:76%;
+  background:#355684;
+}
+
+.sbar.w65{
+  width:65%;
+  background:#183662;
+}
+
+.sbar.w52{
+  width:52%;
+  background:var(--orange);
+}
+
+.slabel{
+  min-width:260px;
+}
+
+.slabel-t{
+  font-family:var(--semi);
+  font-weight:700;
+  font-size:18px;
+  line-height:1.2;
+  color:var(--navy);
+  margin-bottom:6px;
+}
+
+.slabel-d{
+  font-size:15px;
+  line-height:1.55;
+  color:var(--mid);
+}
+
+.stack-callout{
+  margin-top:28px;
+  padding:22px 28px;
+  border:2px dashed var(--orange);
+  background:rgba(232,100,12,.05);
+}
+
+.stack-callout p{
+  font-family:var(--impact);
+  font-size:24px;
+  color:var(--orange);
+  line-height:1.1;
+  margin-bottom:8px;
+}
+
+.stack-callout span{
+  display:block;
+  font-size:16px;
+  color:var(--mid);
+}
+
+/* Tablet */
+
+@media(max-width:960px){
+
+  .srow{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-bottom:20px;
+  }
+
+  .sbar{
+    height:64px;
+  }
+
+  .slabel{
+    min-width:0;
+  }
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+  .sbar{
+    height:56px;
+    font-size:15px;
+    padding:0 16px;
+  }
+
+  .slabel-t{
+    font-size:16px;
+  }
+
+  .slabel-d{
+    font-size:14px;
+  }
+
+}
 /* ============================================================
    WHERE MONEY HIDES
 ============================================================ */
