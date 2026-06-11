@@ -619,10 +619,21 @@
 
 <script>
 <script>
+  function flipCard() {
+    var card = document.getElementById('bigCard');
+    if (card) {
+      card.classList.add('flipped');
+    }
+  }
+
+  // Try on DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-      document.getElementById('bigCard').classList.add('flipped');
-    }, 900);
+    setTimeout(flipCard, 900);
+  });
+
+  // Fallback: also try on full page load in case DOMContentLoaded already fired
+  window.addEventListener('load', function() {
+    setTimeout(flipCard, 900);
   });
 </script>
 </body>
