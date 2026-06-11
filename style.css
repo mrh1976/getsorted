@@ -218,30 +218,34 @@ a{text-decoration:none}
   display:flex;
   flex-direction:column;
   justify-content:center;
-  align-items:flex-start;
+  align-items:center;
+  text-align:center;
 }
 
 .sc-num{
   font-family:var(--impact);
-  font-size:clamp(90px,11vw,160px);
+  font-size:clamp(110px,13vw,190px);
   color:var(--orange);
   line-height:.88;
   letter-spacing:-3px;
-  margin-bottom:24px;
+  margin-bottom:28px;
   opacity:0;
-  /* Prevent number from causing layout shifts */
   white-space:nowrap;
+  display:block;
+  width:100%;
+  text-align:center;
 }
 
 .sc-label{
   font-family:var(--impact);
-  font-size:clamp(20px,2.2vw,30px);
+  font-size:clamp(22px,2.4vw,32px);
   color:var(--white);
   line-height:1.15;
   letter-spacing:.3px;
   max-width:380px;
-  margin-bottom:12px;
+  margin:0 auto 12px;
   opacity:0;
+  text-align:center;
 }
 
 .sc-source{
@@ -253,11 +257,13 @@ a{text-decoration:none}
   color:var(--gray);
   opacity:0;
   margin-bottom:36px;
+  text-align:center;
 }
 
 .sc-dots{
   display:flex;
   gap:10px;
+  justify-content:center;
 }
 
 .sc-dot{
