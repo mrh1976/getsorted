@@ -18,7 +18,7 @@
 <header id="site-header">
   <div class="header-inner">
     <a href="/" class="header-logo" aria-label="GetSorted Home">
-      <img src="images/sorted_logo.png" alt="GetSorted">
+      <img src="images/sorted_logo.png" alt="GetSorted" style="height:150px;width:auto">
     </a>
     <nav class="header-nav" aria-label="Primary">
       <a href="#how">How It Works</a>
@@ -67,183 +67,86 @@
     <div class="hero-right">
       <div class="card-hand" id="cardHand">
 
-        <!-- Card 1: Invoice Price -->
-        <div class="flip-card" style="--r:-22deg;--tx:-148px;--ty:28px;--delay:0.1s">
-          <div class="flip-card-inner">
-            <div class="flip-card-back">
-              <div class="card-back-border">
-                <div class="card-back-inner">
-                  <svg class="card-back-wheel" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="46" fill="none" stroke="#E8640C" stroke-width="2.5"/>
-                    <circle cx="50" cy="50" r="34" fill="none" stroke="#E8640C" stroke-width="1.5"/>
-                    <circle cx="50" cy="50" r="5" fill="#E8640C"/>
-                    <line x1="50" y1="4"  x2="50" y2="96" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="4"  y1="50" x2="96" y2="50" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="17" y1="17" x2="83" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="83" y1="17" x2="17" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="28" y1="8"  x2="72" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="8"  y1="28" x2="92" y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="72" y1="8"  x2="28" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="92" y1="28" x2="8"  y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                  <div class="card-back-logo">get<em>S</em>orted</div>
-                </div>
-              </div>
-            </div>
-            <div class="flip-card-front">
-              <div class="card-corner top-left"><span class="cs blk">♠</span></div>
+        <!-- Each card starts stacked center, deals out, then flips -->
+        <!-- data-r=final rotation, data-tx/ty=final translate position -->
+
+        <div class="deal-card" id="dc0" data-r="-22" data-tx="-160" data-ty="30">
+          <div class="deal-card-inner">
+            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
+            <div class="deal-front">
+              <div class="card-corner tl"><span class="cs blk">♠</span></div>
               <div class="card-center">
                 <div class="card-suit-lg blk">♠</div>
                 <div class="card-name">Invoice Price</div>
                 <div class="card-val">$46,500</div>
               </div>
-              <div class="card-corner bottom-right rot180"><span class="cs blk">♠</span></div>
+              <div class="card-corner br"><span class="cs blk">♠</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 2: Holdback -->
-        <div class="flip-card" style="--r:-11deg;--tx:-74px;--ty:10px;--delay:0.35s">
-          <div class="flip-card-inner">
-            <div class="flip-card-back">
-              <div class="card-back-border">
-                <div class="card-back-inner">
-                  <svg class="card-back-wheel" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="46" fill="none" stroke="#E8640C" stroke-width="2.5"/>
-                    <circle cx="50" cy="50" r="34" fill="none" stroke="#E8640C" stroke-width="1.5"/>
-                    <circle cx="50" cy="50" r="5" fill="#E8640C"/>
-                    <line x1="50" y1="4"  x2="50" y2="96" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="4"  y1="50" x2="96" y2="50" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="17" y1="17" x2="83" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="83" y1="17" x2="17" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="28" y1="8"  x2="72" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="8"  y1="28" x2="92" y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="72" y1="8"  x2="28" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="92" y1="28" x2="8"  y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                  <div class="card-back-logo">get<em>S</em>orted</div>
-                </div>
-              </div>
-            </div>
-            <div class="flip-card-front">
-              <div class="card-corner top-left"><span class="cs red">♦</span></div>
+        <div class="deal-card" id="dc1" data-r="-11" data-tx="-80" data-ty="12">
+          <div class="deal-card-inner">
+            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
+            <div class="deal-front">
+              <div class="card-corner tl"><span class="cs red">♦</span></div>
               <div class="card-center">
                 <div class="card-suit-lg red">♦</div>
                 <div class="card-name">Holdback</div>
                 <div class="card-val">$1,200</div>
               </div>
-              <div class="card-corner bottom-right rot180"><span class="cs red">♦</span></div>
+              <div class="card-corner br"><span class="cs red">♦</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 3: Dealer Cash (center) -->
-        <div class="flip-card" style="--r:0deg;--tx:0px;--ty:0px;--delay:0.6s">
-          <div class="flip-card-inner">
-            <div class="flip-card-back">
-              <div class="card-back-border">
-                <div class="card-back-inner">
-                  <svg class="card-back-wheel" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="46" fill="none" stroke="#E8640C" stroke-width="2.5"/>
-                    <circle cx="50" cy="50" r="34" fill="none" stroke="#E8640C" stroke-width="1.5"/>
-                    <circle cx="50" cy="50" r="5" fill="#E8640C"/>
-                    <line x1="50" y1="4"  x2="50" y2="96" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="4"  y1="50" x2="96" y2="50" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="17" y1="17" x2="83" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="83" y1="17" x2="17" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="28" y1="8"  x2="72" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="8"  y1="28" x2="92" y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="72" y1="8"  x2="28" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="92" y1="28" x2="8"  y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                  <div class="card-back-logo">get<em>S</em>orted</div>
-                </div>
-              </div>
-            </div>
-            <div class="flip-card-front">
-              <div class="card-corner top-left"><span class="cs blk">♣</span></div>
+        <div class="deal-card" id="dc2" data-r="0" data-tx="0" data-ty="0">
+          <div class="deal-card-inner">
+            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
+            <div class="deal-front">
+              <div class="card-corner tl"><span class="cs blk">♣</span></div>
               <div class="card-center">
                 <div class="card-suit-lg blk">♣</div>
                 <div class="card-name">Dealer Cash</div>
                 <div class="card-val">$2,000</div>
               </div>
-              <div class="card-corner bottom-right rot180"><span class="cs blk">♣</span></div>
+              <div class="card-corner br"><span class="cs blk">♣</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 4: Money Factor -->
-        <div class="flip-card" style="--r:11deg;--tx:74px;--ty:10px;--delay:0.85s">
-          <div class="flip-card-inner">
-            <div class="flip-card-back">
-              <div class="card-back-border">
-                <div class="card-back-inner">
-                  <svg class="card-back-wheel" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="46" fill="none" stroke="#E8640C" stroke-width="2.5"/>
-                    <circle cx="50" cy="50" r="34" fill="none" stroke="#E8640C" stroke-width="1.5"/>
-                    <circle cx="50" cy="50" r="5" fill="#E8640C"/>
-                    <line x1="50" y1="4"  x2="50" y2="96" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="4"  y1="50" x2="96" y2="50" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="17" y1="17" x2="83" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="83" y1="17" x2="17" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="28" y1="8"  x2="72" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="8"  y1="28" x2="92" y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="72" y1="8"  x2="28" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="92" y1="28" x2="8"  y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                  <div class="card-back-logo">get<em>S</em>orted</div>
-                </div>
-              </div>
-            </div>
-            <div class="flip-card-front">
-              <div class="card-corner top-left"><span class="cs red">♥</span></div>
+        <div class="deal-card" id="dc3" data-r="11" data-tx="80" data-ty="12">
+          <div class="deal-card-inner">
+            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
+            <div class="deal-front">
+              <div class="card-corner tl"><span class="cs red">♥</span></div>
               <div class="card-center">
                 <div class="card-suit-lg red">♥</div>
                 <div class="card-name">Money Factor</div>
                 <div class="card-val">.00189</div>
               </div>
-              <div class="card-corner bottom-right rot180"><span class="cs red">♥</span></div>
+              <div class="card-corner br"><span class="cs red">♥</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 5: True Cost -->
-        <div class="flip-card" style="--r:22deg;--tx:148px;--ty:28px;--delay:1.1s">
-          <div class="flip-card-inner">
-            <div class="flip-card-back">
-              <div class="card-back-border">
-                <div class="card-back-inner">
-                  <svg class="card-back-wheel" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="46" fill="none" stroke="#E8640C" stroke-width="2.5"/>
-                    <circle cx="50" cy="50" r="34" fill="none" stroke="#E8640C" stroke-width="1.5"/>
-                    <circle cx="50" cy="50" r="5" fill="#E8640C"/>
-                    <line x1="50" y1="4"  x2="50" y2="96" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="4"  y1="50" x2="96" y2="50" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="17" y1="17" x2="83" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="83" y1="17" x2="17" y2="83" stroke="#E8640C" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="28" y1="8"  x2="72" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="8"  y1="28" x2="92" y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="72" y1="8"  x2="28" y2="92" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                    <line x1="92" y1="28" x2="8"  y2="72" stroke="#E8640C" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                  <div class="card-back-logo">get<em>S</em>orted</div>
-                </div>
-              </div>
-            </div>
-            <div class="flip-card-front">
-              <div class="card-corner top-left"><span class="cs blk">♠</span></div>
+        <div class="deal-card" id="dc4" data-r="22" data-tx="160" data-ty="30">
+          <div class="deal-card-inner">
+            <div class="deal-back"><img src="images/back_blue.png" alt=""></div>
+            <div class="deal-front">
+              <div class="card-corner tl"><span class="cs blk">♠</span></div>
               <div class="card-center">
                 <div class="card-suit-lg blk">♠</div>
                 <div class="card-name">True Cost</div>
                 <div class="card-val">$42,800</div>
               </div>
-              <div class="card-corner bottom-right rot180"><span class="cs blk">♠</span></div>
+              <div class="card-corner br"><span class="cs blk">♠</span></div>
             </div>
           </div>
         </div>
 
       </div><!-- /card-hand -->
-      <p class="card-caption">What the dealer knows before you say a word.</p>
+      <p class="card-caption" id="cardCaption">What the dealer knows before you say a word.</p>
     </div><!-- /hero-right -->
   </div><!-- /hero-inner -->
 </section>
@@ -691,7 +594,7 @@
   <div class="footer-main">
     <div>
       <div class="footer-logo-wrap">
-        <img src="images/sorted.svg" alt="GetSorted">
+        <img src="images/sorted_logo.png" alt="GetSorted" style="height:150px;width:auto">
       </div>
       <p class="footer-tagline">Chicago's car buying concierge. We negotiate on your behalf so you never leave money on the table.</p>
       <div class="footer-contact">
@@ -737,17 +640,36 @@
 </footer>
 
 <script>
-  // Staggered card flip on page load
-  // Cards start showing their back (branded GetSorted design)
-  // then flip one by one to reveal dealer intel
   document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.flip-card');
-    cards.forEach(function(card) {
-      const delay = parseFloat(card.style.getPropertyValue('--delay')) * 1000;
+    const cards   = document.querySelectorAll('.deal-card');
+    const caption = document.getElementById('cardCaption');
+
+    // Timing constants (ms)
+    const DEAL_START  = 600;   // pause before first card deals
+    const DEAL_GAP    = 220;   // gap between each card dealing out
+    const DEAL_HOLD   = 700;   // pause after all cards dealt before flipping
+    const FLIP_GAP    = 260;   // gap between each card flip
+
+    // Phase 1: deal cards out from center stack, one by one
+    cards.forEach(function(card, i) {
+      setTimeout(function() {
+        card.classList.add('dealt');
+      }, DEAL_START + i * DEAL_GAP);
+    });
+
+    // Phase 2: flip each card to reveal dealer intel
+    const flipStart = DEAL_START + cards.length * DEAL_GAP + DEAL_HOLD;
+    cards.forEach(function(card, i) {
       setTimeout(function() {
         card.classList.add('flipped');
-      }, 800 + delay); // 800ms initial pause, then stagger
+      }, flipStart + i * FLIP_GAP);
     });
+
+    // Phase 3: show caption after all flips complete
+    const captionTime = flipStart + cards.length * FLIP_GAP + 400;
+    setTimeout(function() {
+      caption.classList.add('visible');
+    }, captionTime);
   });
 </script>
 </body>
