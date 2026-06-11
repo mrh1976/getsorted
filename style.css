@@ -209,6 +209,7 @@ a{text-decoration:none}
   height:480px;
   perspective:1200px;
   flex-shrink:0;
+  transform-style:preserve-3d;
 }
 
 .big-card-inner{
@@ -221,6 +222,11 @@ a{text-decoration:none}
 
 .big-card.flipped .big-card-inner{
   transform:rotateY(180deg);
+}
+
+/* Debug helper — remove after confirming flip works */
+.big-card-inner{
+  will-change:transform;
 }
 
 .big-card-back,
