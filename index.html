@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GetSorted — Visual Mockup</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<title>GetSorted — We Know Their Hand.</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{
   --navy:#0B1F3A;
   --navy-mid:#142d52;
@@ -19,182 +20,365 @@
   --gray-lt:#dce3ed;
   --text:#1a2e47;
   --text-mid:#4a6070;
+  --max:1140px;
 }
+
 html{scroll-behavior:smooth}
-body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+body{
+  font-family:'Barlow',sans-serif;
+  background:var(--white);
+  color:var(--text);
+  overflow-x:hidden;
+}
 
-/* ── NAV ── */
-.nav{
-  position:sticky;top:0;z-index:99;
+/* ─────────────────────────────────────────
+   TYPOGRAPHY SCALE
+   Impact for all display / headline use
+   Barlow Semi Condensed for eyebrows / utility
+   Barlow for body
+───────────────────────────────────────── */
+
+.t-display{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-weight:400; /* Impact has no weight variants, 400 renders correctly */
+  letter-spacing:-.5px;
+  line-height:.92;
+}
+.t-hed{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-weight:400;
+  letter-spacing:-.3px;
+  line-height:.95;
+}
+.t-subhed{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-weight:400;
+  letter-spacing:.5px;
+  line-height:1.1;
+}
+.t-eyebrow{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--orange);
+}
+.t-body{
+  font-family:'Barlow',sans-serif;
+  font-weight:400;
+  line-height:1.75;
+}
+.t-ui{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* ─────────────────────────────────────────
+   GLOBAL HEADER
+───────────────────────────────────────── */
+
+#site-header{
+  position:sticky;top:0;z-index:200;
   background:var(--navy);
-  height:60px;display:flex;align-items:center;
-  justify-content:space-between;padding:0 48px;
+  height:68px;
+  display:flex;align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
-.nav-logo{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;
-  color:var(--white);letter-spacing:-0.5px;display:flex;align-items:center;gap:2px;
+.header-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  width:100%;
+  padding:0 40px;
+  display:flex;align-items:center;justify-content:space-between;
 }
-.nav-logo-wheel{
-  width:20px;height:20px;margin:0 1px;
+/* Hero left must share the same left origin as the header */
+.hero-left.wrap{
+  padding-left:40px;
+  padding-right:0;
 }
-.nav-logo em{color:var(--orange);font-style:normal}
-.nav-right{display:flex;align-items:center;gap:28px}
-.nav-link{
-  font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
-  color:var(--gray);text-decoration:none;transition:color .2s;
+.header-logo{
+  display:flex;align-items:center;
+  text-decoration:none;
+  height:40px;
 }
-.nav-link:hover{color:var(--white)}
-.nav-btn{
-  background:var(--orange);color:#fff;
-  font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  padding:9px 20px;text-decoration:none;transition:background .2s;
+.header-logo img{
+  height:36px;
+  width:auto;
+  display:block;
 }
-.nav-btn:hover{background:var(--orange-lt)}
+.header-nav{
+  display:flex;align-items:center;gap:28px;
+}
+.header-nav a{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:600;
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--gray);
+  text-decoration:none;
+  transition:color .2s;
+}
+.header-nav a:hover{color:var(--white)}
+.header-cta{
+  background:var(--orange) !important;
+  color:#fff !important;
+  padding:10px 22px;
+  transition:background .2s !important;
+  letter-spacing:1px;
+}
+.header-cta:hover{background:var(--orange-lt) !important}
 
-/* ── HERO ── */
+/* ─────────────────────────────────────────
+   GLOBAL FOOTER
+───────────────────────────────────────── */
+
+#site-footer{
+  background:var(--navy);
+  border-top:1px solid rgba(255,255,255,.07);
+}
+.footer-main{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:64px 40px 48px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:48px;
+}
+.footer-brand{}
+.footer-logo-wrap{
+  display:flex;align-items:center;
+  margin-bottom:20px;
+}
+.footer-logo-wrap img{
+  height:32px;width:auto;display:block;
+}
+.footer-tagline{
+  font-size:14px;
+  color:var(--gray);
+  line-height:1.65;
+  max-width:240px;
+  margin-bottom:24px;
+}
+.footer-contact a{
+  display:block;
+  font-size:13px;
+  color:var(--gray);
+  text-decoration:none;
+  margin-bottom:6px;
+  transition:color .2s;
+}
+.footer-contact a:hover{color:var(--orange)}
+.footer-col-label{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:18px;
+}
+.footer-col a{
+  display:block;
+  font-size:13px;
+  color:var(--gray);
+  text-decoration:none;
+  margin-bottom:10px;
+  line-height:1.4;
+  transition:color .2s;
+}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.07);
+  padding:20px 40px;
+  max-width:var(--max);
+  margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-legal{
+  font-size:12px;color:rgba(138,154,176,.6);
+}
+.footer-legal a{color:rgba(138,154,176,.6);text-decoration:none;margin-left:16px;transition:color .2s}
+.footer-legal a:hover{color:var(--gray)}
+.footer-social{
+  display:flex;gap:16px;
+}
+.footer-social a{
+  width:32px;height:32px;
+  border:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gray);text-decoration:none;
+  font-size:13px;font-weight:700;
+  transition:border-color .2s,color .2s;
+}
+.footer-social a:hover{border-color:var(--orange);color:var(--orange)}
+
+/* ─────────────────────────────────────────
+   SHARED SECTION UTILITIES
+───────────────────────────────────────── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
+.section{padding:100px 0}
+.section-sm{padding:72px 0}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.btn{
+  display:inline-block;text-decoration:none;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:14px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:14px 32px;
+  transition:background .2s,transform .15s,color .2s,border-color .2s;
+  cursor:pointer;border:none;
+}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-lt);transform:translateY(-1px)}
+.btn-secondary{
+  background:transparent;color:var(--gray);
+  border:1.5px solid rgba(138,154,176,.3);
+}
+.btn-secondary:hover{border-color:var(--white);color:var(--white)}
+.btn-white{background:#fff;color:var(--orange)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-lt)}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
 .hero{
   background:var(--navy);
-  min-height:100vh;
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:0;
+  min-height:calc(100vh - 68px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
   position:relative;overflow:hidden;
 }
 .hero-glow{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 80% at 75% 50%,rgba(30,61,110,.55) 0%,transparent 70%),
-             radial-gradient(ellipse 30% 40% at 15% 85%,rgba(232,100,12,.07) 0%,transparent 60%);
-  pointer-events:none;
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 70% at 72% 50%,rgba(30,61,110,.6) 0%,transparent 65%),
+    radial-gradient(ellipse 28% 38% at 12% 88%,rgba(232,100,12,.07) 0%,transparent 55%);
 }
 .hero-left{
-  padding:80px 0 80px 64px;
+  padding:80px 0 80px 0;
+  display:flex;flex-direction:column;justify-content:center;
   position:relative;z-index:2;
 }
-.hero-eyebrow{
-  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--orange);margin-bottom:20px;
-}
+.hero-eyebrow{margin-bottom:20px}
 .hero-hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(64px,7.5vw,108px);
-  line-height:.9;color:var(--white);letter-spacing:-2px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-weight:400;
+  font-size:clamp(72px,9vw,118px);
+  line-height:.88;
+  color:var(--white);
+  letter-spacing:-1px;
   margin-bottom:20px;
 }
 .hero-hed em{font-style:normal;color:var(--orange)}
-.hero-sub{
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  font-size:clamp(20px,2.5vw,30px);
-  color:rgba(138,154,176,.9);margin-bottom:28px;line-height:1.2;
+.hero-subhed{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-weight:400;
+  font-size:clamp(20px,2.8vw,32px);
+  color:rgba(138,154,176,.85);
+  letter-spacing:1px;
+  margin-bottom:28px;
+  line-height:1.1;
 }
 .hero-body{
-  font-size:16px;line-height:1.75;color:var(--gray);
-  max-width:440px;margin-bottom:40px;
+  font-size:16px;line-height:1.75;
+  color:var(--gray);max-width:440px;
+  margin-bottom:40px;
 }
-.hero-ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.btn-orange{
-  background:var(--orange);color:#fff;
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:15px;letter-spacing:1px;text-transform:uppercase;
-  padding:14px 32px;text-decoration:none;display:inline-block;
-  transition:background .2s,transform .15s;
-}
-.btn-orange:hover{background:var(--orange-lt);transform:translateY(-1px)}
-.btn-outline{
-  border:1.5px solid rgba(138,154,176,.35);color:var(--gray);
-  font-size:13px;font-weight:600;padding:13px 24px;
-  text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;
-}
-.btn-outline:hover{border-color:var(--white);color:var(--white)}
-.hero-divider{
-  width:100%;border:none;border-top:1px solid rgba(255,255,255,.07);
-  margin:40px 0 32px;
-}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.hero-divider{border:none;border-top:1px solid rgba(255,255,255,.07);margin-bottom:32px}
 .hero-stats{display:flex;gap:40px;flex-wrap:wrap}
-.stat-n{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:36px;color:var(--white);line-height:1;
+.stat-num{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:38px;color:var(--white);line-height:1;
 }
-.stat-n em{color:var(--orange);font-style:normal}
-.stat-l{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;max-width:110px}
+.stat-num em{color:var(--orange);font-style:normal}
+.stat-label{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;max-width:110px}
 
 /* CARD HAND */
 .hero-right{
-  position:relative;z-index:2;
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
-  padding:80px 64px 80px 0;
-  min-height:100vh;
+  position:relative;z-index:2;
+  padding:80px 0;
 }
 .card-hand{
-  position:relative;width:340px;height:300px;
+  position:relative;width:340px;height:290px;
 }
 .card{
   position:absolute;
-  width:108px;height:158px;
-  background:var(--white);
-  border-radius:8px;
+  width:110px;height:160px;
+  background:var(--white);border-radius:8px;
   box-shadow:0 12px 40px rgba(0,0,0,.45),0 2px 8px rgba(0,0,0,.3);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:12px;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:12px;
 }
-.card:nth-child(1){transform:rotate(-20deg) translate(-128px,24px);z-index:1}
+.card:nth-child(1){transform:rotate(-20deg) translate(-128px,22px);z-index:1}
 .card:nth-child(2){transform:rotate(-10deg) translate(-62px,8px);z-index:2}
 .card:nth-child(3){transform:rotate(0deg) translate(0,0);z-index:5}
 .card:nth-child(4){transform:rotate(10deg) translate(62px,8px);z-index:2}
-.card:nth-child(5){transform:rotate(20deg) translate(128px,24px);z-index:1}
-.card-suit{font-size:18px;margin-bottom:6px}
+.card:nth-child(5){transform:rotate(20deg) translate(128px,22px);z-index:1}
+.card-suit{font-size:20px;margin-bottom:6px}
 .card-suit.red{color:#cc2200}
-.card-suit.black{color:#0B1F3A}
+.card-suit.blk{color:var(--navy)}
 .card-name{
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:12px;color:var(--navy);text-align:center;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:11px;
+  color:var(--navy);text-align:center;
   line-height:1.2;text-transform:uppercase;letter-spacing:.3px;
 }
 .card-val{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:18px;color:var(--orange);margin-top:5px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:20px;color:var(--orange);margin-top:5px;
 }
 .card-caption{
   margin-top:28px;text-align:center;
   font-size:11px;font-weight:600;letter-spacing:2px;
-  text-transform:uppercase;color:rgba(138,154,176,.6);
+  text-transform:uppercase;color:rgba(138,154,176,.55);
   max-width:280px;line-height:1.6;
 }
 
-/* ── MARK BAND ── */
+/* ─────────────────────────────────────────
+   MARK BAND
+───────────────────────────────────────── */
 .mark-band{
   background:var(--navy-mid);
-  padding:64px 64px;
-  text-align:center;
+  padding:64px 40px;text-align:center;
   border-top:1px solid rgba(255,255,255,.06);
   border-bottom:1px solid rgba(255,255,255,.06);
 }
 .mark-quote{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(24px,3.5vw,44px);
-  color:var(--white);line-height:1.1;letter-spacing:-.5px;
-  max-width:780px;margin:0 auto 20px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-weight:400;
+  font-size:clamp(24px,3.8vw,46px);
+  color:var(--white);line-height:1.05;
+  letter-spacing:-.3px;max-width:820px;
+  margin:0 auto 20px;
 }
 .mark-quote em{color:var(--orange);font-style:normal}
-.mark-body{
-  font-size:17px;color:var(--gray);max-width:580px;
-  margin:0 auto;line-height:1.7;
-}
+.mark-body{font-size:17px;color:var(--gray);max-width:580px;margin:0 auto;line-height:1.7}
 .mark-body strong{color:var(--white)}
 
-/* ── THREE CARDS / STACKED DECK ── */
-.stacked{background:var(--navy);padding:100px 64px}
-.stacked .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.stacked .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(40px,5.5vw,66px);color:var(--white);
-  line-height:.95;letter-spacing:-1px;margin-bottom:16px;
-}
-.stacked .intro{font-size:17px;color:var(--gray);max-width:560px;line-height:1.7;margin-bottom:56px}
-.dealer-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+/* ─────────────────────────────────────────
+   STACKED DECK
+───────────────────────────────────────── */
+.stacked{background:var(--navy)}
+.stacked .sec-hed{color:var(--white)}
+.stacked .sec-intro{color:var(--gray)}
+
+.dealer-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
 .dc{
   background:var(--navy-mid);padding:40px 32px;
-  position:relative;overflow:hidden;
-  transition:background .2s;cursor:default;
+  position:relative;overflow:hidden;transition:background .2s;
 }
 .dc:hover{background:var(--navy-lt)}
 .dc::before{
@@ -202,33 +386,29 @@ body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--text);o
   background:var(--orange);
 }
 .dc-ghost{
-  position:absolute;top:8px;right:16px;
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:100px;color:var(--orange);opacity:.08;line-height:1;
+  position:absolute;top:4px;right:14px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:110px;color:var(--orange);opacity:.07;line-height:1;
 }
 .dc-icon{font-size:28px;margin-bottom:18px}
 .dc-title{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:28px;color:var(--white);margin-bottom:14px;line-height:1.1;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:28px;color:var(--white);
+  margin-bottom:14px;line-height:1.05;letter-spacing:.3px;
 }
 .dc-body{font-size:14px;line-height:1.7;color:var(--gray)}
 .dc-body strong{color:var(--white)}
 
-/* ── PRICE STACK ── */
-.pricestack{background:var(--offwhite);padding:100px 64px}
-.pricestack .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.pricestack .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(36px,5vw,60px);color:var(--navy);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:16px;
-}
-.pricestack .intro{font-size:17px;color:var(--text-mid);max-width:560px;line-height:1.7;margin-bottom:56px}
-.stack-wrap{max-width:700px}
+/* ─────────────────────────────────────────
+   PRICE STACK
+───────────────────────────────────────── */
+.pricestack{background:var(--offwhite)}
+.stack-wrap{max-width:700px;margin-top:56px}
 .srow{display:flex;align-items:stretch;margin-bottom:3px;height:68px}
 .sbar{
   display:flex;align-items:center;padding:0 20px;
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:16px;color:#fff;flex-shrink:0;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:17px;color:#fff;flex-shrink:0;letter-spacing:.5px;
 }
 .sbar.w100{width:100%;background:#8a9ab0}
 .sbar.w87{width:87%;background:#5a7090}
@@ -236,7 +416,10 @@ body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--text);o
 .sbar.w65{width:65%;background:var(--navy-mid)}
 .sbar.w52{width:52%;background:var(--orange)}
 .slabel{display:flex;flex-direction:column;justify-content:center;padding-left:18px;flex:1}
-.slabel-t{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--navy)}
+.slabel-t{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:14px;color:var(--navy);
+}
 .slabel-d{font-size:12px;color:var(--text-mid);margin-top:2px;line-height:1.4}
 .stack-callout{
   margin-top:20px;padding:18px 24px;
@@ -244,130 +427,139 @@ body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--text);o
   background:rgba(232,100,12,.06);
 }
 .stack-callout p{
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  font-size:17px;color:var(--orange);
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:18px;color:var(--orange);letter-spacing:.3px;
 }
 .stack-callout span{font-size:13px;color:var(--text-mid);display:block;margin-top:4px}
 
-/* ── WHERE MONEY HIDES ── */
-.moneyhides{background:var(--white);padding:100px 64px}
-.moneyhides .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.moneyhides .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(36px,5vw,60px);color:var(--navy);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:16px;
-}
-.moneyhides .intro{font-size:17px;color:var(--text-mid);max-width:560px;line-height:1.7;margin-bottom:56px}
-.hide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+/* ─────────────────────────────────────────
+   WHERE MONEY HIDES
+───────────────────────────────────────── */
+.moneyhides{background:var(--white)}
+.hide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
 .hcard{border:1.5px solid var(--gray-lt);padding:36px 28px;transition:border-color .2s,box-shadow .2s}
 .hcard:hover{border-color:var(--navy);box-shadow:0 8px 32px rgba(11,31,58,.08)}
 .htag{
   display:inline-block;background:var(--navy);color:var(--orange);
-  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  padding:4px 12px;margin-bottom:18px;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;padding:4px 12px;margin-bottom:18px;
 }
 .htitle{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:26px;color:var(--navy);margin-bottom:12px;line-height:1.1;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:26px;color:var(--navy);margin-bottom:12px;
+  line-height:1.05;letter-spacing:.3px;
 }
 .hbody{font-size:14px;line-height:1.7;color:var(--text-mid);margin-bottom:20px}
 .htraps{border-top:1px solid var(--gray-lt);padding-top:16px}
-.htrap-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.htrap-label{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy);margin-bottom:10px;
+}
 .htrap{display:flex;gap:10px;margin-bottom:7px}
 .htrap::before{content:'▸';color:var(--orange);font-size:11px;flex-shrink:0;margin-top:1px}
 .htrap p{font-size:13px;color:var(--text-mid);line-height:1.5}
 
-/* ── SITUATIONS ── */
-.situations{background:var(--offwhite);padding:100px 64px}
-.situations .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.situations .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(36px,5vw,60px);color:var(--navy);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:16px;
-}
-.situations .intro{font-size:17px;color:var(--text-mid);max-width:560px;line-height:1.7;margin-bottom:56px}
-.sit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px}
+/* ─────────────────────────────────────────
+   SITUATIONS
+───────────────────────────────────────── */
+.situations{background:var(--offwhite)}
+.sit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:56px}
 .scard{
   background:var(--white);padding:44px 40px;
-  transition:background .2s;cursor:pointer;position:relative;
+  transition:background .2s;cursor:pointer;
 }
 .scard:hover{background:var(--navy)}
-.scard:hover .stitle{color:var(--white)}
-.scard:hover .sbody{color:var(--gray)}
+.scard:hover .stitle,.scard:hover .sarrow{color:var(--white)}
+.scard:hover .sbody,.scard:hover .sstake{color:var(--gray)}
 .scard:hover .sstake-l{color:var(--orange)}
-.scard:hover .sstake{color:var(--gray)}
-.scard:hover .sarrow{color:var(--orange)}
-.snum{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.snum{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--orange);margin-bottom:14px;
+}
 .stitle{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:28px;color:var(--navy);margin-bottom:10px;
-  line-height:1.1;transition:color .2s;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:26px;color:var(--navy);margin-bottom:10px;
+  line-height:1.05;letter-spacing:.3px;transition:color .2s;
 }
 .sbody{font-size:14px;line-height:1.65;color:var(--text-mid);margin-bottom:20px;transition:color .2s}
-.sstake-l{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:5px;transition:color .2s}
-.sstake{font-size:13px;color:var(--text-mid);line-height:1.5;transition:color .2s}
-.sarrow{display:block;margin-top:20px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);transition:color .2s}
-
-/* ── HOW IT WORKS ── */
-.how{background:var(--navy);padding:100px 64px}
-.how .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.how .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(36px,5vw,60px);color:var(--white);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:16px;
+.sstake-l{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy);
+  margin-bottom:5px;transition:color .2s;
 }
-.how .intro{font-size:17px;color:var(--gray);max-width:560px;line-height:1.7;margin-bottom:56px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.sstake{font-size:13px;color:var(--text-mid);line-height:1.5;transition:color .2s}
+.sarrow{
+  display:block;margin-top:20px;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:12px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--navy);transition:color .2s;
+}
+
+/* ─────────────────────────────────────────
+   HOW IT WORKS
+───────────────────────────────────────── */
+.how{background:var(--navy)}
+.how .sec-hed{color:var(--white)}
+.how .sec-intro{color:var(--gray)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:56px}
 .step{background:var(--navy-mid);padding:36px 28px}
 .step-n{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:52px;color:var(--orange);opacity:.25;line-height:1;margin-bottom:16px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:60px;color:var(--orange);
+  opacity:.22;line-height:1;margin-bottom:16px;
 }
 .step-t{
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:20px;color:var(--white);margin-bottom:10px;line-height:1.1;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:22px;color:var(--white);
+  margin-bottom:10px;line-height:1.05;letter-spacing:.3px;
 }
 .step-b{font-size:13px;color:var(--gray);line-height:1.65}
 
-/* ── SERVICES ── */
-.services{background:var(--white);padding:100px 64px}
-.services .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.services .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(36px,5vw,60px);color:var(--navy);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:16px;
-}
-.services .intro{font-size:17px;color:var(--text-mid);max-width:560px;line-height:1.7;margin-bottom:56px}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+/* ─────────────────────────────────────────
+   SERVICES
+───────────────────────────────────────── */
+.services{background:var(--white)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
 .svc{border:1.5px solid var(--gray-lt);padding:40px 32px;position:relative;transition:border-color .2s}
 .svc:hover{border-color:var(--navy)}
 .svc.feat{border-color:var(--navy);border-width:2px}
 .svc-tag{
-  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:var(--orange);margin-bottom:12px;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--orange);margin-bottom:12px;
 }
 .svc-name{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:30px;color:var(--navy);margin-bottom:4px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:34px;color:var(--navy);margin-bottom:4px;letter-spacing:.3px;
 }
 .svc-who{font-size:13px;color:var(--text-mid);margin-bottom:20px;font-style:italic;line-height:1.5}
 .svc-price{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:42px;color:var(--orange);margin-bottom:24px;line-height:1;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:46px;color:var(--orange);margin-bottom:24px;line-height:1;
 }
-.svc-price span{font-size:15px;color:var(--gray);font-weight:400}
+.svc-price span{
+  font-family:'Barlow',sans-serif;
+  font-size:14px;color:var(--gray);font-weight:400;
+}
 .svc-list{list-style:none;margin-bottom:28px}
 .svc-list li{
-  font-size:13px;color:var(--text-mid);padding:7px 0 7px 18px;
-  border-bottom:1px solid var(--gray-lt);position:relative;line-height:1.5;
+  font-size:13px;color:var(--text-mid);
+  padding:7px 0 7px 18px;
+  border-bottom:1px solid var(--gray-lt);
+  position:relative;line-height:1.5;
 }
 .svc-list li::before{content:'→';position:absolute;left:0;color:var(--orange);font-size:11px}
 .svc-btn{
   display:block;text-align:center;
-  background:var(--navy);color:#fff;
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  font-size:14px;letter-spacing:1px;text-transform:uppercase;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:13px;
+  letter-spacing:1.5px;text-transform:uppercase;
   padding:13px 20px;text-decoration:none;transition:background .2s;
+  background:var(--navy);color:#fff;
 }
 .svc-btn:hover{background:var(--navy-lt)}
 .svc.feat .svc-btn{background:var(--orange)}
@@ -375,226 +567,296 @@ body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--text);o
 .svc-pop{
   position:absolute;top:-1px;left:32px;
   background:var(--orange);color:#fff;
-  font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  padding:3px 12px;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 12px;
 }
 
-/* ── LEAD MAGNET BAND ── */
+/* ─────────────────────────────────────────
+   LEAD MAGNET
+───────────────────────────────────────── */
 .lead-band{
   background:var(--navy-mid);
-  padding:80px 64px;
+  padding:80px 0;
+}
+.lead-inner{
+  max-width:var(--max);margin:0 auto;padding:0 40px;
   display:grid;grid-template-columns:1fr 1fr;
   gap:64px;align-items:center;
 }
-.lead-left .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.lead-left .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(32px,4vw,52px);color:var(--white);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:16px;
+.lead-eyebrow{margin-bottom:14px}
+.lead-hed{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:clamp(32px,4vw,54px);
+  color:var(--white);line-height:.95;
+  letter-spacing:-.3px;margin-bottom:16px;
 }
-.lead-left p{font-size:16px;color:var(--gray);line-height:1.7;margin-bottom:28px}
+.lead-body{font-size:16px;color:var(--gray);line-height:1.7;margin-bottom:28px}
 .lead-form{display:flex;gap:0}
 .lead-input{
   flex:1;padding:14px 18px;border:none;
-  font-size:14px;background:var(--navy-lt);color:var(--white);
-  outline:none;
+  font-family:'Barlow',sans-serif;
+  font-size:14px;background:var(--navy-lt);
+  color:var(--white);outline:none;
 }
 .lead-input::placeholder{color:var(--gray)}
 .lead-submit{
   background:var(--orange);color:#fff;
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:14px;letter-spacing:1px;text-transform:uppercase;
-  padding:14px 24px;border:none;cursor:pointer;white-space:nowrap;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:13px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:14px 22px;
+  border:none;cursor:pointer;white-space:nowrap;
+  transition:background .2s;
 }
+.lead-submit:hover{background:var(--orange-lt)}
 .lead-fine{font-size:11px;color:var(--gray);margin-top:10px}
 
-/* PDF PREVIEW */
 .pdf-preview{
-  background:var(--white);
-  border-radius:4px;
+  background:var(--white);border-radius:4px;
   box-shadow:0 20px 60px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
-  overflow:hidden;width:100%;max-width:320px;margin:0 auto;
+  overflow:hidden;width:100%;max-width:300px;margin:0 auto;
 }
-.pdf-cover{
-  background:var(--navy);padding:32px 28px 28px;
-  position:relative;
-}
+.pdf-cover{background:var(--navy);padding:28px 24px;position:relative}
 .pdf-accent{position:absolute;top:0;left:0;width:4px;height:100%;background:var(--orange)}
-.pdf-eyebrow{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.pdf-eyebrow{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--orange);margin-bottom:14px;
+}
 .pdf-title{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:24px;color:var(--white);line-height:1.05;margin-bottom:12px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:22px;color:var(--white);line-height:1.05;margin-bottom:12px;
 }
 .pdf-title em{color:var(--orange);font-style:normal}
-.pdf-divider{width:60px;height:2px;background:var(--orange);margin:14px 0}
+.pdf-rule{width:50px;height:2px;background:var(--orange);margin:12px 0}
 .pdf-sub{font-size:11px;color:var(--gray);line-height:1.5}
-.pdf-footer{
-  background:var(--navy-mid);padding:12px 18px;
+.pdf-foot{
+  background:var(--navy-mid);padding:10px 16px;
   display:flex;align-items:center;justify-content:space-between;
 }
-.pdf-footer-logo{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:14px;color:var(--white);
+.pdf-foot-logo{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:14px;color:var(--white);letter-spacing:.5px;
 }
-.pdf-footer-logo em{color:var(--orange);font-style:normal}
-.pdf-footer-tag{font-size:10px;color:var(--orange);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.pdf-foot-logo em{color:var(--orange);font-style:normal}
+.pdf-foot-tag{
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--orange);
+}
 
-/* ── TESTIMONIALS ── */
-.testi{background:var(--offwhite);padding:100px 64px}
-.testi .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.testi .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(36px,5vw,60px);color:var(--navy);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:56px;
-}
-.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+/* ─────────────────────────────────────────
+   TESTIMONIALS
+───────────────────────────────────────── */
+.testi{background:var(--offwhite)}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
 .tcard{background:var(--white);padding:32px 26px;position:relative}
 .tsavings{
   position:absolute;top:0;right:0;
   background:var(--navy);color:var(--orange);
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:18px;padding:8px 14px;line-height:1;text-align:center;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:20px;padding:8px 14px;line-height:1;text-align:center;
 }
-.tsavings span{display:block;font-size:9px;color:var(--gray);font-weight:400;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.tsavings span{
+  display:block;font-size:9px;color:var(--gray);
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:2px;
+}
 .tmark{font-family:Georgia,serif;font-size:44px;color:var(--orange);line-height:1;margin-bottom:8px}
 .tbody{font-size:14px;line-height:1.7;color:var(--text);font-style:italic;margin-bottom:20px}
-.tname{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy)}
+.tname{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:17px;color:var(--navy);letter-spacing:.5px;
+}
 .tdetail{font-size:11px;color:var(--gray);margin-top:2px}
 
-/* ── ABOUT ── */
-.about{background:var(--navy);padding:100px 64px}
+/* ─────────────────────────────────────────
+   ABOUT
+───────────────────────────────────────── */
+.about{background:var(--navy)}
 .about-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:start}
-.about .eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
-.about .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(36px,5vw,60px);color:var(--white);
-  line-height:.95;letter-spacing:-.5px;margin-bottom:24px;
-}
-.about .hed em{color:var(--orange);font-style:normal}
+.about .sec-hed{color:var(--white)}
+.about .sec-hed em{color:var(--orange);font-style:normal}
 .about-p{font-size:15px;line-height:1.75;color:var(--gray);margin-bottom:16px}
 .cred-list{margin-top:8px}
 .cred{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.07);padding:16px 0}
 .cred-n{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:11px;letter-spacing:2px;color:var(--orange);
-  min-width:32px;padding-top:2px;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:13px;letter-spacing:2px;
+  color:var(--orange);min-width:32px;padding-top:2px;
 }
 .cred-t{font-size:14px;color:var(--gray);line-height:1.6}
-.cred-t strong{color:var(--white);display:block;font-family:'Barlow Condensed',sans-serif;font-size:16px;margin-bottom:2px}
+.cred-t strong{
+  color:var(--white);display:block;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:17px;letter-spacing:.3px;margin-bottom:2px;
+}
 
-/* ── CTA CLOSE ── */
+/* ─────────────────────────────────────────
+   CTA CLOSE
+───────────────────────────────────────── */
 .cta-close{
-  background:var(--orange);padding:100px 64px;
+  background:var(--orange);padding:100px 0;
   display:grid;grid-template-columns:1fr 1fr;
-  gap:64px;align-items:center;
 }
-.cta-close-left .hed{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:clamp(56px,8vw,96px);color:#fff;
-  line-height:.9;letter-spacing:-2px;margin-bottom:20px;
+.cta-close-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 48px 0 40px;max-width:calc(var(--max)/2 + 40px);
+  margin-left:auto;
 }
-.cta-close-left p{font-size:17px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:36px;max-width:380px}
-.btn-white{
-  background:#fff;color:var(--orange);
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:17px;letter-spacing:1px;text-transform:uppercase;
-  padding:16px 40px;text-decoration:none;display:inline-block;
-  transition:transform .15s,box-shadow .15s;
+.cta-close-hed{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:clamp(56px,9vw,104px);
+  color:#fff;line-height:.88;
+  letter-spacing:-1px;margin-bottom:20px;
 }
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.cta-close-body{
+  font-size:17px;color:rgba(255,255,255,.8);
+  line-height:1.65;margin-bottom:36px;max-width:380px;
+}
 .cta-close-right{
-  background:rgba(0,0,0,.1);padding:40px;
+  padding:0 40px 0 48px;
+  max-width:calc(var(--max)/2 + 40px);
 }
+.cal-wrap{background:rgba(0,0,0,.12);padding:36px 32px}
 .cal-label{
-  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,255,255,.6);margin-bottom:20px;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:16px;
 }
 .cal-title{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:28px;color:#fff;margin-bottom:6px;line-height:1.1;
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-size:30px;color:#fff;margin-bottom:6px;line-height:1.05;letter-spacing:.3px;
 }
 .cal-sub{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:28px;line-height:1.5}
 .cal-slots{display:flex;flex-direction:column;gap:8px}
 .cal-slot{
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
-  padding:12px 18px;display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  padding:12px 18px;
+  display:flex;justify-content:space-between;align-items:center;
   transition:background .2s;cursor:pointer;
 }
-.cal-slot:hover{background:rgba(255,255,255,.2)}
+.cal-slot:hover{background:rgba(255,255,255,.22)}
 .cal-slot-day{font-size:13px;color:#fff;font-weight:600}
 .cal-slot-time{font-size:12px;color:rgba(255,255,255,.6)}
 .cal-slot-badge{
-  background:rgba(255,255,255,.15);
-  font-size:10px;font-weight:700;letter-spacing:1px;
-  text-transform:uppercase;color:#fff;padding:3px 10px;
+  background:rgba(255,255,255,.15);color:#fff;
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:10px;letter-spacing:1px;
+  text-transform:uppercase;padding:3px 10px;
 }
 .cal-cta{
-  display:block;text-align:center;background:#fff;color:var(--orange);
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:15px;letter-spacing:1px;text-transform:uppercase;
-  padding:14px 24px;text-decoration:none;margin-top:20px;
-  transition:transform .15s;
+  display:block;text-align:center;
+  background:#fff;color:var(--orange);
+  font-family:'Barlow Semi Condensed',sans-serif;
+  font-weight:700;font-size:14px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:14px 24px;
+  text-decoration:none;margin-top:18px;transition:transform .15s;
 }
 .cal-cta:hover{transform:translateY(-1px)}
-.cal-reassure{font-size:12px;color:rgba(255,255,255,.55);text-align:center;margin-top:12px}
+.cal-reassure{font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin-top:10px}
 
-/* ── FOOTER ── */
-footer{
-  background:var(--navy);padding:28px 64px;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;
-  border-top:1px solid rgba(255,255,255,.05);
+/* ─────────────────────────────────────────
+   SHARED SECTION HEADER BLOCK
+───────────────────────────────────────── */
+.sec-eyebrow{margin-bottom:14px}
+.sec-hed{
+  font-family:Impact,'Arial Narrow',sans-serif;
+  font-weight:400;
+  font-size:clamp(38px,5.5vw,66px);
+  color:var(--navy);
+  line-height:.93;letter-spacing:-.3px;margin-bottom:18px;
 }
-.foot-logo{
-  font-family:'Barlow Condensed',sans-serif;font-weight:900;
-  font-size:18px;color:var(--white);
+.sec-intro{
+  font-size:17px;color:var(--text-mid);
+  max-width:580px;line-height:1.7;margin-bottom:56px;
 }
-.foot-logo em{color:var(--orange);font-style:normal}
-.foot-copy{font-size:12px;color:var(--gray)}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:64px 0}
+  .dealer-cards{grid-template-columns:1fr}
+  .hide-grid{grid-template-columns:1fr}
+  .sit-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:1fr}
+  .lead-inner{grid-template-columns:1fr}
+  .t-grid{grid-template-columns:1fr}
+  .about-inner{grid-template-columns:1fr;gap:40px}
+  .cta-close{grid-template-columns:1fr}
+  .cta-close-left,.cta-close-right{max-width:100%;padding:0 24px}
+  .cta-close-left{margin-bottom:48px}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .header-nav{display:none}
+}
+@media(max-width:600px){
+  .wrap{padding:0 24px}
+  .section{padding:72px 0}
+  .lead-form{flex-direction:column}
+  .footer-main{grid-template-columns:1fr;padding:48px 24px 32px}
+  .footer-bottom{padding:16px 24px}
+  #site-header .header-inner{padding:0 24px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-logo">
-    get<em>S</em>orted
+<!-- ═══════════════════════════════════════
+     GLOBAL HEADER
+     Include this in every page
+═══════════════════════════════════════ -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="GetSorted Home">
+      <img src="images/sorted.svg" alt="GetSorted" />
+    </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+      <a href="#how">How It Works</a>
+      <a href="#services">Services</a>
+      <a href="#guide">Free Guide</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="header-cta">Book a Free Call</a>
+    </nav>
   </div>
-  <div class="nav-right">
-    <a class="nav-link" href="#how">How It Works</a>
-    <a class="nav-link" href="#services">Services</a>
-    <a class="nav-link" href="#guide">Free Guide</a>
-    <a class="nav-link" href="#about">About</a>
-    <a class="nav-btn" href="#contact">Book a Free Call</a>
-  </div>
-</nav>
+</header>
 
-<!-- ═══ HERO ═══ -->
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-glow"></div>
 
-  <div class="hero-left">
-    <p class="hero-eyebrow">Chicago Car Buying Concierge</p>
+  <div class="hero-left wrap">
+    <p class="t-eyebrow hero-eyebrow">Chicago Car Buying Concierge</p>
     <h1 class="hero-hed">You're<br>playing a<br><em>rigged</em><br>game.</h1>
-    <p class="hero-sub">We know every card in their hand.</p>
+    <p class="hero-subhed">We know every card in their hand.</p>
     <p class="hero-body">The car buying process was designed by dealers, for dealers. The numbers are hidden, the rules are theirs, and they've run this play ten thousand times before you walked in. GetSorted changes the odds.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn-orange">Book a Free 15-Min Call</a>
-      <a href="#guide" class="btn-outline">Get the Free Guide</a>
+      <a href="#contact" class="btn btn-primary">Book a Free 15-Min Call</a>
+      <a href="#guide" class="btn btn-secondary">Get the Free Guide</a>
     </div>
     <hr class="hero-divider">
     <div class="hero-stats">
       <div>
-        <div class="stat-n"><em>$4,200</em></div>
-        <div class="stat-l">average savings per deal</div>
+        <div class="stat-num"><em>$4,200</em></div>
+        <div class="stat-label">average savings per deal</div>
       </div>
       <div>
-        <div class="stat-n">30<em>+</em></div>
-        <div class="stat-l">cars personally bought and sold</div>
+        <div class="stat-num">30<em>+</em></div>
+        <div class="stat-label">cars personally bought and sold</div>
       </div>
       <div>
-        <div class="stat-n">25<em>yrs</em></div>
-        <div class="stat-l">inside the automotive world</div>
+        <div class="stat-num">25<em>yrs</em></div>
+        <div class="stat-label">inside the automotive world</div>
       </div>
     </div>
   </div>
@@ -602,7 +864,7 @@ footer{
   <div class="hero-right">
     <div class="card-hand">
       <div class="card">
-        <div class="card-suit black">♠</div>
+        <div class="card-suit blk">♠</div>
         <div class="card-name">Invoice Price</div>
         <div class="card-val">$46,500</div>
       </div>
@@ -612,7 +874,7 @@ footer{
         <div class="card-val">$1,200</div>
       </div>
       <div class="card">
-        <div class="card-suit black">♣</div>
+        <div class="card-suit blk">♣</div>
         <div class="card-name">Dealer Cash</div>
         <div class="card-val">$2,000</div>
       </div>
@@ -622,7 +884,7 @@ footer{
         <div class="card-val">.00189</div>
       </div>
       <div class="card">
-        <div class="card-suit black">♠</div>
+        <div class="card-suit blk">♠</div>
         <div class="card-name">True Cost</div>
         <div class="card-val">$42,800</div>
       </div>
@@ -631,368 +893,474 @@ footer{
   </div>
 </section>
 
-<!-- ═══ MARK BAND ═══ -->
+
+<!-- ═══════════════════════════════════════
+     MARK BAND
+═══════════════════════════════════════ -->
 <div class="mark-band">
   <p class="mark-quote">"If you can't spot the mark at the table — <em>it's you.</em>"</p>
   <p class="mark-body">There's an old saying at the card table. At a car dealership, <strong>the mark is always the buyer</strong> — not because you're uninformed, but because the game was designed that way long before you arrived.</p>
 </div>
 
-<!-- ═══ STACKED DECK ═══ -->
-<section class="stacked">
-  <div class="eyebrow">The stacked deck</div>
-  <h2 class="hed">They hold three cards<br>you never see.</h2>
-  <p class="intro">The dealer's advantage isn't luck. It's information, structure, and time. They have all three before the conversation starts.</p>
-  <div class="dealer-cards">
-    <div class="dc">
-      <div class="dc-ghost">1</div>
-      <div class="dc-icon">🂡</div>
-      <div class="dc-title">The Numbers</div>
-      <div class="dc-body">MSRP is the anchor. But between that sticker and what the dealer actually paid sit invoice, holdback, dealer cash, and trunk money. <strong>Every layer is profit you don't know exists.</strong> On a $50,000 vehicle the gap between sticker and true dealer cost can exceed $6,000.</div>
-    </div>
-    <div class="dc">
-      <div class="dc-ghost">2</div>
-      <div class="dc-icon">🂮</div>
-      <div class="dc-title">The Rules</div>
-      <div class="dc-body">Lease money factors, four square worksheets, F&I menus, rolled loan terms. <strong>Each one is a system designed to move your focus to the monthly payment</strong> and away from total cost. The rules were written so you can't win playing by them.</div>
-    </div>
-    <div class="dc">
-      <div class="dc-ghost">3</div>
-      <div class="dc-icon">🂻</div>
-      <div class="dc-title">The Clock</div>
-      <div class="dc-body">You buy every 3–5 years. They sell ten today. <strong>Every hour in that building is working against you.</strong> End-of-month urgency, manufactured scarcity, the manager visit — all of it is designed to make you commit before you're ready.</div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══ PRICE STACK ═══ -->
-<section class="pricestack">
-  <div class="eyebrow">The real numbers</div>
-  <h2 class="hed">Six prices for every car.<br>You're shown one.</h2>
-  <p class="intro">The sticker is the ceiling. The dealer's true cost is the floor. Everything between them is negotiable — if you know it exists.</p>
-
-  <div class="stack-wrap">
-    <div class="srow">
-      <div class="sbar w100">MSRP</div>
-      <div class="slabel">
-        <div class="slabel-t">Sticker Price</div>
-        <div class="slabel-d">Where most buyers start. Where no buyer should end up.</div>
+<!-- ═══════════════════════════════════════
+     STACKED DECK
+═══════════════════════════════════════ -->
+<section class="stacked section">
+  <div class="wrap">
+    <p class="t-eyebrow sec-eyebrow">The stacked deck</p>
+    <h2 class="sec-hed">They hold three cards<br>you never see.</h2>
+    <p class="sec-intro">The dealer's advantage isn't luck. It's information, structure, and time. They have all three before the conversation starts.</p>
+    <div class="dealer-cards">
+      <div class="dc">
+        <div class="dc-ghost">1</div>
+        <div class="dc-icon">🂡</div>
+        <div class="dc-title">The Numbers</div>
+        <div class="dc-body">MSRP is the anchor. Between that sticker and what the dealer actually paid sit invoice, holdback, dealer cash, and trunk money. <strong>Every layer is profit you don't know exists.</strong> On a $50,000 vehicle the gap can exceed $6,000.</div>
       </div>
-    </div>
-    <div class="srow">
-      <div class="sbar w87">Invoice</div>
-      <div class="slabel">
-        <div class="slabel-t">Invoice Price</div>
-        <div class="slabel-d">What the dealer paid the manufacturer. Sounds like the floor. It isn't.</div>
+      <div class="dc">
+        <div class="dc-ghost">2</div>
+        <div class="dc-icon">🂮</div>
+        <div class="dc-title">The Rules</div>
+        <div class="dc-body">Lease money factors, four square worksheets, F&I menus, rolled loan terms. <strong>Each one moves your focus to the monthly payment</strong> and away from total cost. The rules were written so you can't win playing by them.</div>
       </div>
-    </div>
-    <div class="srow">
-      <div class="sbar w76">− Holdback</div>
-      <div class="slabel">
-        <div class="slabel-t">Minus Holdback</div>
-        <div class="slabel-d">2–3% of MSRP the manufacturer pays back to the dealer after every sale. They profit at invoice. You'd never know.</div>
-      </div>
-    </div>
-    <div class="srow">
-      <div class="sbar w65">− Dealer Cash</div>
-      <div class="slabel">
-        <div class="slabel-t">Minus Dealer Cash</div>
-        <div class="slabel-d">Regional incentives invisible to buyers. Thousands of dollars, never on any consumer document.</div>
-      </div>
-    </div>
-    <div class="srow">
-      <div class="sbar w52">True Cost</div>
-      <div class="slabel">
-        <div class="slabel-t">Dealer's True Cost</div>
-        <div class="slabel-d">The real number. Where your negotiation should start. This is what we know before we pick up the phone.</div>
-      </div>
-    </div>
-    <div class="stack-callout">
-      <p>The gap between MSRP and true dealer cost on a $50,000 vehicle can exceed $6,000.</p>
-      <span>That's the game board. Now you know it exists.</span>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ WHERE MONEY HIDES ═══ -->
-<section class="moneyhides">
-  <div class="eyebrow">The structure</div>
-  <h2 class="hed">The price is just<br>where it starts.</h2>
-  <p class="intro">Every deal structure has its own hidden variables. Here's where the money moves depending on how you're buying.</p>
-  <div class="hide-grid">
-    <div class="hcard">
-      <div class="htag">Lease</div>
-      <div class="htitle">Four variables.<br>One you're shown.</div>
-      <div class="hbody">A lease has four moving parts: cap cost, money factor, residual, and fees. Dealers can make the monthly look great by adjusting any one while quietly taking back ground on the others. Most people only ever discuss the payment.</div>
-      <div class="htraps">
-        <div class="htrap-label">Where the money goes</div>
-        <div class="htrap"><p>Money factor markups above the manufacturer base rate — worth $50–$100 per month you never had to pay.</p></div>
-        <div class="htrap"><p>Dealer add-ons pre-loaded into the cap cost. On a lease you pay interest on them for 36 months.</p></div>
-        <div class="htrap"><p>Acquisition fees that vary by dealer and are almost never disclosed unprompted.</p></div>
-      </div>
-    </div>
-    <div class="hcard">
-      <div class="htag">Finance or Cash</div>
-      <div class="htitle">Win at the desk.<br>Lose in the box.</div>
-      <div class="hbody">You negotiated hard on price. You're tired. Now the finance manager presents a menu of products in a room designed for exactly that moment. The F&I office generates more profit per deal than the entire sales floor.</div>
-      <div class="htraps">
-        <div class="htrap-label">Where the money goes</div>
-        <div class="htrap"><p>Interest rate markups above the lender's buy rate — the dealer keeps the spread, just like a mortgage broker.</p></div>
-        <div class="htrap"><p>Loan term extension without disclosure — your payment drops $60, your total cost climbs $3,000.</p></div>
-        <div class="htrap"><p>Extended warranties priced at 2–3x their actual market value.</p></div>
-      </div>
-    </div>
-    <div class="hcard">
-      <div class="htag">Trade-In</div>
-      <div class="htitle">Two numbers.<br>You only know one.</div>
-      <div class="hbody">Your trade has a real market value and a dealer offer. Those are almost always different numbers. The dealer controls when and how the trade enters the conversation — and uses it throughout.</div>
-      <div class="htraps">
-        <div class="htrap-label">Where the money goes</div>
-        <div class="htrap"><p>Inflated trade offer to build goodwill, quietly recovered through a higher purchase price.</p></div>
-        <div class="htrap"><p>Undervalued offers on cars the dealer knows they'll wholesale for significantly more within 48 hours.</p></div>
-        <div class="htrap"><p>Negative equity rolled into your new loan without clear disclosure of the total cost impact.</p></div>
+      <div class="dc">
+        <div class="dc-ghost">3</div>
+        <div class="dc-icon">🂻</div>
+        <div class="dc-title">The Clock</div>
+        <div class="dc-body">You buy every 3–5 years. They sell ten today. <strong>Every hour in that building works against you.</strong> End-of-month urgency, manufactured scarcity, the manager visit — all designed to make you commit before you're ready.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SITUATIONS ═══ -->
-<section class="situations">
-  <div class="eyebrow">Your situation</div>
-  <h2 class="hed">Where are you<br>right now?</h2>
-  <p class="intro">You don't need to understand all of it. Just tell us where you are. We handle what comes next.</p>
-  <div class="sit-grid">
-    <div class="scard">
-      <div class="snum">Situation 01</div>
-      <div class="stitle">I'm getting into a new car.</div>
-      <div class="sbody">New or used, lease or buy. You know what you want and you're ready to move. You just don't want to leave money on the table or spend three weekends at dealerships running the same exhausting play.</div>
-      <div class="sstake-l">What's at stake</div>
-      <div class="sstake">The gap between what you pay and what you should. On most vehicles that's $2,000–$6,000.</div>
-      <span class="sarrow">Get this sorted →</span>
-    </div>
-    <div class="scard">
-      <div class="snum">Situation 02</div>
-      <div class="stitle">My lease is ending and I'm not sure what to do.</div>
-      <div class="sbody">Buy it out, return it, or roll into something new? The dealer is calling and making it sound simple. It isn't. Each path has its own math and the right answer depends on numbers most people never see.</div>
-      <div class="sstake-l">What's at stake</div>
-      <div class="sstake">Buyout price vs real market value, disposition fees, and whether that new offer is actually good.</div>
-      <span class="sarrow">Get this sorted →</span>
-    </div>
-    <div class="scard">
-      <div class="snum">Situation 03</div>
-      <div class="stitle">I have a deal on the table and something feels off.</div>
-      <div class="sbody">You've done the work, you have a number, but you're not sure it's real. Or you're about to sign and you want someone who knows this world to look at it first. That instinct is worth following.</div>
-      <div class="sstake-l">What's at stake</div>
-      <div class="sstake">Hidden markups in the structure, F&I products you didn't ask for, or a great price quietly recovered somewhere else.</div>
-      <span class="sarrow">Get this sorted →</span>
-    </div>
-    <div class="scard">
-      <div class="snum">Situation 04</div>
-      <div class="stitle">I have a trade and I want to know what it's worth.</div>
-      <div class="sbody">Your current vehicle is part of the deal and you want to make sure it doesn't become the place the dealer makes back everything you negotiated. Know your number before you walk in.</div>
-      <div class="sstake-l">What's at stake</div>
-      <div class="sstake">The spread between a dealer's opening offer and actual market value can run thousands of dollars.</div>
-      <span class="sarrow">Get this sorted →</span>
-    </div>
-  </div>
-</section>
 
-<!-- ═══ HOW IT WORKS ═══ -->
-<section class="how" id="how">
-  <div class="eyebrow">The process</div>
-  <h2 class="hed">Simple on your end.<br>That's the whole point.</h2>
-  <p class="intro">The complexity is real. You just shouldn't have to feel any of it.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-n">01</div>
-      <div class="step-t">Tell us what you want</div>
-      <div class="step-b">Short intake. What you're buying or leasing, your budget, your timeline, whether you have a trade. Five minutes. No commitment.</div>
-    </div>
-    <div class="step">
-      <div class="step-n">02</div>
-      <div class="step-t">We find the real numbers</div>
-      <div class="step-b">Transaction data, manufacturer rate sheets, dealer cost, live market comps. We know what this deal should look like before we contact anyone.</div>
-    </div>
-    <div class="step">
-      <div class="step-n">03</div>
-      <div class="step-t">We run the negotiation</div>
-      <div class="step-b">We handle all dealer communication by phone and email. Multiple dealers compete. You never sit across from a salesperson until the deal is locked.</div>
-    </div>
-    <div class="step">
-      <div class="step-n">04</div>
-      <div class="step-t">You drive away sorted</div>
-      <div class="step-b">We walk you through the final numbers before you sign. You leave knowing exactly what you got and why it's good. That doubt? Gone.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SERVICES ═══ -->
-<section class="services" id="services">
-  <div class="eyebrow">Services and pricing</div>
-  <h2 class="hed">Flat fee.<br>You keep the savings.</h2>
-  <p class="intro">One price per engagement. No percentage of savings. No hidden charges. Every dollar recovered beyond our fee is yours.</p>
-  <div class="svc-grid">
-    <div class="svc">
-      <div class="svc-tag">Deal Check</div>
-      <div class="svc-name">Review</div>
-      <div class="svc-who">You have a deal. You want a second opinion before you sign.</div>
-      <div class="svc-price">$149 <span>flat</span></div>
-      <ul class="svc-list">
-        <li>Full analysis of any deal on the table</li>
-        <li>Market comp report for your vehicle</li>
-        <li>Line-by-line number breakdown</li>
-        <li>Specific guidance on what to push back on</li>
-        <li>Written summary you can use yourself</li>
-      </ul>
-      <a href="#contact" class="svc-btn">Get Started</a>
-    </div>
-    <div class="svc feat">
-      <div class="svc-pop">Most Popular</div>
-      <div class="svc-tag">Full Service</div>
-      <div class="svc-name">Negotiation</div>
-      <div class="svc-who">You want us to handle the whole thing, start to finish.</div>
-      <div class="svc-price">$599 <span>flat</span></div>
-      <ul class="svc-list">
-        <li>Everything in Review</li>
-        <li>We handle all dealer communication</li>
-        <li>New car, lease, or used vehicle</li>
-        <li>Trade-in strategy included</li>
-        <li>F&amp;I guidance before you sign</li>
-        <li>Final contract review</li>
-      </ul>
-      <a href="#contact" class="svc-btn">Get Started</a>
-    </div>
-    <div class="svc">
-      <div class="svc-tag">White Glove</div>
-      <div class="svc-name">Concierge</div>
-      <div class="svc-who">Complex deal, multiple variables, or you want everything handled.</div>
-      <div class="svc-price">$999 <span>flat</span></div>
-      <ul class="svc-list">
-        <li>Everything in Negotiation</li>
-        <li>Multi-dealer competitive bidding</li>
-        <li>Vehicle sourcing if needed</li>
-        <li>Lease-end strategy and buyout analysis</li>
-        <li>12 months of deal advisory access</li>
-      </ul>
-      <a href="#contact" class="svc-btn">Get Started</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ LEAD MAGNET ═══ -->
-<section class="lead-band" id="guide">
-  <div class="lead-left">
-    <div class="eyebrow" style="color:var(--orange)">Free guide</div>
-    <h2 class="hed" style="color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);line-height:.95;letter-spacing:-.5px;margin-bottom:16px">The 7 Ways a Dealership<br>Makes Money on Your Deal.</h2>
-    <p style="color:var(--gray);font-size:16px;line-height:1.7;margin-bottom:28px">No solutions. No tool lists. Just the cold reality of every profit center in a car deal from the moment you walk in to the moment you drive out. Most buyers are aware of maybe one or two. You'll know all seven.</p>
-    <div class="lead-form">
-      <input class="lead-input" type="email" placeholder="Your email address">
-      <button class="lead-submit">Send Me the Guide</button>
-    </div>
-    <p class="lead-fine">No spam. One email with your guide. That's it.</p>
-  </div>
-  <div style="display:flex;align-items:center;justify-content:center">
-    <div class="pdf-preview">
-      <div class="pdf-cover">
-        <div class="pdf-accent"></div>
-        <div class="pdf-eyebrow">GetSorted · Free Guide</div>
-        <div class="pdf-title">The 7 Ways a<br>Dealership<br><em>Makes Money</em><br>on Your Deal.</div>
-        <div class="pdf-divider"></div>
-        <div class="pdf-sub">What happens to your money between "I'm interested" and "where do I sign."</div>
+<!-- ═══════════════════════════════════════
+     PRICE STACK
+═══════════════════════════════════════ -->
+<section class="pricestack section">
+  <div class="wrap">
+    <p class="t-eyebrow sec-eyebrow">The real numbers</p>
+    <h2 class="sec-hed">Six prices for every car.<br>You're shown one.</h2>
+    <p class="sec-intro">The sticker is the ceiling. The dealer's true cost is the floor. Everything between them is negotiable — if you know it exists.</p>
+    <div class="stack-wrap">
+      <div class="srow">
+        <div class="sbar w100">MSRP</div>
+        <div class="slabel">
+          <div class="slabel-t">Sticker Price</div>
+          <div class="slabel-d">Where most buyers start. Where no buyer should end up.</div>
+        </div>
       </div>
-      <div class="pdf-footer">
-        <div class="pdf-footer-logo">get<em>S</em>orted</div>
-        <div class="pdf-footer-tag">Free · 9 Pages</div>
+      <div class="srow">
+        <div class="sbar w87">Invoice</div>
+        <div class="slabel">
+          <div class="slabel-t">Invoice Price</div>
+          <div class="slabel-d">What the dealer paid the manufacturer. Sounds like the floor. It isn't.</div>
+        </div>
+      </div>
+      <div class="srow">
+        <div class="sbar w76">− Holdback</div>
+        <div class="slabel">
+          <div class="slabel-t">Minus Holdback</div>
+          <div class="slabel-d">2–3% of MSRP the manufacturer pays back to the dealer after every sale. They profit at invoice. You'd never know.</div>
+        </div>
+      </div>
+      <div class="srow">
+        <div class="sbar w65">− Dealer Cash</div>
+        <div class="slabel">
+          <div class="slabel-t">Minus Dealer Cash</div>
+          <div class="slabel-d">Regional incentives invisible to buyers. Thousands of dollars, never on any consumer document.</div>
+        </div>
+      </div>
+      <div class="srow">
+        <div class="sbar w52">True Cost</div>
+        <div class="slabel">
+          <div class="slabel-t">Dealer's True Cost</div>
+          <div class="slabel-d">The real number. Where your negotiation should start. This is what we know before we pick up the phone.</div>
+        </div>
+      </div>
+      <div class="stack-callout">
+        <p>The gap between MSRP and true dealer cost on a $50,000 vehicle can exceed $6,000.</p>
+        <span>That's the game board. Now you know it exists.</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
-<section class="testi">
-  <div class="eyebrow">Real results</div>
-  <h2 class="hed">People who got sorted.</h2>
-  <div class="t-grid">
-    <div class="tcard">
-      <div class="tsavings">$4,800<span>saved</span></div>
-      <div class="tmark">"</div>
-      <p class="tbody">I thought I was a good negotiator. Then I saw what Mike got me on my X5 lease versus what I had agreed to. The money factor alone was costing me $80 a month. I had no idea that was even something you could push back on.</p>
-      <div class="tname">Dave K.</div>
-      <div class="tdetail">2024 BMW X5 · Northbrook, IL</div>
-    </div>
-    <div class="tcard">
-      <div class="tsavings">$3,200<span>saved</span></div>
-      <div class="tmark">"</div>
-      <p class="tbody">We were ready to sign and something felt off. Mike called within an hour. They had loaded $1,800 in accessories we never asked for and the trade was $1,400 below market. We walked out with a completely different deal.</p>
-      <div class="tname">Sarah and Tom M.</div>
-      <div class="tdetail">2025 Honda Pilot · Naperville, IL</div>
-    </div>
-    <div class="tcard">
-      <div class="tsavings">$6,100<span>saved</span></div>
-      <div class="tmark">"</div>
-      <p class="tbody">Three dealers gave me the same runaround. Mike had a competitive deal within 48 hours. I never set foot in a showroom until the car was ready for pickup. That alone was worth it.</p>
-      <div class="tname">James R.</div>
-      <div class="tdetail">2024 Cadillac Escalade · Chicago, IL</div>
+
+<!-- ═══════════════════════════════════════
+     WHERE MONEY HIDES
+═══════════════════════════════════════ -->
+<section class="moneyhides section">
+  <div class="wrap">
+    <p class="t-eyebrow sec-eyebrow">The structure</p>
+    <h2 class="sec-hed">The price is just<br>where it starts.</h2>
+    <p class="sec-intro">Every deal type has its own hidden variables. Here's where the money moves depending on how you're buying.</p>
+    <div class="hide-grid">
+      <div class="hcard">
+        <div class="htag">Lease</div>
+        <div class="htitle">Four variables.<br>One you're shown.</div>
+        <div class="hbody">A lease has four moving parts: cap cost, money factor, residual, and fees. Dealers can make the monthly look great by adjusting any one while quietly taking back ground on the others. Most people only ever discuss the payment.</div>
+        <div class="htraps">
+          <div class="htrap-label">Where the money goes</div>
+          <div class="htrap"><p>Money factor markups above the manufacturer base rate — worth $50–$100 per month you never had to pay.</p></div>
+          <div class="htrap"><p>Dealer add-ons pre-loaded into the cap cost. On a lease you pay interest on them for 36 months.</p></div>
+          <div class="htrap"><p>Acquisition fees that vary by dealer and are almost never disclosed unprompted.</p></div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="htag">Finance or Cash</div>
+        <div class="htitle">Win at the desk.<br>Lose in the box.</div>
+        <div class="hbody">You negotiated hard on price. You're tired. Now the finance manager presents a menu of products in a room designed for exactly that moment. The F&I office generates more profit per deal than the entire sales floor.</div>
+        <div class="htraps">
+          <div class="htrap-label">Where the money goes</div>
+          <div class="htrap"><p>Interest rate markups above the lender's buy rate — the dealer keeps the spread, just like a mortgage broker.</p></div>
+          <div class="htrap"><p>Loan term extension without disclosure — your payment drops $60, your total cost climbs $3,000.</p></div>
+          <div class="htrap"><p>Extended warranties priced at 2–3x their actual market value.</p></div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="htag">Trade-In</div>
+        <div class="htitle">Two numbers.<br>You only know one.</div>
+        <div class="hbody">Your trade has a real market value and a dealer offer. Those are almost always different numbers. The dealer controls when and how the trade enters the conversation — and uses it throughout.</div>
+        <div class="htraps">
+          <div class="htrap-label">Where the money goes</div>
+          <div class="htrap"><p>Inflated trade offer to build goodwill, quietly recovered through a higher purchase price.</p></div>
+          <div class="htrap"><p>Undervalued offers on cars the dealer knows they'll wholesale for significantly more within 48 hours.</p></div>
+          <div class="htrap"><p>Negative equity rolled into your new loan without clear disclosure of the total cost impact.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
-<section class="about" id="about">
-  <div class="about-inner">
+
+<!-- ═══════════════════════════════════════
+     SITUATIONS
+═══════════════════════════════════════ -->
+<section class="situations section">
+  <div class="wrap">
+    <p class="t-eyebrow sec-eyebrow">Your situation</p>
+    <h2 class="sec-hed">Where are you<br>right now?</h2>
+    <p class="sec-intro">You don't need to understand all of it. Just tell us where you are. We handle what comes next.</p>
+    <div class="sit-grid">
+      <a href="#contact" class="scard" style="text-decoration:none;display:block">
+        <div class="snum">Situation 01</div>
+        <div class="stitle">I'm getting into a new car.</div>
+        <div class="sbody">New or used, lease or buy. You know what you want and you're ready to move. You just don't want to leave money on the table or spend three weekends at dealerships running the same exhausting play.</div>
+        <div class="sstake-l">What's at stake</div>
+        <div class="sstake">The gap between what you pay and what you should. On most vehicles that's $2,000–$6,000.</div>
+        <span class="sarrow">Get this sorted →</span>
+      </a>
+      <a href="#contact" class="scard" style="text-decoration:none;display:block">
+        <div class="snum">Situation 02</div>
+        <div class="stitle">My lease is ending and I'm not sure what to do.</div>
+        <div class="sbody">Buy it out, return it, or roll into something new? The dealer is calling and making it sound simple. It isn't. Each path has its own math and the right answer depends on numbers most people never see.</div>
+        <div class="sstake-l">What's at stake</div>
+        <div class="sstake">Buyout price vs real market value, disposition fees, and whether that new offer is actually good.</div>
+        <span class="sarrow">Get this sorted →</span>
+      </a>
+      <a href="#contact" class="scard" style="text-decoration:none;display:block">
+        <div class="snum">Situation 03</div>
+        <div class="stitle">I have a deal on the table and something feels off.</div>
+        <div class="sbody">You've done the work, you have a number, but you're not sure it's real. Or you're about to sign and you want someone who knows this world to look at it first. That instinct is worth following.</div>
+        <div class="sstake-l">What's at stake</div>
+        <div class="sstake">Hidden markups in the structure, F&I products you didn't ask for, or a great price quietly recovered somewhere else.</div>
+        <span class="sarrow">Get this sorted →</span>
+      </a>
+      <a href="#contact" class="scard" style="text-decoration:none;display:block">
+        <div class="snum">Situation 04</div>
+        <div class="stitle">I have a trade and I want to know what it's worth.</div>
+        <div class="sbody">Your current vehicle is part of the deal and you want to make sure it doesn't become the place the dealer makes back everything you negotiated. Know your number before you walk in.</div>
+        <div class="sstake-l">What's at stake</div>
+        <div class="sstake">The spread between a dealer's opening offer and actual market value can run thousands of dollars.</div>
+        <span class="sarrow">Get this sorted →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════ -->
+<section class="how section" id="how">
+  <div class="wrap">
+    <p class="t-eyebrow sec-eyebrow">The process</p>
+    <h2 class="sec-hed">Simple on your end.<br>That's the whole point.</h2>
+    <p class="sec-intro">The complexity is real. You just shouldn't have to feel any of it.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-t">Tell us what you want</div>
+        <div class="step-b">Short intake. What you're buying or leasing, your budget, your timeline, whether you have a trade. Five minutes. No commitment.</div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-t">We find the real numbers</div>
+        <div class="step-b">Transaction data, manufacturer rate sheets, dealer cost, live market comps. We know what this deal should look like before we contact anyone.</div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-t">We run the negotiation</div>
+        <div class="step-b">We handle all dealer communication by phone and email. Multiple dealers compete. You never sit across from a salesperson until the deal is locked.</div>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div class="step-t">You drive away sorted</div>
+        <div class="step-b">We walk you through the final numbers before you sign. You leave knowing exactly what you got and why it's good. That doubt? Gone.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════ -->
+<section class="services section" id="services">
+  <div class="wrap">
+    <p class="t-eyebrow sec-eyebrow">Services and pricing</p>
+    <h2 class="sec-hed">Flat fee.<br>You keep the savings.</h2>
+    <p class="sec-intro">One price per engagement. No percentage of savings. No hidden charges. Every dollar recovered beyond our fee is yours.</p>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="svc-tag">Deal Check</div>
+        <div class="svc-name">Review</div>
+        <div class="svc-who">You have a deal. You want a second opinion before you sign.</div>
+        <div class="svc-price">$149 <span>flat</span></div>
+        <ul class="svc-list">
+          <li>Full analysis of any deal on the table</li>
+          <li>Market comp report for your vehicle</li>
+          <li>Line-by-line number breakdown</li>
+          <li>Specific guidance on what to push back on</li>
+          <li>Written summary you can use yourself</li>
+        </ul>
+        <a href="#contact" class="svc-btn">Get Started</a>
+      </div>
+      <div class="svc feat">
+        <div class="svc-pop">Most Popular</div>
+        <div class="svc-tag">Full Service</div>
+        <div class="svc-name">Negotiation</div>
+        <div class="svc-who">You want us to handle the whole thing, start to finish.</div>
+        <div class="svc-price">$599 <span>flat</span></div>
+        <ul class="svc-list">
+          <li>Everything in Review</li>
+          <li>We handle all dealer communication</li>
+          <li>New car, lease, or used vehicle</li>
+          <li>Trade-in strategy included</li>
+          <li>F&amp;I guidance before you sign</li>
+          <li>Final contract review</li>
+        </ul>
+        <a href="#contact" class="svc-btn">Get Started</a>
+      </div>
+      <div class="svc">
+        <div class="svc-tag">White Glove</div>
+        <div class="svc-name">Concierge</div>
+        <div class="svc-who">Complex deal, multiple variables, or you want everything handled.</div>
+        <div class="svc-price">$999 <span>flat</span></div>
+        <ul class="svc-list">
+          <li>Everything in Negotiation</li>
+          <li>Multi-dealer competitive bidding</li>
+          <li>Vehicle sourcing if needed</li>
+          <li>Lease-end strategy and buyout analysis</li>
+          <li>12 months of deal advisory access</li>
+        </ul>
+        <a href="#contact" class="svc-btn">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     LEAD MAGNET
+═══════════════════════════════════════ -->
+<section class="lead-band section-sm" id="guide">
+  <div class="lead-inner">
     <div>
-      <div class="eyebrow">Who we are</div>
-      <h2 class="hed">Not a platform.<br>Not an algorithm.<br><em>A person.</em></h2>
-      <p class="about-p">GetSorted is based in Chicago and built on one belief: the car buying process is broken and most people deserve better than what they're getting.</p>
-      <p class="about-p">Our founder has owned more than 30 cars, rebuilt engines, attended auctions, and spent 25 years watching how money moves through this industry. We know how dealers think because we've been on both sides of the desk.</p>
-      <p class="about-p">We started local because local matters. We know the Chicago market, we know which dealers move and which ones play games, and we're building relationships that get our clients better access and better deals.</p>
+      <p class="t-eyebrow lead-eyebrow">Free guide</p>
+      <h2 class="lead-hed">The 7 Ways a Dealership<br>Makes Money on Your Deal.</h2>
+      <p class="lead-body">No solutions. No tool lists. Just the cold reality of every profit center in a car deal — from the moment you walk in to the moment you drive out. Most buyers know one or two. You'll know all seven.</p>
+      <div class="lead-form">
+        <input class="lead-input" type="email" placeholder="Your email address">
+        <button class="lead-submit">Send Me the Guide</button>
+      </div>
+      <p class="lead-fine">No spam. One email with your guide. That's it.</p>
     </div>
-    <div class="cred-list">
-      <div class="cred"><div class="cred-n">01</div><div class="cred-t"><strong>30+ personal vehicle transactions</strong>New, used, leased, auctioned. Every deal type, personally navigated.</div></div>
-      <div class="cred"><div class="cred-n">02</div><div class="cred-t"><strong>Deep Chicago dealer knowledge</strong>We know which dealers are volume players willing to move and which rely on uninformed buyers.</div></div>
-      <div class="cred"><div class="cred-n">03</div><div class="cred-t"><strong>Data-driven, not gut-driven</strong>Real transaction data, manufacturer rate sheets, and live comps. Not estimates. Not guesses.</div></div>
-      <div class="cred"><div class="cred-n">04</div><div class="cred-t"><strong>Flat fee. No conflicts.</strong>We charge once. No dealer relationships, no referral fees, no commissions. Our only incentive is your deal.</div></div>
-      <div class="cred"><div class="cred-n">05</div><div class="cred-t"><strong>Chicago-based, remote-capable</strong>Local relationships for Chicago metro. Lease and finance negotiation available anywhere in the US.</div></div>
+    <div style="display:flex;align-items:center;justify-content:center">
+      <div class="pdf-preview">
+        <div class="pdf-cover">
+          <div class="pdf-accent"></div>
+          <div class="pdf-eyebrow">GetSorted · Free Guide</div>
+          <div class="pdf-title">The 7 Ways a<br>Dealership<br><em>Makes Money</em><br>on Your Deal.</div>
+          <div class="pdf-rule"></div>
+          <div class="pdf-sub">What happens to your money between "I'm interested" and "where do I sign."</div>
+        </div>
+        <div class="pdf-foot">
+          <div class="pdf-foot-logo">get<em>S</em>orted</div>
+          <div class="pdf-foot-tag">Free · 9 Pages</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CTA CLOSE ═══ -->
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════ -->
+<section class="testi section">
+  <div class="wrap">
+    <p class="t-eyebrow sec-eyebrow">Real results</p>
+    <h2 class="sec-hed">People who got sorted.</h2>
+    <div class="t-grid">
+      <div class="tcard">
+        <div class="tsavings">$4,800<span>saved</span></div>
+        <div class="tmark">"</div>
+        <p class="tbody">I thought I was a good negotiator. Then I saw what Mike got me on my X5 lease versus what I had agreed to. The money factor alone was costing me $80 a month. I had no idea that was even something you could push back on.</p>
+        <div class="tname">Dave K.</div>
+        <div class="tdetail">2024 BMW X5 · Northbrook, IL</div>
+      </div>
+      <div class="tcard">
+        <div class="tsavings">$3,200<span>saved</span></div>
+        <div class="tmark">"</div>
+        <p class="tbody">We were ready to sign and something felt off. Mike called within an hour. They had loaded $1,800 in accessories we never asked for and the trade was $1,400 below market. We walked out with a completely different deal.</p>
+        <div class="tname">Sarah and Tom M.</div>
+        <div class="tdetail">2025 Honda Pilot · Naperville, IL</div>
+      </div>
+      <div class="tcard">
+        <div class="tsavings">$6,100<span>saved</span></div>
+        <div class="tmark">"</div>
+        <p class="tbody">Three dealers gave me the same runaround. Mike had a competitive deal within 48 hours. I never set foot in a showroom until the car was ready for pickup. That alone was worth it.</p>
+        <div class="tname">James R.</div>
+        <div class="tdetail">2024 Cadillac Escalade · Chicago, IL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════ -->
+<section class="about section" id="about">
+  <div class="wrap">
+    <div class="about-inner">
+      <div>
+        <p class="t-eyebrow sec-eyebrow">Who we are</p>
+        <h2 class="sec-hed about" style="color:var(--white)">Not a platform.<br>Not an algorithm.<br><em style="font-style:normal;color:var(--orange)">A person.</em></h2>
+        <p class="about-p" style="margin-top:20px">GetSorted is based in Chicago and built on one belief: the car buying process is broken and most people deserve better than what they're getting.</p>
+        <p class="about-p">Our founder has owned more than 30 cars, rebuilt engines, attended auctions, and spent 25 years watching how money moves through this industry. We know how dealers think because we've been on both sides of the desk.</p>
+        <p class="about-p">We started local because local matters. We know the Chicago market, we know which dealers move and which ones play games, and we're building relationships that get our clients better access and better deals.</p>
+      </div>
+      <div class="cred-list">
+        <div class="cred"><div class="cred-n">01</div><div class="cred-t"><strong>30+ personal vehicle transactions</strong>New, used, leased, auctioned. Every deal type, personally navigated.</div></div>
+        <div class="cred"><div class="cred-n">02</div><div class="cred-t"><strong>Deep Chicago dealer knowledge</strong>We know which dealers are volume players willing to move and which rely on uninformed buyers.</div></div>
+        <div class="cred"><div class="cred-n">03</div><div class="cred-t"><strong>Data-driven, not gut-driven</strong>Real transaction data, manufacturer rate sheets, and live comps. Not estimates. Not guesses.</div></div>
+        <div class="cred"><div class="cred-n">04</div><div class="cred-t"><strong>Flat fee. No conflicts.</strong>We charge once. No dealer relationships, no referral fees, no commissions. Our only incentive is your deal.</div></div>
+        <div class="cred"><div class="cred-n">05</div><div class="cred-t"><strong>Chicago-based, remote-capable</strong>Local relationships for Chicago metro. Lease and finance negotiation available anywhere in the US.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA CLOSE
+═══════════════════════════════════════ -->
 <section class="cta-close" id="contact">
   <div class="cta-close-left">
-    <h2 class="hed">Ready to<br>see their<br>hand?</h2>
-    <p>Tell us what you're after. We'll tell you what it should cost and handle everything from there. No pressure, no pitch — just the real numbers on your deal.</p>
-    <a href="mailto:hello@getsorted.autos" class="btn-white">Send Us a Message</a>
+    <h2 class="cta-close-hed">Ready to<br>see their<br>hand?</h2>
+    <p class="cta-close-body">Tell us what you're after. We'll tell you what it should cost and handle everything from there. No pressure, no pitch — just the real numbers on your deal.</p>
+    <a href="mailto:hello@getsorted.autos" class="btn btn-white">Send Us a Message</a>
   </div>
   <div class="cta-close-right">
-    <div class="cal-label">Free · 15 Minutes · No Pitch</div>
-    <div class="cal-title">Book a call with Mike.</div>
-    <div class="cal-sub">Pick a time that works. We'll talk through your situation and tell you exactly where you stand.</div>
-    <div class="cal-slots">
-      <div class="cal-slot">
-        <div class="cal-slot-day">Wednesday, Jun 11</div>
-        <div class="cal-slot-time">10:00 AM CST</div>
-        <div class="cal-slot-badge">Available</div>
+    <div class="cal-wrap">
+      <div class="cal-label">Free · 15 Minutes · No Pitch</div>
+      <div class="cal-title">Book a call with Mike.</div>
+      <div class="cal-sub">Pick a time that works. We'll talk through your situation and tell you exactly where you stand.</div>
+      <div class="cal-slots">
+        <div class="cal-slot">
+          <div class="cal-slot-day">Wednesday, Jun 11</div>
+          <div class="cal-slot-time">10:00 AM CST</div>
+          <div class="cal-slot-badge">Available</div>
+        </div>
+        <div class="cal-slot">
+          <div class="cal-slot-day">Wednesday, Jun 11</div>
+          <div class="cal-slot-time">2:00 PM CST</div>
+          <div class="cal-slot-badge">Available</div>
+        </div>
+        <div class="cal-slot">
+          <div class="cal-slot-day">Thursday, Jun 12</div>
+          <div class="cal-slot-time">11:00 AM CST</div>
+          <div class="cal-slot-badge">Available</div>
+        </div>
       </div>
-      <div class="cal-slot">
-        <div class="cal-slot-day">Wednesday, Jun 11</div>
-        <div class="cal-slot-time">2:00 PM CST</div>
-        <div class="cal-slot-badge">Available</div>
-      </div>
-      <div class="cal-slot">
-        <div class="cal-slot-day">Thursday, Jun 12</div>
-        <div class="cal-slot-time">11:00 AM CST</div>
-        <div class="cal-slot-badge">Available</div>
-      </div>
+      <a href="#" class="cal-cta">See All Available Times</a>
+      <p class="cal-reassure">No pitch. No pressure. You leave with better information regardless.</p>
     </div>
-    <a href="#" class="cal-cta">See All Available Times</a>
-    <p class="cal-reassure">No pitch. No pressure. You leave with better information regardless.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="foot-logo">get<em>S</em>orted</div>
-  <div class="foot-copy">© 2026 GetSorted · Chicago, IL · getsorted.autos</div>
+
+<!-- ═══════════════════════════════════════
+     GLOBAL FOOTER
+     Include this in every page
+═══════════════════════════════════════ -->
+<footer id="site-footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="images/sorted.svg" alt="GetSorted" />
+      </div>
+      <p class="footer-tagline">Chicago's car buying concierge. We negotiate on your behalf so you never leave money on the table.</p>
+      <div class="footer-contact">
+        <a href="mailto:hello@getsorted.autos">hello@getsorted.autos</a>
+        <a href="tel:+13125550100">Chicago, IL</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-label">Services</div>
+      <a href="#services">Deal Review — $149</a>
+      <a href="#services">Full Negotiation — $599</a>
+      <a href="#services">Concierge — $999</a>
+      <a href="#guide">Free Guide</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-label">How It Works</div>
+      <a href="#how">The Process</a>
+      <a href="#stacked">Why It Matters</a>
+      <a href="#about">About GetSorted</a>
+      <a href="#contact">Book a Free Call</a>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-label">Deal Types</div>
+      <a href="#services">New Car Lease</a>
+      <a href="#services">New Car Purchase</a>
+      <a href="#services">Used Vehicle</a>
+      <a href="#services">Trade-In Strategy</a>
+      <a href="#services">Lease-End Decisions</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      © 2026 GetSorted · Chicago, IL
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="LinkedIn">in</a>
+      <a href="#" aria-label="Instagram">ig</a>
+      <a href="#" aria-label="TikTok">tk</a>
+    </div>
+  </div>
 </footer>
 
 </body>
