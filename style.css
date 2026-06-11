@@ -104,7 +104,7 @@ a{text-decoration:none}
 }
 .header-nav a:hover{color:var(--white)}
 .header-nav .btn-primary{
-  font-size:12px;padding:10px 22px;letter-spacing:1px; color:#ffffff !important;
+  font-size:12px;padding:10px 22px;letter-spacing:1px;
 }
 
 /* ============================================================
@@ -342,140 +342,29 @@ a{text-decoration:none}
 /* ============================================================
    PRICE STACK
 ============================================================ */
-
-.pricestack{
-  background:var(--off);
-}
-
-.stack-wrap{
-  max-width:1100px;
-  margin-top:56px;
-}
-
-.srow{
-  display:grid;
-  grid-template-columns:760px 1fr;
-  gap:20px;
-  align-items:center;
-  margin-bottom:6px;
-}
-
+.pricestack{background:var(--off)}
+.stack-wrap{max-width:700px;margin-top:56px}
+.srow{display:flex;align-items:stretch;margin-bottom:3px;height:68px}
 .sbar{
-  height:72px;
-  display:flex;
-  align-items:center;
-  padding:0 24px;
-  font-family:var(--impact);
-  font-size:18px;
-  color:#fff;
-  letter-spacing:.3px;
-  flex-shrink:0;
+  display:flex;align-items:center;padding:0 20px;
+  font-family:var(--impact);font-size:17px;
+  color:#fff;flex-shrink:0;letter-spacing:.5px;
 }
-
-.sbar.w100{
-  width:100%;
-  background:#97a6bb;
-}
-
-.sbar.w87{
-  width:87%;
-  background:#627b9f;
-}
-
-.sbar.w76{
-  width:76%;
-  background:#355684;
-}
-
-.sbar.w65{
-  width:65%;
-  background:#183662;
-}
-
-.sbar.w52{
-  width:52%;
-  background:var(--orange);
-}
-
-.slabel{
-  min-width:260px;
-}
-
-.slabel-t{
-  font-family:var(--semi);
-  font-weight:700;
-  font-size:18px;
-  line-height:1.2;
-  color:var(--navy);
-  margin-bottom:6px;
-}
-
-.slabel-d{
-  font-size:15px;
-  line-height:1.55;
-  color:var(--mid);
-}
-
+.sbar.w100{width:100%;background:#8a9ab0}
+.sbar.w87 {width:87%; background:#5a7090}
+.sbar.w76 {width:76%; background:#2a4870}
+.sbar.w65 {width:65%; background:var(--navy-mid)}
+.sbar.w52 {width:52%; background:var(--orange)}
+.slabel{display:flex;flex-direction:column;justify-content:center;padding-left:18px;flex:1}
+.slabel-t{font-family:var(--semi);font-weight:700;font-size:14px;color:var(--navy)}
+.slabel-d{font-size:12px;color:var(--mid);margin-top:2px;line-height:1.4}
 .stack-callout{
-  margin-top:28px;
-  padding:22px 28px;
-  border:2px dashed var(--orange);
-  background:rgba(232,100,12,.05);
+  margin-top:20px;padding:18px 24px;
+  border:1.5px dashed var(--orange);background:rgba(232,100,12,.06);
 }
+.stack-callout p{font-family:var(--impact);font-size:18px;color:var(--orange);letter-spacing:.3px}
+.stack-callout span{font-size:13px;color:var(--mid);display:block;margin-top:4px}
 
-.stack-callout p{
-  font-family:var(--impact);
-  font-size:24px;
-  color:var(--orange);
-  line-height:1.1;
-  margin-bottom:8px;
-}
-
-.stack-callout span{
-  display:block;
-  font-size:16px;
-  color:var(--mid);
-}
-
-/* Tablet */
-
-@media(max-width:960px){
-
-  .srow{
-    grid-template-columns:1fr;
-    gap:12px;
-    margin-bottom:20px;
-  }
-
-  .sbar{
-    height:64px;
-  }
-
-  .slabel{
-    min-width:0;
-  }
-
-}
-
-/* Mobile */
-
-@media(max-width:600px){
-
-  .sbar{
-    height:56px;
-    font-size:15px;
-    padding:0 16px;
-  }
-
-  .slabel-t{
-    font-size:16px;
-  }
-
-  .slabel-d{
-    font-size:14px;
-  }
-
-}
 /* ============================================================
    WHERE MONEY HIDES
 ============================================================ */
@@ -779,4 +668,241 @@ a{text-decoration:none}
 /* Accessibility */
 @media(prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important}
+}
+
+/* ============================================================
+   NARRATIVE BAND
+============================================================ */
+.narrative-band{
+  background:var(--off);
+  padding:100px 0;
+}
+.narrative-inner{
+  display:grid;
+  grid-template-columns:1fr 1.6fr;
+  gap:80px;
+  align-items:start;
+}
+.narrative-hed{
+  font-family:var(--impact);
+  font-size:clamp(40px,5vw,64px);
+  color:var(--navy);
+  line-height:.95;
+  letter-spacing:-.5px;
+  margin-top:14px;
+}
+.narrative-body{
+  font-size:17px;
+  line-height:1.8;
+  color:var(--text-mid);
+  margin-bottom:18px;
+}
+.narrative-highlight{
+  font-style:italic;
+  color:var(--navy);
+  font-weight:600;
+  border-left:3px solid var(--orange);
+  padding-left:16px;
+  margin-left:0;
+}
+
+/* ============================================================
+   MONEY SECTION
+============================================================ */
+.money-section{ background:var(--navy) }
+.money-section .sec-hed{ color:var(--white) }
+.money-section .sec-intro{ color:var(--gray) }
+
+.money-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  margin-top:56px;
+}
+
+.money-card{
+  background:var(--navy-mid);
+  padding:36px 28px;
+  position:relative;
+  transition:background .2s;
+}
+.money-card:hover{ background:var(--navy-lt) }
+.money-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--orange);
+}
+
+.money-num{
+  font-family:var(--impact);
+  font-size:52px;
+  color:var(--orange);
+  opacity:.15;
+  line-height:1;
+  margin-bottom:12px;
+  letter-spacing:-1px;
+}
+
+.money-title{
+  font-family:var(--impact);
+  font-size:26px;
+  color:var(--white);
+  margin-bottom:14px;
+  line-height:1.05;
+  letter-spacing:.3px;
+}
+
+.money-body{
+  font-size:14px;
+  line-height:1.75;
+  color:var(--gray);
+  margin-bottom:24px;
+}
+
+.money-saving{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:16px;
+}
+.money-saving-label{
+  font-family:var(--semi);
+  font-weight:700;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gray);
+  margin-bottom:6px;
+}
+.money-saving-val{
+  font-family:var(--impact);
+  font-size:22px;
+  color:var(--orange);
+  letter-spacing:.3px;
+}
+
+.money-total{
+  margin-top:3px;
+  background:var(--orange);
+  padding:36px 40px;
+  display:flex;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.money-total-label{
+  font-family:var(--semi);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.8);
+  flex:0 0 auto;
+}
+.money-total-val{
+  font-family:var(--impact);
+  font-size:clamp(32px,4vw,52px);
+  color:#fff;
+  letter-spacing:-1px;
+  line-height:1;
+  flex:0 0 auto;
+}
+.money-total-note{
+  font-size:14px;
+  color:rgba(255,255,255,.8);
+  line-height:1.55;
+  flex:1;
+  min-width:200px;
+}
+
+/* ============================================================
+   CARMAX BAND
+============================================================ */
+.carmax-band{
+  background:var(--white);
+  padding:100px 0;
+  border-top:1px solid var(--gray-lt);
+}
+.carmax-inner{
+  display:grid;
+  grid-template-columns:1fr 1.6fr;
+  gap:80px;
+  align-items:start;
+}
+.carmax-hed{
+  font-family:var(--impact);
+  font-size:clamp(32px,4vw,50px);
+  color:var(--navy);
+  line-height:1;
+  letter-spacing:-.3px;
+  margin-top:14px;
+}
+.carmax-body{
+  font-size:17px;
+  line-height:1.8;
+  color:var(--text-mid);
+  margin-bottom:18px;
+}
+.carmax-highlight{
+  color:var(--navy);
+  font-weight:600;
+}
+
+/* ============================================================
+   SERVICES — guarantee + launch offer
+============================================================ */
+.svc-grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+.svc-guarantee{
+  background:rgba(232,100,12,.08);
+  border:1px solid rgba(232,100,12,.3);
+  color:var(--orange);
+  font-family:var(--semi);
+  font-weight:700;
+  font-size:12px;
+  line-height:1.4;
+  padding:10px 14px;
+  margin-bottom:20px;
+}
+
+.svc-launch{
+  margin-top:24px;
+  background:var(--navy);
+  padding:24px 32px;
+}
+.svc-launch-inner{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+}
+.svc-launch-icon{
+  color:var(--orange);
+  font-size:20px;
+  flex-shrink:0;
+  margin-top:2px;
+}
+.svc-launch-text{
+  font-size:15px;
+  color:var(--gray);
+  line-height:1.65;
+}
+.svc-launch-text strong{
+  color:var(--white);
+}
+.svc-launch-text a{
+  color:var(--orange);
+  font-weight:700;
+}
+.svc-launch-text a:hover{
+  text-decoration:underline;
+}
+
+/* ============================================================
+   RESPONSIVE ADDITIONS
+============================================================ */
+@media(max-width:960px){
+  .narrative-inner{ grid-template-columns:1fr; gap:32px }
+  .carmax-inner{ grid-template-columns:1fr; gap:32px }
+  .money-grid{ grid-template-columns:1fr }
+  .money-total{ flex-direction:column; gap:16px }
+  .svc-grid-3{ grid-template-columns:1fr }
 }
