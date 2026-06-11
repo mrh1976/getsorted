@@ -4,6 +4,7 @@
    Colors: --navy / --orange / --white / --gray
    Max site width: 1140px via --max
 ============================================================ */
+
 /* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -173,7 +174,7 @@ a{text-decoration:none}
   position:relative;z-index:2;
 }
 .hero-left{
-  padding:60px 48px 60px 0;
+  padding:60px 40px 60px 0;
   display:flex;flex-direction:column;justify-content:center;
 }
 .hero-hed{
