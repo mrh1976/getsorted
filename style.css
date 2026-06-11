@@ -200,8 +200,10 @@ a{text-decoration:none}
 
 /* ── Hero right: animated stat grid ── */
 .hero-right{
-  display:flex;align-items:center;justify-content:center;
-  padding:60px 0 60px 48px;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  padding:60px 0 60px 32px;
 }
 
 .hero-stat-grid{
@@ -579,7 +581,7 @@ a{text-decoration:none}
 
   /* Hero */
   .hero-inner{grid-template-columns:1fr}
-  .hero-right{display:none}
+  .hero-right{display:none !important}
   .hero-left{padding:64px 0}
 
   /* Sections */
