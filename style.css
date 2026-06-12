@@ -968,3 +968,57 @@ a{text-decoration:none}
   max-width:320px;
   margin:0 auto;
 }
+/* ============================================================
+   MOBILE RESPONSIVE — new sections
+============================================================ */
+
+/* Tablet 960px additions */
+@media(max-width:960px){
+  .narrative-inner{ grid-template-columns:1fr; gap:32px }
+  .carmax-inner{ grid-template-columns:1fr; gap:32px }
+  .money-grid{ grid-template-columns:1fr 1fr }
+  .money-total{ flex-direction:column; gap:16px; text-align:center }
+  .svc-grid-3{ grid-template-columns:1fr }
+  .svc-grid-3 .svc{ max-width:100% }
+  .header-logo img{ height:40px !important }
+}
+
+/* Mobile 600px additions */
+@media(max-width:600px){
+  #site-header{ height:56px }
+  .header-logo img{ height:32px !important }
+  .header-nav{ gap:16px }
+  .hero-hed{ font-size:clamp(38px,11vw,56px) !important; line-height:.95 }
+  .hero-subhed{ font-size:clamp(20px,6vw,28px) }
+  .hero-body{ font-size:14px }
+  .hero-left{ padding:40px 0 32px }
+  .money-grid{ grid-template-columns:1fr }
+  .money-total{ padding:24px 20px }
+  .money-total-val{ font-size:clamp(28px,8vw,42px) }
+  .narrative-band{ padding:60px 0 }
+  .narrative-hed{ font-size:clamp(32px,9vw,48px) }
+  .narrative-body{ font-size:15px }
+  .carmax-band{ padding:60px 0 }
+  .carmax-hed{ font-size:clamp(24px,7vw,36px) }
+  .carmax-body{ font-size:15px }
+  .svc-grid-3{ grid-template-columns:1fr }
+  .svc{ padding:32px 24px }
+  .svc-launch{ padding:20px 20px }
+  .svc-launch-inner{ flex-direction:column; gap:10px }
+  .cred-list{ gap:16px }
+  .cred{ padding:16px }
+  .cf-row{ grid-template-columns:1fr }
+  .cta-close-hed{ font-size:clamp(40px,11vw,60px) }
+  .footer-contact{ flex-direction:column; gap:8px }
+  .footer-tagline{ font-size:13px }
+  .sec-hed{ font-size:clamp(28px,8vw,42px) }
+  .sec-intro{ font-size:15px }
+}
+
+/* Very small screens 400px */
+@media(max-width:400px){
+  .hero-hed{ font-size:32px !important }
+  .btn{ padding:12px 20px; font-size:11px }
+  .proof-num{ font-size:32px }
+  .money-card{ padding:24px 20px }
+}
