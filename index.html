@@ -1,14 +1,191 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GetSorted | Car Buying, Done Right.</title>
-  <meta name="description" content="Chicago's car buying service. We level the playing field with real market data, expert negotiation, and someone who knows exactly how dealers work.">
+
+  <!-- ── Primary SEO ── -->
+  <title>GetSorted | Chicago Car Buying Service | Save Money on Your Next Car</title>
+  <meta name="description" content="GetSorted is a Chicago car buying concierge. We handle the research, negotiation, and dealer conversation so you drive away knowing you got a fair deal. Flat fee. No surprises.">
+  <meta name="keywords" content="car buying service Chicago, car negotiation service, auto broker Chicago, car buying concierge, lease negotiation Chicago, car dealer negotiation, save money buying car, car buying help Illinois">
+  <meta name="author" content="GetSorted">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://getsorted.autos/">
+
+  <!-- ── GEO tags ── -->
+  <meta name="geo.region" content="US-IL">
+  <meta name="geo.placename" content="Chicago, Illinois">
+  <meta name="geo.position" content="41.8781;-87.6298">
+  <meta name="ICBM" content="41.8781, -87.6298">
+
+  <!-- ── Open Graph (Facebook, LinkedIn) ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getsorted.autos/">
+  <meta property="og:title" content="GetSorted | Chicago Car Buying Service">
+  <meta property="og:description" content="Car dealers want you to spend more. We want you to save it. GetSorted handles the research, negotiation, and dealer conversation so you drive away knowing you won.">
+  <meta property="og:image" content="https://getsorted.autos/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="GetSorted">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ── Twitter / X Card ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GetSorted | Chicago Car Buying Service">
+  <meta name="twitter:description" content="Car dealers want you to spend more. We want you to save it. Flat fee car buying concierge in Chicago.">
+  <meta name="twitter:image" content="https://getsorted.autos/images/og-image.png">
+
+  <!-- ── Favicons ── -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+
+  <!-- ── Fonts ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
+
+  <!-- ── Schema.org Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://getsorted.autos/#business",
+        "name": "GetSorted",
+        "description": "Chicago car buying concierge service. We handle the research, negotiation, and dealer conversation so you drive away knowing you got a fair deal.",
+        "url": "https://getsorted.autos",
+        "telephone": "+13129457770",
+        "email": "getsortedautos@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Chicago",
+          "addressRegion": "IL",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 41.8781,
+          "longitude": -87.6298
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Chicago",
+            "sameAs": "https://www.wikidata.org/wiki/Q1297"
+          },
+          {
+            "@type": "State",
+            "name": "Illinois"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          }
+        ],
+        "serviceType": [
+          "Car Buying Concierge",
+          "Auto Negotiation",
+          "Lease Negotiation",
+          "Car Deal Review",
+          "Trade-In Consultation"
+        ],
+        "priceRange": "$99 - $899",
+        "logo": "https://getsorted.autos/images/sorted_logo.png",
+        "image": "https://getsorted.autos/images/og-image.png",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://getsorted.autos/#website",
+        "url": "https://getsorted.autos",
+        "name": "GetSorted",
+        "description": "Chicago car buying service",
+        "publisher": {
+          "@id": "https://getsorted.autos/#business"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://getsorted.autos/#consult",
+        "name": "Car Buying Consult",
+        "provider": { "@id": "https://getsorted.autos/#business" },
+        "description": "30-minute one-on-one call covering lease vs buy analysis, negotiation tactics, trade-in strategy, and any car buying question you have.",
+        "offers": {
+          "@type": "Offer",
+          "price": "99",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://getsorted.autos/#review",
+        "name": "Car Deal Review",
+        "provider": { "@id": "https://getsorted.autos/#business" },
+        "description": "Full analysis of any deal on the table. Market comp report, line-by-line breakdown, and specific pushback recommendations. If we don't find $199 in savings, you don't pay.",
+        "offers": {
+          "@type": "Offer",
+          "price": "199",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://getsorted.autos/#negotiation",
+        "name": "Full Car Negotiation",
+        "provider": { "@id": "https://getsorted.autos/#business" },
+        "description": "Full service car buying negotiation. We handle all dealer communication, multi-dealer bidding, trade-in negotiation, and final contract review.",
+        "offers": {
+          "@type": "Offer",
+          "price": "899",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does GetSorted cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GetSorted offers three flat-fee services: a 30-minute Consult for $99, a Deal Review for $199 (free if we don't find $199 in savings), and a Full Negotiation service for $899. No percentage of savings. No hidden charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does GetSorted work for leases and used cars?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. GetSorted handles new car purchases, new car leases, used vehicles, and trade-in strategy. We also help with lease-end decisions including buyouts, returns, and rolling into a new vehicle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does GetSorted save me money?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We use real transaction data, manufacturer rate sheets, and live market comps to know what your deal should cost before we contact any dealer. We negotiate on your behalf across multiple dealers and identify hidden markups in the price, lease structure, trade-in, financing rate, and F&I products."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is GetSorted only available in Chicago?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GetSorted is based in Chicago with deep local dealer knowledge. Lease negotiation and finance consulting are available anywhere in the United States."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -40,7 +217,7 @@
 
     <div class="hero-left">
       <p class="eyebrow">Chicago Car Buying Service</p>
-      <h1 class="hero-hed">Car dealers want you to <em>spend more money.</em> We want you to save it.</h1>
+      <h1 class="hero-hed">Car dealers want you to <em>spend more.</em> We want you to save it.</h1>
       <p class="hero-subhed">Finally, someone on your side.</p>
       <p class="hero-body">Dealerships invest thousands every year training their teams to maximize what you pay. GetSorted levels the playing field with real market data, expert negotiation, and someone who knows exactly how the game is played.</p>
       <div class="hero-ctas">
@@ -382,73 +559,12 @@
       <p class="eyebrow">Free guide</p>
       <h2 class="lead-hed">The 7 Ways a Dealership<br>Makes Money on Your Deal.</h2>
       <p class="lead-body">No solutions. No tool lists. Just the cold reality of every profit center in a car deal from the moment you walk in to the moment you drive out. Most buyers know one or two. You'll know all seven.</p>
-     <form
-  class="lead-form"
-  id="guideForm"
-  method="POST"
-  action="https://41220950.sibforms.com/serve/MUIFANaDmYytXDb_u913vIrX5dchm1dtM3BTF3k07VMC6fcZGOl6nGcSUIGG3BLCypwpWe8-kHSEVuuQSgGwRRHfO5ZmjdV7La4T-GxUMegXrxco1hoG-WsQNmXN5dUFFOCrZe-UbNAtuS6Xe72LnsOaa8JSdKWAxwe4_oYL8T2fsHAZhLtr-W37LZ4REl-O8siGUBeCT8a6tQ0FTQ=="
-  target="hidden_iframe"
->
-
-  <input
-    class="lead-input"
-    type="email"
-    name="EMAIL"
-    placeholder="Your email address"
-    required
-  >
-
-  <input type="hidden" name="locale" value="en">
-
-  <input
-    type="text"
-    name="email_address_check"
-    style="display:none"
-  >
-
-  <button class="lead-submit" type="submit">
-    Send Me the Guide
-  </button>
-
-</form>
-
-<iframe
-  name="hidden_iframe"
-  style="display:none"
-></iframe>
-
-<div
-  id="guideSuccess"
-  style="
-    display:none;
-    margin-top:20px;
-    padding:24px;
-    background:#fff8f1;
-    border-left:4px solid #f97316;
-    border-radius:8px;
-  "
->
-  <div style="
-    font-size:22px;
-    font-weight:700;
-    margin-bottom:10px;
-    color:#111827;
-  ">
-    Thanks. You're officially one step smarter than the dealership.
-  </div>
-
-  <div style="
-    font-size:16px;
-    line-height:1.7;
-    color:#4b5563;
-  ">
-    Your free guide is on its way and should arrive within the next 5 minutes.
-    <br><br>
-    If you don't see it, check your Promotions, Spam, or Junk folder.
-    <br><br>
-    Inside you'll learn the seven places dealerships make money on every deal and the tactics most buyers never see coming.
-  </div>
-</div>
+      <form class="lead-form" name="guide" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="guide">
+        <input type="hidden" name="bot-field" style="display:none">
+        <input class="lead-input" type="email" name="email" placeholder="Your email address" required>
+        <button class="lead-submit" type="submit">Send Me the Guide</button>
+      </form>
       <p class="lead-fine">No spam. One email with your guide. That's it.</p>
     </div>
     <div style="display:flex;align-items:center;justify-content:center">
@@ -514,11 +630,11 @@
         <p class="eyebrow">Who we are</p>
         <h2 class="sec-hed light">Not a platform.<br>Not an algorithm.<br><em style="font-style:normal;color:var(--orange)">A person.</em></h2>
         <p class="about-p" style="margin-top:20px">GetSorted is based in Chicago and built on one belief: the car buying process is broken and most people deserve a better experience than what they're getting.</p>
-        <p class="about-p">Our founder has bought and sold more than 30 cars and negotiated well over 100+ deals for friends and family members.  He has bought in person, on-line and purchased sight unseen, participated as a buyer and seller at auctions both online and in person, and spent 30+ years watching how money moves through this industry. We know how dealers think because we've been on both sides of the desk. We love the process of buying a car. Most people hate it. We're here to fix that.</p>
+        <p class="about-p">Our founder has owned more than 30 cars, rebuilt engines, attended auctions, and spent 25 years watching how money moves through this industry. We know how dealers think because we've been on both sides of the desk. We love the process of buying a car. Most people hate it. We're here to fix that.</p>
         <p class="about-p">We started local because local matters. We know the Chicago market, we know which dealers move and which ones play games, and we're building the relationships that get our clients better access and better deals.</p>
       </div>
       <div class="cred-list">
-        <div class="cred"><div class="cred-n">01</div><div class="cred-t"><strong>100+ personal vehicle transactions</strong>New, used, leased, auctioned. Every deal type, personally navigated.</div></div>
+        <div class="cred"><div class="cred-n">01</div><div class="cred-t"><strong>30+ personal vehicle transactions</strong>New, used, leased, auctioned. Every deal type, personally navigated.</div></div>
         <div class="cred"><div class="cred-n">02</div><div class="cred-t"><strong>Deep Chicago dealer knowledge</strong>We know which dealers are volume players willing to move and which rely on uninformed buyers.</div></div>
         <div class="cred"><div class="cred-n">03</div><div class="cred-t"><strong>Data-driven, not gut-driven</strong>Real transaction data, manufacturer rate sheets, and live market comps. Not estimates. Not guesses.</div></div>
         <div class="cred"><div class="cred-n">04</div><div class="cred-t"><strong>Flat fee. No conflicts.</strong>We charge you once. No dealer relationships, no referral fees, no commissions. Our only incentive is your deal.</div></div>
@@ -576,6 +692,7 @@
       <p class="footer-tagline">Chicago's car buying service. We level the playing field so you never leave money on the table.</p>
       <div class="footer-contact">
         <a href="mailto:getsortedautos@gmail.com">getsortedautos@gmail.com</a>
+        <a href="tel:+13129457770">(312) 945-7770</a>
         <a href="#">Chicago, IL</a>
       </div>
     </div>
@@ -717,27 +834,5 @@
     setTimeout(function() { showStat(0); }, 400);
   });
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  const guideForm = document.getElementById('guideForm');
-  const guideSuccess = document.getElementById('guideSuccess');
-
-  if (guideForm) {
-    guideForm.addEventListener('submit', function() {
-
-      setTimeout(function() {
-
-        guideForm.style.display = 'none';
-        guideSuccess.style.display = 'block';
-
-      }, 1000);
-
-    });
-  }
-
-});
-</script>
-
 </body>
 </html>
