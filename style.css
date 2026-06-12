@@ -84,7 +84,7 @@ a{text-decoration:none}
 ============================================================ */
 #site-header{
   position:sticky;top:0;z-index:200;
-  background:var(--navy);height:80px;
+  background:var(--navy);height:68px;
   display:flex;align-items:center;
   border-bottom:1px solid rgba(255,255,255,.06);
 }
@@ -100,12 +100,15 @@ a{text-decoration:none}
 .header-nav a{
   font-family:var(--semi);font-weight:600;
   font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--gray);transition:color .2s;
+  color:var(--gray);transition:color .2s;text-decoration:none;
 }
 .header-nav a:hover{color:var(--white)}
+/* Override color for the CTA button specifically */
 .header-nav .btn-primary{
   font-size:12px;padding:10px 22px;letter-spacing:1px;
+  color:#fff !important;
 }
+.header-nav .btn-primary:hover{color:#fff !important}
 
 /* ============================================================
    GLOBAL FOOTER
@@ -167,20 +170,18 @@ a{text-decoration:none}
 .hero-inner{
   max-width:var(--max);
   margin:0 auto;
-  padding:0 var(--pad);
+  padding:40px var(--pad) 0;
   display:grid;
   grid-template-columns:1fr 1fr;
-  /* Fixed height prevents left column reflow when right content changes */
   height:calc(100vh - 68px);
   min-height:600px;
   max-height:900px;
   position:relative;z-index:2;
-  align-items:stretch;
+  align-items:center;
 }
 .hero-left{
-  padding:60px 40px 60px 0;
+  padding:0 40px 0 0;
   display:flex;flex-direction:column;justify-content:center;
-  /* Prevent left column from reflowing when right column changes */
   overflow:hidden;
 }
 .hero-hed{
