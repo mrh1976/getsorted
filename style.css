@@ -79,7 +79,7 @@ a{text-decoration:none}
    GLOBAL HEADER
 ============================================================ */
 #site-header{
-  position:sticky;top:0;z-index:200;
+  position:sticky;top:0;z-index:1000;
   background:var(--navy);
   display:flex;flex-direction:column;
   border-bottom:1px solid rgba(255,255,255,.06);
