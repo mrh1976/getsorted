@@ -1095,12 +1095,12 @@ a{text-decoration:none}
 .hero-stat-mobile{
   display:none;
   text-align:center;
-  padding:32px var(--pad) 0;
-  min-height:160px;
+  padding:48px var(--pad) 8px;
+  min-height:200px;
 }
 .hero-stat-mobile .sc-num{
   font-family:Impact,sans-serif;
-  font-size:clamp(80px,20vw,120px);
+  font-size:clamp(100px,24vw,148px);
   color:#E8640C;
   line-height:.88;
   letter-spacing:-2px;
