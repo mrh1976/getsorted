@@ -204,6 +204,18 @@
       <a href="#about">About</a>
       <a href="#contact" class="btn btn-primary">Book a Free Call</a>
     </nav>
+    <!-- Hamburger — mobile only -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#how" class="mobile-nav-link">How It Works</a>
+    <a href="#services" class="mobile-nav-link">Services</a>
+    <a href="#guide" class="mobile-nav-link">Free Guide</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#contact" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
   </div>
 </header>
 
@@ -213,11 +225,25 @@
 ════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-glow"></div>
+
+  <!-- Mobile stat cycler — shown above headline on mobile only -->
+  <div class="hero-stat-mobile" id="heroStatMobile">
+    <div class="sc-num" id="scNumMobile"></div>
+    <div class="sc-label" id="scLabelMobile"></div>
+    <div class="sc-source" id="scSourceMobile"></div>
+    <div class="sc-dots">
+      <span class="sc-dot active" id="mob-dot-0"></span>
+      <span class="sc-dot" id="mob-dot-1"></span>
+      <span class="sc-dot" id="mob-dot-2"></span>
+      <span class="sc-dot" id="mob-dot-3"></span>
+    </div>
+  </div>
+
   <div class="hero-inner">
 
     <div class="hero-left">
       <p class="eyebrow">Chicago Car Buying Service</p>
-      <h1 class="hero-hed">Car dealers want you to <em>spend more money.</em> We want you to save it.</h1>
+      <h1 class="hero-hed">Car dealers want you to <em>spend more.</em> We want you to save it.</h1>
       <p class="hero-subhed">Finally, someone on your side.</p>
       <p class="hero-body">Dealerships invest thousands every year training their teams to maximize what you pay. GetSorted levels the playing field with real market data, expert negotiation, and someone who knows exactly how the game is played.</p>
       <div class="hero-ctas">
@@ -755,62 +781,6 @@
 
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 
-  function countUp(target, prefix, suffix, done) {
-    var start  = null;
-    var digits = target.toString().length;
-    var from   = Math.pow(10, digits - 1);
-    function step(ts) {
-      if (!start) start = ts;
-      var p   = Math.min((ts - start) / COUNT_DUR, 1);
-      var val = Math.floor(from + easeOut(p) * (target - from));
-      numEl.textContent = prefix + val.toLocaleString() + suffix;
-      if (p < 1) { requestAnimationFrame(step); }
-      else { numEl.textContent = prefix + target.toLocaleString() + suffix; if (done) done(); }
-    }
-    requestAnimationFrame(step);
-  }
-
-  function setDot(i) {
-    dots.forEach(function(d, idx) { d.classList.toggle('active', idx === i); });
-  }
-
-  function showStat(i) {
-    var s = stats[i];
-    setDot(i);
-    numEl.style.opacity    = '0';
-    labelEl.style.opacity  = '0';
-    sourceEl.style.opacity = '0';
-    numEl.textContent      = s.prefix + '0' + s.suffix;
-    labelEl.textContent    = s.label;
-    sourceEl.textContent   = s.source;
-
-    requestAnimationFrame(function() {
-      numEl.style.transition    = 'opacity ' + FADE_IN + 'ms ease';
-      labelEl.style.transition  = 'opacity ' + FADE_IN + 'ms ease';
-      sourceEl.style.transition = 'opacity ' + FADE_IN + 'ms ease';
-      numEl.style.opacity = '1';
-
-      setTimeout(function() {
-        countUp(s.val, s.prefix, s.suffix, function() {
-          labelEl.style.opacity  = '1';
-          sourceEl.style.opacity = '1';
-          setTimeout(function() {
-            numEl.style.transition    = 'opacity ' + FADE_OUT + 'ms ease';
-            labelEl.style.transition  = 'opacity ' + FADE_OUT + 'ms ease';
-            sourceEl.style.transition = 'opacity ' + FADE_OUT + 'ms ease';
-            numEl.style.opacity    = '0';
-            labelEl.style.opacity  = '0';
-            sourceEl.style.opacity = '0';
-            setTimeout(function() {
-              current = (i + 1) % stats.length;
-              showStat(current);
-            }, FADE_OUT + 80);
-          }, HOLD);
-        });
-      }, FADE_IN + 100);
-    });
-  }
-
   // Contact form — AJAX submit, stay on page
   var contactForm = document.getElementById('contactForm');
   var cfSuccess   = document.getElementById('cfSuccess');
@@ -827,6 +797,103 @@
           contactForm.style.display = 'none';
           cfSuccess.style.display   = 'block';
         });
+    });
+  }
+
+  // ── Stat cycler — drives both desktop and mobile simultaneously ──
+  function fadeSet(el, opacity, dur) {
+    if (!el) return;
+    el.style.transition = 'opacity ' + dur + 'ms ease';
+    el.style.opacity = String(opacity);
+  }
+
+  function countUpEl(el, target, prefix, suffix, done) {
+    if (!el) { if (done) done(); return; }
+    var start  = null;
+    var digits = target.toString().length;
+    var from   = Math.pow(10, digits - 1);
+    function step(ts) {
+      if (!start) start = ts;
+      var p   = Math.min((ts - start) / COUNT_DUR, 1);
+      var val = Math.floor(from + easeOut(p) * (target - from));
+      el.textContent = prefix + val.toLocaleString() + suffix;
+      if (p < 1) { requestAnimationFrame(step); }
+      else { el.textContent = prefix + target.toLocaleString() + suffix; if (done) done(); }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function setDots(dotList, i) {
+    dotList.forEach(function(d, idx) { if (d) d.classList.toggle('active', idx === i); });
+  }
+
+  // Desktop elements
+  var numEl    = document.getElementById('scNum');
+  var labelEl  = document.getElementById('scLabel');
+  var sourceEl = document.getElementById('scSource');
+  var dots     = Array.from(document.querySelectorAll('#scDots .sc-dot'));
+
+  // Mobile elements
+  var numElM    = document.getElementById('scNumMobile');
+  var labelElM  = document.getElementById('scLabelMobile');
+  var sourceElM = document.getElementById('scSourceMobile');
+  var dotsM     = ['mob-dot-0','mob-dot-1','mob-dot-2','mob-dot-3']
+                    .map(function(id){ return document.getElementById(id); });
+
+  var allEls = [numEl, labelEl, sourceEl, numElM, labelElM, sourceElM];
+
+  function showStat(i) {
+    var s = stats[i];
+    setDots(dots,  i);
+    setDots(dotsM, i);
+
+    allEls.forEach(function(el) { if (el) el.style.opacity = '0'; });
+    if (numEl)    numEl.textContent    = s.prefix + '0' + s.suffix;
+    if (labelEl)  labelEl.textContent  = s.label;
+    if (sourceEl) sourceEl.textContent = s.source;
+    if (numElM)   numElM.textContent   = s.prefix + '0' + s.suffix;
+    if (labelElM) labelElM.textContent = s.label;
+    if (sourceElM)sourceElM.textContent= s.source;
+
+    requestAnimationFrame(function() {
+      fadeSet(numEl,  1, FADE_IN);
+      fadeSet(numElM, 1, FADE_IN);
+
+      setTimeout(function() {
+        var dDone = false, mDone = false;
+        function check() {
+          if (!dDone || !mDone) return;
+          fadeSet(labelEl,  1, FADE_IN); fadeSet(sourceEl,  1, FADE_IN);
+          fadeSet(labelElM, 1, FADE_IN); fadeSet(sourceElM, 1, FADE_IN);
+          setTimeout(function() {
+            allEls.forEach(function(el) { fadeSet(el, 0, FADE_OUT); });
+            setTimeout(function() {
+              current = (i + 1) % stats.length;
+              showStat(current);
+            }, FADE_OUT + 80);
+          }, HOLD);
+        }
+        countUpEl(numEl,  s.val, s.prefix, s.suffix, function(){ dDone=true; check(); });
+        countUpEl(numElM, s.val, s.prefix, s.suffix, function(){ mDone=true; check(); });
+      }, FADE_IN + 100);
+    });
+  }
+
+  // ── Hamburger ──────────────────────────────────────────
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      var isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+    mobileNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
