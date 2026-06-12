@@ -940,3 +940,30 @@ a{text-decoration:none}
 @media(max-width:600px){
   .cf-row{grid-template-columns:1fr}
 }
+
+/* ── Form success state ── */
+.cf-success{
+  display:none;
+  padding:40px 32px;
+  text-align:center;
+}
+.cf-success-icon{
+  font-size:48px;
+  color:var(--orange);
+  margin-bottom:16px;
+  line-height:1;
+}
+.cf-success-title{
+  font-family:var(--impact);
+  font-size:36px;
+  color:#fff;
+  letter-spacing:.3px;
+  margin-bottom:12px;
+}
+.cf-success-body{
+  font-size:15px;
+  color:rgba(255,255,255,.7);
+  line-height:1.6;
+  max-width:320px;
+  margin:0 auto;
+}
