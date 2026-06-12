@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
 
@@ -481,7 +481,7 @@
       <div class="cal-label">Free · 15 Minutes · No Pitch</div>
       <div class="cal-title">Let's talk about your deal.</div>
       <div class="cal-sub">Tell us a little about your situation and we'll be in touch to set up a time that works for you.</div>
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
         <input type="hidden" name="form-name" value="contact">
         <input type="hidden" name="bot-field" style="display:none">
         <div class="cf-row">
@@ -493,6 +493,11 @@
         <button class="cf-submit" type="submit">Send My Info</button>
         <p class="cf-fine">No spam. No sales pitch. Just a straight conversation about your deal.</p>
       </form>
+      <div class="cf-success" id="cfSuccess">
+        <div class="cf-success-icon">✓</div>
+        <div class="cf-success-title">We got it. Talk soon.</div>
+        <div class="cf-success-body">We'll be in touch within one business day to set up a time that works for you.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -625,6 +630,25 @@
           }, HOLD);
         });
       }, FADE_IN + 100);
+    });
+  }
+
+  // Contact form — AJAX submit, stay on page
+  var contactForm = document.getElementById('contactForm');
+  var cfSuccess   = document.getElementById('cfSuccess');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var data = new FormData(contactForm);
+      fetch('/', { method: 'POST', body: data })
+        .then(function() {
+          contactForm.style.display = 'none';
+          cfSuccess.style.display   = 'block';
+        })
+        .catch(function() {
+          contactForm.style.display = 'none';
+          cfSuccess.style.display   = 'block';
+        });
     });
   }
 
