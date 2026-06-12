@@ -80,7 +80,7 @@ a{text-decoration:none}
 ============================================================ */
 #site-header{
   position:sticky;top:0;z-index:200;
-  background:var(--navy);height:68px;
+  background:var(--navy);
   display:flex;flex-direction:column;
   border-bottom:1px solid rgba(255,255,255,.06);
 }
