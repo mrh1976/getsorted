@@ -95,7 +95,7 @@ a{text-decoration:none}
 }
 .header-logo{display:flex;align-items:center}
 .header-logo img{height:50px;width:auto;display:block}
-.footer-logo-wrap img{height:40px;width:auto;display:block}
+.footer-logo-wrap img{height:22px;width:auto;display:block}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{
   font-family:var(--semi);font-weight:600;
@@ -119,15 +119,15 @@ a{text-decoration:none}
 }
 .footer-main{
   max-width:var(--max);margin:0 auto;
-  padding:64px var(--pad) 48px;
+  padding:40px var(--pad) 32px;
   display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;
 }
-.footer-logo-wrap{margin-bottom:18px}
-.footer-logo-wrap img{height:30px;width:auto}
-.footer-tagline{font-size:14px;color:var(--gray);line-height:1.65;max-width:240px;margin-bottom:20px}
+.footer-logo-wrap{margin-bottom:12px}
+.footer-logo-wrap img{height:22px;width:auto}
+.footer-tagline{font-size:13px;color:var(--gray);line-height:1.6;max-width:240px;margin-bottom:14px}
 .footer-contact a,.footer-col a{
   display:block;font-size:13px;color:var(--gray);
-  margin-bottom:9px;line-height:1.4;transition:color .2s;
+  margin-bottom:7px;line-height:1.4;transition:color .2s;
 }
 .footer-contact a:hover,.footer-col a:hover{color:var(--orange)}
 .footer-col-label{
@@ -968,6 +968,7 @@ a{text-decoration:none}
   max-width:320px;
   margin:0 auto;
 }
+
 /* ============================================================
    MOBILE RESPONSIVE — new sections
 ============================================================ */
@@ -985,32 +986,52 @@ a{text-decoration:none}
 
 /* Mobile 600px additions */
 @media(max-width:600px){
+
+  /* Header */
   #site-header{ height:56px }
   .header-logo img{ height:32px !important }
   .header-nav{ gap:16px }
+
+  /* Hero */
   .hero-hed{ font-size:clamp(38px,11vw,56px) !important; line-height:.95 }
   .hero-subhed{ font-size:clamp(20px,6vw,28px) }
   .hero-body{ font-size:14px }
   .hero-left{ padding:40px 0 32px }
+
+  /* Money grid single col */
   .money-grid{ grid-template-columns:1fr }
   .money-total{ padding:24px 20px }
   .money-total-val{ font-size:clamp(28px,8vw,42px) }
+
+  /* Narrative */
   .narrative-band{ padding:60px 0 }
   .narrative-hed{ font-size:clamp(32px,9vw,48px) }
   .narrative-body{ font-size:15px }
+
+  /* Carmax */
   .carmax-band{ padding:60px 0 }
   .carmax-hed{ font-size:clamp(24px,7vw,36px) }
   .carmax-body{ font-size:15px }
+
+  /* Services */
   .svc-grid-3{ grid-template-columns:1fr }
   .svc{ padding:32px 24px }
   .svc-launch{ padding:20px 20px }
   .svc-launch-inner{ flex-direction:column; gap:10px }
+
+  /* About */
   .cred-list{ gap:16px }
   .cred{ padding:16px }
+
+  /* Contact form */
   .cf-row{ grid-template-columns:1fr }
   .cta-close-hed{ font-size:clamp(40px,11vw,60px) }
+
+  /* Footer */
   .footer-contact{ flex-direction:column; gap:8px }
   .footer-tagline{ font-size:13px }
+
+  /* Sections general */
   .sec-hed{ font-size:clamp(28px,8vw,42px) }
   .sec-intro{ font-size:15px }
 }
