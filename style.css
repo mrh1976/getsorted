@@ -94,7 +94,7 @@ a{text-decoration:none}
   display:flex;align-items:center;justify-content:space-between;
 }
 .header-logo{display:flex;align-items:center}
-.header-logo img{width:180px;height:auto;display:block}
+.header-logo img{width:150px;height:auto;display:block}
 .footer-logo-wrap img{width:120px;height:auto;display:block}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{
@@ -581,7 +581,7 @@ a{text-decoration:none}
   :root{--pad:32px}
 
   /* Header */
-  .header-nav a:not(.btn-primary){display:none}
+  .header-nav a:not(.hamburger){ display:none }
 
   /* Hero */
   .hero-inner{grid-template-columns:1fr}
