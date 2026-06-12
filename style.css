@@ -95,7 +95,7 @@ a{text-decoration:none}
 }
 .header-logo{display:flex;align-items:center}
 .header-logo img{height:50px;width:auto;display:block}
-.footer-logo-wrap img{height:22px;width:auto;display:block}
+.footer-logo-wrap img{height:48px;width:auto;display:block}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{
   font-family:var(--semi);font-weight:600;
@@ -123,7 +123,7 @@ a{text-decoration:none}
   display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;
 }
 .footer-logo-wrap{margin-bottom:12px}
-.footer-logo-wrap img{height:22px;width:auto}
+.footer-logo-wrap img{height:48px;width:auto}
 .footer-tagline{font-size:13px;color:var(--gray);line-height:1.6;max-width:240px;margin-bottom:14px}
 .footer-contact a,.footer-col a{
   display:block;font-size:13px;color:var(--gray);
