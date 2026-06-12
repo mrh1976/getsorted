@@ -1044,22 +1044,23 @@ a{text-decoration:none}
   .money-card{ padding:24px 20px }
 }
 
+/* Hamburger hidden on desktop */
+.hamburger{ display:none }
+
 /* ============================================================
    HAMBURGER MENU
 ============================================================ */
 .hamburger{
-  display:none;
   flex-direction:column;justify-content:center;align-items:center;
-  gap:5px;width:40px;height:40px;
+  gap:5px;width:44px;height:44px;
   background:none;border:none;cursor:pointer;padding:4px;
   flex-shrink:0;
 }
 .hamburger span{
-  display:block;width:24px;height:2px;
+  display:block;width:26px;height:2px;
   background:var(--white);border-radius:2px;
   transition:transform .3s ease, opacity .3s ease;
 }
-/* Animate to X when open */
 .hamburger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg) }
 .hamburger.open span:nth-child(2){ opacity:0 }
 .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg) }
@@ -1069,20 +1070,21 @@ a{text-decoration:none}
   flex-direction:column;
   background:var(--navy-mid);
   border-top:1px solid rgba(255,255,255,.08);
-  overflow:hidden;
   max-height:0;
+  overflow:hidden;
   transition:max-height .35s ease;
 }
 .mobile-nav.open{
-  max-height:400px;
+  max-height:500px;
 }
 .mobile-nav-link{
   font-family:'Barlow Semi Condensed',sans-serif;
   font-weight:600;font-size:15px;
   letter-spacing:.5px;text-transform:uppercase;
   color:var(--gray);text-decoration:none;
-  padding:16px var(--pad);
+  padding:18px var(--pad);
   border-bottom:1px solid rgba(255,255,255,.06);
+  display:block;
   transition:color .2s, background .2s;
 }
 .mobile-nav-link:hover{ color:var(--white); background:rgba(255,255,255,.04) }
@@ -1127,8 +1129,8 @@ a{text-decoration:none}
 }
 
 @media(max-width:960px){
-  .header-nav{ display:none }
-  .hamburger{ display:flex; margin-left:auto }
+  .header-nav{ display:none !important }
+  .hamburger{ display:flex !important }
   .mobile-nav{ display:flex }
   .hero-stat-mobile{ display:block }
   .hero-right{ display:none !important }
