@@ -206,12 +206,12 @@
       <a href="#contact" class="btn btn-primary">Book a Free Call</a>
     </nav>
     <!-- Hamburger — mobile only -->
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" onclick="var n=document.getElementById('mobileNav');var open=n.style.maxHeight&&n.style.maxHeight!='0px';n.style.maxHeight=open?'0px':'400px';n.style.visibility=open?'hidden':'visible';this.classList.toggle('open',!open);">
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" onclick="var n=document.getElementById('mobileNav');var isOpen=n.style.display==='flex';n.style.display=isOpen?'none':'flex';this.classList.toggle('open',!isOpen);">
       <span></span><span></span><span></span>
     </button>
   </div>
   <!-- Mobile nav drawer -->
-  <div class="mobile-nav" id="mobileNav" style="display:flex;flex-direction:column;max-height:0;overflow:hidden;visibility:hidden;transition:max-height .35s ease;background:#142d52;">
+  <div class="mobile-nav" id="mobileNav" style="display:none;flex-direction:column;background:#142d52;position:relative;z-index:1001;width:100%;">
     <a href="#how" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link" style="padding:18px 32px;color:#8a9ab0;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);display:block;">How It Works</a>
     <a href="#services" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link" style="padding:18px 32px;color:#8a9ab0;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);display:block;">Services</a>
     <a href="#guide" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link" style="padding:18px 32px;color:#8a9ab0;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);display:block;">Free Guide</a>
@@ -244,7 +244,7 @@
 
     <div class="hero-left">
       <p class="eyebrow">Chicago Car Buying Service</p>
-      <h1 class="hero-hed">Car dealers want you to <em>spend more.</em> We want you to save it.</h1>
+      <h1 class="hero-hed">Car dealers want you to <em>spend more money.</em> We want you to save it.</h1>
       <p class="hero-subhed">Finally, someone on your side.</p>
       <p class="hero-body">Dealerships invest thousands every year training their teams to maximize what you pay. GetSorted levels the playing field with real market data, expert negotiation, and someone who knows exactly how the game is played.</p>
       <div class="hero-ctas">
