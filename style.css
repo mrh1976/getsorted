@@ -1108,7 +1108,6 @@ a{text-decoration:none}
   opacity:0;
   white-space:nowrap;
 }
-.hero-stat-mobile .sc-label{
   font-family:Impact,sans-serif;
   font-size:clamp(18px,5vw,24px);
   color:var(--white);
@@ -1128,12 +1127,11 @@ a{text-decoration:none}
 }
 
 @media(max-width:960px){
-  .hamburger{ display:flex }
+  .header-nav{ display:none }
+  .hamburger{ display:flex; margin-left:auto }
   .mobile-nav{ display:flex }
   .hero-stat-mobile{ display:block }
-  /* Hide desktop right column stat on mobile */
   .hero-right{ display:none !important }
-  /* Hero goes single column */
   .hero-inner{
     grid-template-columns:1fr;
     height:auto;
@@ -1141,4 +1139,15 @@ a{text-decoration:none}
     align-items:start;
   }
   .hero-left{ padding:24px 0 48px }
+}
+
+.hero-stat-mobile .sc-num{
+  font-family:Impact,sans-serif;
+  font-size:clamp(120px,28vw,180px);
+  color:#E8640C;
+  line-height:.88;
+  letter-spacing:-2px;
+  margin-bottom:16px;
+  opacity:0;
+  white-space:nowrap;
 }
