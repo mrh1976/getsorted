@@ -906,3 +906,36 @@ a{text-decoration:none}
   .money-total{ flex-direction:column; gap:16px }
   .svc-grid-3{ grid-template-columns:1fr }
 }
+
+/* ── Contact form ── */
+.contact-form{
+  display:flex;flex-direction:column;gap:10px;
+}
+.cf-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.cf-input{
+  width:100%;padding:13px 16px;border:none;
+  background:rgba(255,255,255,.12);
+  color:#fff;font-family:var(--body);font-size:14px;
+  outline:none;transition:background .2s;
+}
+.cf-input::placeholder{color:rgba(255,255,255,.45)}
+.cf-input:focus{background:rgba(255,255,255,.2)}
+.cf-textarea{height:90px;resize:vertical}
+.cf-submit{
+  background:#fff;color:var(--orange);
+  font-family:var(--semi);font-weight:700;
+  font-size:14px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:15px 24px;border:none;cursor:pointer;
+  transition:transform .15s,box-shadow .15s;
+  margin-top:4px;
+}
+.cf-submit:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.cf-fine{
+  font-size:11px;color:rgba(255,255,255,.45);
+  margin-top:4px;line-height:1.5;
+}
+@media(max-width:600px){
+  .cf-row{grid-template-columns:1fr}
+}
