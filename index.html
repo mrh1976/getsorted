@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
 
     <div class="hero-left">
       <p class="eyebrow">Chicago Car Buying Service</p>
-      <h1 class="hero-hed">Car dealers want you to <em>spend more money.</em> We want you to save it.</h1>
+      <h1 class="hero-hed">Car dealers want you to <em>spend more.</em> We want you to save it.</h1>
       <p class="hero-subhed">Finally, someone on your side.</p>
       <p class="hero-body">Dealerships invest thousands every year training their teams to maximize what you pay. GetSorted levels the playing field with real market data, expert negotiation, and someone who knows exactly how the game is played.</p>
       <div class="hero-ctas">
@@ -382,10 +382,12 @@
       <p class="eyebrow">Free guide</p>
       <h2 class="lead-hed">The 7 Ways a Dealership<br>Makes Money on Your Deal.</h2>
       <p class="lead-body">No solutions. No tool lists. Just the cold reality of every profit center in a car deal from the moment you walk in to the moment you drive out. Most buyers know one or two. You'll know all seven.</p>
-      <div class="lead-form">
-        <input class="lead-input" type="email" placeholder="Your email address">
-        <button class="lead-submit">Send Me the Guide</button>
-      </div>
+      <form class="lead-form" name="guide" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="guide">
+        <input type="hidden" name="bot-field" style="display:none">
+        <input class="lead-input" type="email" name="email" placeholder="Your email address" required>
+        <button class="lead-submit" type="submit">Send Me the Guide</button>
+      </form>
       <p class="lead-fine">No spam. One email with your guide. That's it.</p>
     </div>
     <div style="display:flex;align-items:center;justify-content:center">
@@ -479,14 +481,16 @@
       <div class="cal-label">Free · 15 Minutes · No Pitch</div>
       <div class="cal-title">Let's talk about your deal.</div>
       <div class="cal-sub">Tell us a little about your situation and we'll be in touch to set up a time that works for you.</div>
-      <form class="contact-form" onsubmit="return false;">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="bot-field" style="display:none">
         <div class="cf-row">
-          <input class="cf-input" type="text" placeholder="Your name">
-          <input class="cf-input" type="email" placeholder="Email address">
+          <input class="cf-input" type="text" name="name" placeholder="Your name" required>
+          <input class="cf-input" type="email" name="email" placeholder="Email address" required>
         </div>
-        <input class="cf-input" type="text" placeholder="What are you buying or looking at?">
-        <textarea class="cf-input cf-textarea" placeholder="Any other details about your situation (optional)"></textarea>
-        <button class="cf-submit">Send My Info</button>
+        <input class="cf-input" type="text" name="vehicle" placeholder="What are you buying or looking at?">
+        <textarea class="cf-input cf-textarea" name="message" placeholder="Any other details about your situation (optional)"></textarea>
+        <button class="cf-submit" type="submit">Send My Info</button>
         <p class="cf-fine">No spam. No sales pitch. Just a straight conversation about your deal.</p>
       </form>
     </div>
@@ -505,7 +509,7 @@
       </div>
       <p class="footer-tagline">Chicago's car buying service. We level the playing field so you never leave money on the table.</p>
       <div class="footer-contact">
-        <a href="mailto:hello@getsorted.autos">hello@getsorted.autos</a>
+        <a href="mailto:getsortedautos@gmail.com">getsortedautos@gmail.com</a>
         <a href="#">Chicago, IL</a>
       </div>
     </div>
