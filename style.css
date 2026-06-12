@@ -94,8 +94,8 @@ a{text-decoration:none}
   display:flex;align-items:center;justify-content:space-between;
 }
 .header-logo{display:flex;align-items:center}
-.header-logo img{height:50px;width:auto;display:block}
-.footer-logo-wrap img{height:80px;width:auto;display:block;margin-left:-8px}
+.header-logo img{width:150px;height:auto;display:block}
+.footer-logo-wrap img{width:120px;height:auto;display:block}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{
   font-family:var(--semi);font-weight:600;
@@ -123,7 +123,7 @@ a{text-decoration:none}
   display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;
 }
 .footer-logo-wrap{margin-bottom:4px}
-.footer-logo-wrap img{height:80px;width:auto;margin-left:-8px}
+.footer-logo-wrap img{width:120px;height:auto}
 .footer-tagline{font-size:13px;color:var(--gray);line-height:1.6;max-width:240px;margin-bottom:14px;margin-top:0}
 .footer-contact a,.footer-col a{
   display:block;font-size:13px;color:var(--gray);
@@ -981,7 +981,7 @@ a{text-decoration:none}
   .money-total{ flex-direction:column; gap:16px; text-align:center }
   .svc-grid-3{ grid-template-columns:1fr }
   .svc-grid-3 .svc{ max-width:100% }
-  .header-logo img{ height:40px !important }
+  .header-logo img{ width:120px !important; height:auto !important }
 }
 
 /* Mobile 600px additions */
@@ -989,7 +989,7 @@ a{text-decoration:none}
 
   /* Header */
   #site-header{ height:56px }
-  .header-logo img{ height:32px !important }
+  .header-logo img{ width:100px !important; height:auto !important }
   .header-nav{ gap:16px }
 
   /* Hero */
