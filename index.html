@@ -214,12 +214,12 @@
 
   <!-- Mobile nav drawer -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#how" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link" style="padding:18px 32px;color:#8a9ab0;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);display:block;">How It Works</a>
-    <a href="#services" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link" style="padding:18px 32px;color:#8a9ab0;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);display:block;">Services</a>
-    <a href="#guide" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link" style="padding:18px 32px;color:#8a9ab0;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);display:block;">Free Guide</a>
-    <a href="#about" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link" style="padding:18px 32px;color:#8a9ab0;font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06);display:block;">About</a>
-    <a href="#contact" onclick="document.getElementById('mobileNav').style.maxHeight='0px';document.getElementById('mobileNav').style.visibility='hidden';document.getElementById('hamburger').classList.remove('open');" class="mobile-nav-link mobile-nav-cta" style="padding:18px 32px;color:#E8640C;font-family:'Barlow Semi Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:.5px;text-transform:uppercase;text-decoration:none;display:block;">Book a Free Call</a>
-  </div>
+  <a href="#how" class="mobile-nav-link">How It Works</a>
+  <a href="#services" class="mobile-nav-link">Services</a>
+  <a href="#guide" class="mobile-nav-link">Free Guide</a>
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#contact" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
+</div>
 
 <!-- ═══════════════════════════════════
      HERO — DO NOT EDIT
@@ -891,14 +891,15 @@
       mobileNav.style.maxHeight = isOpen ? '500px' : '0px';
       mobileNav.style.visibility = isOpen ? 'visible' : 'hidden';
 
-    });
-    mobileNav.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
-    });
+   mobileNav.querySelectorAll('a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileNav.style.maxHeight = '0px';
+    mobileNav.style.visibility = 'hidden';
+  });
+});
   }
 
   window.addEventListener('load', function() {
