@@ -639,3 +639,10 @@ a{text-decoration:none}
 @media(prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important}
 }
+#how,
+#services,
+#guide,
+#about,
+#contact{
+  scroll-margin-top:90px;
+}
