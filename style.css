@@ -129,16 +129,17 @@ a{text-decoration:none}
   max-height:0;
   overflow:hidden;
   transition:max-height .35s ease;
-  /* Hidden on desktop */
+
   visibility:hidden;
-   pointer-events:none;
-    position:fixed;
-    width:100%;
-    z-index:999;
-    top:68px;
-    left:0;
+  pointer-events:none;
+
+  position:fixed;
+  width:100%;
+  z-index:999;
+  top:68px;
+  left:0;
 }
-}
+
 .mobile-nav.open{
   max-height:500px;
   visibility:visible;
