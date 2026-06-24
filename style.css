@@ -834,16 +834,14 @@ a{text-decoration:none}
 }
 .blog-preview-card {
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0;
   background: var(--off);
-  border-radius: 16px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
 }
 .blog-preview-img {
-  height: 100%;
-  min-height: 280px;
+  aspect-ratio: 1200 / 800;
   background: var(--navy);
   overflow: hidden;
 }
@@ -897,9 +895,5 @@ a{text-decoration:none}
 @media(max-width:760px){
   .blog-preview-card{
     grid-template-columns: 1fr;
-  }
-  .blog-preview-img{
-    height: 200px;
-    min-height: 0;
   }
 }
