@@ -174,7 +174,7 @@ a{text-decoration:none}
 .footer-bottom{
   max-width:var(--max);margin:0 auto;padding:18px var(--pad);
   border-top:1px solid rgba(255,255,255,.07);
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
 }
 .footer-legal{font-size:12px;color:rgba(138,154,176,.6)}
 .footer-legal a{color:rgba(138,154,176,.6);margin-left:16px;transition:color .2s}
