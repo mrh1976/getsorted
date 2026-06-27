@@ -90,7 +90,7 @@ a{text-decoration:none}
   display:flex;align-items:center;justify-content:space-between;
 }
 .header-logo{display:flex;align-items:center}
-.header-logo img{width:200px;height:auto;display:block}
+.header-logo img{width:220px;height:auto;display:block}
 .header-nav{display:flex;align-items:center;gap:28px}
 .header-nav a{
   font-family:var(--semi);font-weight:600;
