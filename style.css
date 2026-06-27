@@ -124,15 +124,14 @@ a{text-decoration:none}
   display:flex;
   flex-direction:column;
   background:var(--navy-mid);
-  border-top:1px solid rgba(255,255,255,.08);
   max-height:0;
   overflow:hidden;
   transition:max-height .35s ease;
-  /* Hidden on desktop */
   visibility:hidden;
   pointer-events:none;
 }
 .mobile-nav.open{
+  border-top:1px solid rgba(255,255,255,.08);
   max-height:500px;
   visibility:visible;
   pointer-events:auto;
