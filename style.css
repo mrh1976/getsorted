@@ -275,10 +275,10 @@ a{text-decoration:none}
 .sal-bubble{
   position:relative;
   width:100%;
-  max-width:300px;
+  max-width:340px;
 }
 .bubble-img{
-  width:100%;
+  width:120%;
   height:auto;
   display:block;
 }
