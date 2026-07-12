@@ -207,9 +207,9 @@ a{text-decoration:none}
   max-width:var(--max);margin:0 auto;
   padding:40px var(--pad) 0;
   display:grid;
-  grid-template-columns:0.7fr 320px 280px;
+  grid-template-columns:1fr 320px 280px;
   gap:0;
-  height:calc(100vh - 68px);grid-template-columns:1fr 320px 280px;
+  height:calc(100vh - 68px);min-height:600px;max-height:900px;
   position:relative;z-index:2;
   align-items:center;
 }
@@ -255,7 +255,6 @@ a{text-decoration:none}
   padding-top:20px;
   padding-left:60px;
 }
-}
 .sal-hero-img{
   width:500px;
   height:auto;
@@ -269,7 +268,7 @@ a{text-decoration:none}
   align-items:flex-start;
   justify-content:flex-start;
   padding:0 0 0 8px;
-  margin-top:-500px;
+  margin-top:-160px;
 }
 .sal-bubble{
   position:relative;
