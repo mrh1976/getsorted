@@ -257,6 +257,7 @@ a{text-decoration:none}
 }
 .sal-hero-img{
   width:500px;
+  max-width:none;
   height:auto;
   display:block;
 }
@@ -268,7 +269,8 @@ a{text-decoration:none}
   align-items:flex-start;
   justify-content:flex-start;
   padding:0 0 0 8px;
-  margin-top:-160px;
+  align-self:flex-start;
+  margin-top:60px;
 }
 .sal-bubble{
   position:relative;
