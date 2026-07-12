@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=22">
+  <link rel="stylesheet" href="style.css?v=23">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -104,6 +104,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
+
+  <!-- Mobile stat strip — hidden on desktop, shown on tablet/mobile -->
   <div class="hero-stat-mobile" id="heroStatMobile">
     <div class="sc-num" id="scNumMobile"></div>
     <div class="sc-label" id="scLabelMobile"></div>
@@ -115,7 +117,11 @@
       <span class="sc-dot" id="mob-dot-3"></span>
     </div>
   </div>
+
+  <!-- Desktop 3-column hero -->
   <div class="hero-inner">
+
+    <!-- Left: headline copy -->
     <div class="hero-left">
       <p class="eyebrow">Chicago Car Buying Service</p>
       <h1 class="hero-hed">Car dealers want you to <em>spend more money.</em> We want you to save it.</h1>
@@ -126,19 +132,25 @@
         <a href="#guide" class="btn btn-secondary">Get the Free Guide</a>
       </div>
     </div>
-    <div class="hero-right" style="display:flex;align-items:center;justify-content:center;padding:60px 0 60px 32px;">
-      <div class="stat-cycler" id="statCycler">
-        <div class="sc-num" id="scNum"></div>
-        <div class="sc-label" id="scLabel"></div>
-        <div class="sc-source" id="scSource"></div>
-        <div class="sc-dots" id="scDots">
-          <span class="sc-dot active"></span>
-          <span class="sc-dot"></span>
-          <span class="sc-dot"></span>
-          <span class="sc-dot"></span>
+
+    <!-- Center: Sal standing -->
+    <div class="hero-sal-wrap">
+      <img src="images/salhome.png" alt="Sal, GetSorted's car buying expert" class="sal-hero-img">
+    </div>
+
+    <!-- Right: speech bubble with stat -->
+    <div class="hero-bubble-wrap">
+      <div class="sal-bubble">
+        <img src="images/speechbubble.png" alt="" class="bubble-img" aria-hidden="true">
+        <div class="bubble-content">
+          <div class="bubble-stat-num">87%</div>
+          <div class="bubble-stat-label">of Americans dislike the car buying process</div>
+          <div class="bubble-tagline">I see why.<br>Let me show you how to beat it.<br><em>— Sal</em></div>
         </div>
       </div>
+      <div class="bubble-footer-tag">Facts don't lie. Dealers do.</div>
     </div>
+
   </div>
 </section>
 
@@ -213,7 +225,7 @@
         <div class="money-num">06</div>
         <div class="money-title">The Financing Rate</div>
         <div class="money-body">When you finance through the dealership, the lender gives the dealer a buy rate, which is the lowest rate your credit qualifies for. The dealer is permitted to mark that rate up and keep the difference. You are almost never told the buy rate. On a $40,000 loan over 60 months, one percentage point costs you approximately $1,000. Knowing your rate before you walk in changes the entire conversation in the finance office.</div>
-        <div class="money-saving"><div class="money-saving-label">Typical savings opportunity</div><div class="money-saving-val">$500 – $2,000</div></div>
+        <div class="money-saving"><div class="money-saving-label">Typical savings opportunity</div><div class="money-saving-val">$500 – 2,000</div></div>
       </div>
     </div>
     <div class="money-total">
@@ -404,8 +416,7 @@
     <p class="eyebrow">From the blog</p>
     <h2 class="sec-hed">Everything dealers<br>hope you never read.</h2>
     <div class="home-blog-grid">
-
-            <a href="https://getsorted.autos/blog/dealer-finance-office-markup" class="post-card">
+      <a href="https://getsorted.autos/blog/dealer-finance-office-markup" class="post-card">
         <div class="post-card-img">
           <img src="/blog/images/Finance_Office_Blog.png" alt="What Happens in the Finance Office Should Be Illegal">
           <span class="post-card-tag">Dealership Tactics</span>
@@ -413,12 +424,10 @@
         <div class="post-card-body">
           <div class="post-card-date">July 1, 2026 · 10 min read</div>
           <h3 class="post-card-title">What Happens in the Finance Office Should Be Illegal. Here's What They're Doing to You.</h3>
-          <p class="post-card-excerpt">The finance manager marked up your loan, sold you a warranty at triple cost, and owed you zero legal obligation to tellt he truth.  Here is exactly how it works.</p>
+          <p class="post-card-excerpt">The finance manager marked up your loan, sold you a warranty at triple cost, and owed you zero legal obligation to tell the truth. Here is exactly how it works.</p>
           <span class="post-card-read">Read the full story →</span>
         </div>
       </a>
-      
-      
       <a href="https://getsorted.autos/blog/car-dealer-four-square-worksheet-trick" class="post-card">
         <div class="post-card-img">
           <img src="/blog/images/4squareworksheet.png" alt="Marked-up four square worksheet from a real car deal">
@@ -431,8 +440,7 @@
           <span class="post-card-read">Read the full story →</span>
         </div>
       </a>
-      <!-- Next post goes here as a second .post-card -->
-      <!-- Third post goes here as a third .post-card -->
+      <!-- Next post goes here as a third .post-card -->
     </div>
     <div style="text-align:center;margin-top:48px">
       <a href="/blog/" class="btn btn-secondary">Visit the Blog</a>
@@ -440,7 +448,6 @@
   </div>
 </section>
 
-  
 <!-- TESTIMONIALS -->
 <section class="testi section">
   <div class="wrap">
@@ -563,7 +570,7 @@
       <a href="#services">Trade-In Strategy</a>
       <a href="#services">Lease-End Decisions</a>
     </div>
- </div>
+  </div>
   <div class="footer-bottom">
     <div class="footer-legal">
       © 2026 GetSorted · Chicago, IL
@@ -637,45 +644,36 @@
     dotList.forEach(function(d, idx) { if (d) d.classList.toggle('active', idx === i); });
   }
 
-  var numEl    = document.getElementById('scNum');
-  var labelEl  = document.getElementById('scLabel');
-  var sourceEl = document.getElementById('scSource');
-  var dots     = Array.from(document.querySelectorAll('#scDots .sc-dot'));
+  // Mobile elements only — desktop now uses static bubble
   var numElM   = document.getElementById('scNumMobile');
   var labelElM = document.getElementById('scLabelMobile');
   var sourceElM= document.getElementById('scSourceMobile');
   var dotsM    = ['mob-dot-0','mob-dot-1','mob-dot-2','mob-dot-3'].map(function(id){ return document.getElementById(id); });
-  var allEls   = [numEl, labelEl, sourceEl, numElM, labelElM, sourceElM];
+  var mobileEls = [numElM, labelElM, sourceElM];
 
   function showStat(i) {
     var s = stats[i];
-    setDots(dots, i);
     setDots(dotsM, i);
-    allEls.forEach(function(el) { if (el) el.style.opacity = '0'; });
-    if (numEl)    numEl.textContent     = s.prefix + '0' + s.suffix;
-    if (labelEl)  labelEl.textContent   = s.label;
-    if (sourceEl) sourceEl.textContent  = s.source;
+    mobileEls.forEach(function(el) { if (el) el.style.opacity = '0'; });
     if (numElM)   numElM.textContent    = s.prefix + '0' + s.suffix;
     if (labelElM) labelElM.textContent  = s.label;
     if (sourceElM)sourceElM.textContent = s.source;
     requestAnimationFrame(function() {
-      fadeSet(numEl, 1, FADE_IN);
       fadeSet(numElM, 1, FADE_IN);
       setTimeout(function() {
-        var dDone = false, mDone = false;
+        var mDone = false;
         function check() {
-          if (!dDone || !mDone) return;
-          fadeSet(labelEl, 1, FADE_IN); fadeSet(sourceEl, 1, FADE_IN);
-          fadeSet(labelElM, 1, FADE_IN); fadeSet(sourceElM, 1, FADE_IN);
+          if (!mDone) return;
+          fadeSet(labelElM, 1, FADE_IN);
+          fadeSet(sourceElM, 1, FADE_IN);
           setTimeout(function() {
-            allEls.forEach(function(el) { fadeSet(el, 0, FADE_OUT); });
+            mobileEls.forEach(function(el) { fadeSet(el, 0, FADE_OUT); });
             setTimeout(function() {
               current = (i + 1) % stats.length;
               showStat(current);
             }, FADE_OUT + 80);
           }, HOLD);
         }
-        countUpEl(numEl,  s.val, s.prefix, s.suffix, function(){ dDone = true; check(); });
         countUpEl(numElM, s.val, s.prefix, s.suffix, function(){ mDone = true; check(); });
       }, FADE_IN + 100);
     });
