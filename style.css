@@ -266,7 +266,8 @@ a{text-decoration:none}
   flex-direction:column;
   align-items:flex-start;
   justify-content:flex-start;
-  padding:40px 0 0 8px;
+  padding:0 0 0 8px;
+  margin-top:-160px;
 }
 .sal-bubble{
   position:relative;
