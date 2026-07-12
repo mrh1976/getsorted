@@ -251,8 +251,8 @@ a{text-decoration:none}
   overflow:visible;
   z-index:3;
   position:relative;
-  align-self:flex-end;
-  margin-top:-80px;
+  align-self:flex-start;
+  padding-top:20px;
 }
 .sal-hero-img{
   width:340px;
@@ -277,13 +277,12 @@ a{text-decoration:none}
   width:100%;
   height:auto;
   display:block;
-  transform:scaleX(-1);
 }
 .bubble-content{
   position:absolute;
   top:9%;
-  left:5%;
-  right:15%;
+  left:15%;
+  right:5%;
   bottom:14%;
   display:flex;
   flex-direction:column;
@@ -291,7 +290,6 @@ a{text-decoration:none}
   align-items:center;
   text-align:center;
   padding:10px 12px;
-  transform:scaleX(-1);
 }
 .bubble-stat-num{
   font-family:var(--impact);
