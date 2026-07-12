@@ -299,7 +299,7 @@ max-width:none;
 }
 .bubble-stat-num{
   font-family:var(--impact);
-  font-size:6rem;
+  font-size:7rem;
   color:var(--orange);
   line-height:1;
   margin-bottom:6px;
@@ -308,7 +308,7 @@ max-width:none;
 .bubble-stat-label{
   font-family:var(--semi);
   font-weight:700;
-  font-size:1.3rem;
+  font-size:2rem;
   color:var(--navy);
   line-height:1;
   margin-bottom:10px;
@@ -322,7 +322,7 @@ max-width:none;
   flex-shrink:0;
 }
 .bubble-tagline{
-  font-size:1.75rem;
+  font-size:2rem;
   font-family:'Caveat',cursive;
   font-weight:500;
   color:var(--navy);
