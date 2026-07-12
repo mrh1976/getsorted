@@ -207,11 +207,11 @@ a{text-decoration:none}
   max-width:var(--max);margin:0 auto;
   padding:40px var(--pad) 0;
   display:grid;
-  grid-template-columns:1fr 210px 270px;
+  grid-template-columns:1fr 240px 280px;
   gap:0;
   height:calc(100vh - 68px);min-height:600px;max-height:900px;
   position:relative;z-index:2;
-  align-items:flex-end;
+  align-items:center;
 }
 
 /* ── Hero left: text column ── */
@@ -245,18 +245,18 @@ a{text-decoration:none}
 
 /* ── Sal image column ── */
 .hero-sal-wrap{
-  height:100%;
   display:flex;
   align-items:flex-end;
   justify-content:center;
   overflow:visible;
   z-index:3;
   position:relative;
+  align-self:flex-end;
 }
 .sal-hero-img{
-  height:88%;
-  width:auto;
-  max-width:none;
+  width:220px;
+  height:auto;
+  max-height:680px;
   display:block;
   object-fit:contain;
   object-position:bottom center;
@@ -269,7 +269,6 @@ a{text-decoration:none}
   align-items:flex-start;
   justify-content:center;
   padding:40px 0 80px 8px;
-  height:100%;
 }
 .sal-bubble{
   position:relative;
