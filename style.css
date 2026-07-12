@@ -270,7 +270,7 @@ a{text-decoration:none}
   justify-content:flex-start;
   padding:0 0 0 8px;
   align-self:flex-start;
-  margin-top:20px;
+  margin-top:60px;
 }
 .sal-bubble{
   position:relative;
@@ -295,35 +295,51 @@ a{text-decoration:none}
   text-align:center;
   padding:16px 12px 10px;
 }
-
 .bubble-stat-num{
+  font-family:var(--impact);
   font-size:4.5rem;
   color:var(--orange);
   line-height:1;
-  margin-bottom:8px;
+  margin-bottom:6px;
   letter-spacing:-.5px;
-  font-family:var(--impact);
 }
-
 .bubble-stat-label{
   font-family:var(--semi);
   font-weight:700;
   font-size:.95rem;
   color:var(--navy);
   line-height:1.35;
-  margin-bottom:12px;
+  margin-bottom:10px;
+}
+.bubble-rule{
+  width:55%;
+  height:3px;
+  background:var(--orange);
+  border-radius:2px;
+  margin:0 auto 14px;
+  flex-shrink:0;
 }
 .bubble-tagline{
-  font-family:var(--body);
-  font-size:.72rem;
-  color:#555;
-  line-height:1.5;
-  font-style:italic;
-  border-top:1px solid #e0e0e0;
-  padding-top:10px;
+  font-family:'Caveat',cursive;
+  font-size:1.25rem;
+  font-weight:500;
+  color:var(--navy);
+  line-height:1.6;
+  font-style:normal;
+  border-top:none;
+  padding-top:0;
   width:100%;
+  text-align:center;
 }
-
+.bubble-tagline em{
+  color:var(--orange);
+  font-style:italic;
+  font-weight:700;
+  font-size:1.35rem;
+  display:block;
+  margin-top:4px;
+}
+.bubble-footer-tag{display:none;}
 
 /* ── Mobile cycling stat (keep for mobile fallback) ── */
 .hero-stat-mobile{display:none;text-align:center;padding:48px var(--pad) 8px;min-height:200px;}
