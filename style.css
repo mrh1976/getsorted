@@ -290,23 +290,25 @@ a{text-decoration:none}
   bottom:14%;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   align-items:center;
   text-align:center;
-  padding:10px 12px;
+  padding:16px 12px 10px;
 }
+
 .bubble-stat-num{
-  font-family:var(--impact);
-  font-size:3rem;
+  font-size:4.5rem;
   color:var(--orange);
   line-height:1;
   margin-bottom:8px;
   letter-spacing:-.5px;
+  font-family:var(--impact);
 }
+
 .bubble-stat-label{
   font-family:var(--semi);
   font-weight:700;
-  font-size:.78rem;
+  font-size:.95rem;
   color:var(--navy);
   line-height:1.35;
   margin-bottom:12px;
@@ -321,16 +323,7 @@ a{text-decoration:none}
   padding-top:10px;
   width:100%;
 }
-.bubble-footer-tag{
-  font-family:var(--semi);
-  font-weight:700;
-  font-size:.65rem;
-  color:rgba(255,255,255,.4);
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  margin-top:10px;
-  padding-left:2px;
-}
+
 
 /* ── Mobile cycling stat (keep for mobile fallback) ── */
 .hero-stat-mobile{display:none;text-align:center;padding:48px var(--pad) 8px;min-height:200px;}
