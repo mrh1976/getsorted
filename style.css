@@ -308,7 +308,7 @@ max-width:none;
 .bubble-stat-label{
   font-family:var(--semi);
   font-weight:700;
-  font-size:2rem;
+  font-size:1.5rem;
   color:var(--navy);
   line-height:1;
   margin-bottom:10px;
