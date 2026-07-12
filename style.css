@@ -1,5 +1,5 @@
 /* ============================================================
-   GETSORTED.AUTOS — Main Stylesheet
+   GETSORTED.AUTOS — Main Stylesheet  v23
    Fonts: Impact (headlines) · Barlow Semi Condensed (UI/eyebrow) · Barlow (body)
    Colors: --navy / --orange / --white / --gray
    Max site width: 1140px via --max
@@ -201,16 +201,26 @@ a{text-decoration:none}
     radial-gradient(ellipse 45% 60% at 25% 50%,rgba(30,61,110,.5) 0%,transparent 60%),
     radial-gradient(ellipse 28% 38% at 12% 88%,rgba(232,100,12,.07) 0%,transparent 55%);
 }
+
+/* ── Hero inner: 3-column layout ── */
 .hero-inner{
   max-width:var(--max);margin:0 auto;
   padding:40px var(--pad) 0;
-  display:grid;grid-template-columns:1fr 1fr;
+  display:grid;
+  grid-template-columns:1fr 210px 270px;
+  gap:0;
   height:calc(100vh - 68px);min-height:600px;max-height:900px;
-  position:relative;z-index:2;align-items:center;
+  position:relative;z-index:2;
+  align-items:flex-end;
 }
+
+/* ── Hero left: text column ── */
 .hero-left{
-  padding:0 40px 0 0;
-  display:flex;flex-direction:column;justify-content:center;overflow:hidden;
+  padding:0 32px 0 0;
+  display:flex;flex-direction:column;
+  justify-content:center;
+  align-self:center;
+  overflow:hidden;
 }
 .hero-hed{
   font-family:var(--impact);
@@ -233,37 +243,95 @@ a{text-decoration:none}
 .stat-num em{color:var(--orange);font-style:normal}
 .stat-label{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;max-width:120px}
 
-/* ── Desktop cycling stat ── */
-.hero-right{
-  display:flex !important;align-items:center;justify-content:center;
-  padding:0 0 0 32px;overflow:visible;
+/* ── Sal image column ── */
+.hero-sal-wrap{
+  height:100%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:visible;
+  z-index:3;
+  position:relative;
 }
-.stat-cycler{
-  width:100%;max-width:480px;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:0;
+.sal-hero-img{
+  height:88%;
+  width:auto;
+  max-width:none;
+  display:block;
+  object-fit:contain;
+  object-position:bottom center;
 }
-.sc-num{
-  font-family:var(--impact);font-size:clamp(120px,14vw,200px);
-  color:#E8640C;line-height:.88;letter-spacing:-3px;
-  margin-bottom:24px;opacity:0;white-space:nowrap;
-  display:block;width:100%;text-align:center;
-}
-.sc-label{
-  font-family:var(--impact);font-size:clamp(22px,2.4vw,32px);
-  color:var(--white);line-height:1.15;letter-spacing:.3px;
-  max-width:380px;margin:0 auto 10px;opacity:0;text-align:center;
-}
-.sc-source{
-  font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;
-  font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--gray);opacity:0;margin-bottom:20px;text-align:center;
-}
-.sc-dots{display:flex;gap:10px;justify-content:center;margin:0;padding:0;}
-.sc-dot{width:8px;height:8px;border-radius:50%;background:var(--gray);transition:background .3s,transform .3s;}
-.sc-dot.active{background:var(--orange);transform:scale(1.5);}
 
-/* ── Mobile hero stat strip ── */
+/* ── Speech bubble column ── */
+.hero-bubble-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  padding:40px 0 80px 8px;
+  height:100%;
+}
+.sal-bubble{
+  position:relative;
+  width:100%;
+  max-width:260px;
+}
+.bubble-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.bubble-content{
+  position:absolute;
+  top:9%;
+  left:15%;
+  right:5%;
+  bottom:14%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:10px 12px;
+}
+.bubble-stat-num{
+  font-family:var(--impact);
+  font-size:3rem;
+  color:var(--orange);
+  line-height:1;
+  margin-bottom:8px;
+  letter-spacing:-.5px;
+}
+.bubble-stat-label{
+  font-family:var(--semi);
+  font-weight:700;
+  font-size:.78rem;
+  color:var(--navy);
+  line-height:1.35;
+  margin-bottom:12px;
+}
+.bubble-tagline{
+  font-family:var(--body);
+  font-size:.72rem;
+  color:#555;
+  line-height:1.5;
+  font-style:italic;
+  border-top:1px solid #e0e0e0;
+  padding-top:10px;
+  width:100%;
+}
+.bubble-footer-tag{
+  font-family:var(--semi);
+  font-weight:700;
+  font-size:.65rem;
+  color:rgba(255,255,255,.4);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin-top:10px;
+  padding-left:2px;
+}
+
+/* ── Mobile cycling stat (keep for mobile fallback) ── */
 .hero-stat-mobile{display:none;text-align:center;padding:48px var(--pad) 8px;min-height:200px;}
 .hero-stat-mobile .sc-num{
   font-family:Impact,sans-serif;
@@ -282,6 +350,8 @@ a{text-decoration:none}
   color:var(--gray);opacity:0;margin-bottom:20px;
 }
 .hero-stat-mobile .sc-dots{display:flex;gap:8px;justify-content:center;}
+.sc-dot{width:8px;height:8px;border-radius:50%;background:var(--gray);transition:background .3s,transform .3s;}
+.sc-dot.active{background:var(--orange);transform:scale(1.5);}
 
 /* ============================================================
    PROOF BAND
@@ -544,9 +614,15 @@ a{text-decoration:none}
   .header-nav{display:none !important}
   .hamburger{display:flex !important}
   .hero-stat-mobile{display:block}
-  .hero-right{display:none !important}
-  .hero-inner{grid-template-columns:1fr;height:auto;min-height:auto;align-items:start;}
-  .hero-left{padding:24px 0 48px}
+  /* Hide Sal and bubble on tablet/mobile */
+  .hero-sal-wrap,
+  .hero-bubble-wrap{display:none !important}
+  .hero-inner{
+    grid-template-columns:1fr;
+    height:auto;min-height:auto;
+    align-items:start;
+  }
+  .hero-left{padding:24px 0 48px;align-self:auto;}
   .section{padding:72px 0}
   .section-sm{padding:56px 0}
   .dealer-cards,.hide-grid,.svc-grid,.t-grid{grid-template-columns:1fr}
