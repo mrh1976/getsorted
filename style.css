@@ -209,7 +209,7 @@ a{text-decoration:none}
   display:grid;
   grid-template-columns:0.7fr 320px 280px;
   gap:0;
-  height:calc(100vh - 68px);min-height:600px;max-height:900px;
+  height:calc(100vh - 68px);grid-template-columns:1fr 320px 280px;
   position:relative;z-index:2;
   align-items:center;
 }
@@ -253,6 +253,8 @@ a{text-decoration:none}
   position:relative;
   align-self:flex-start;
   padding-top:20px;
+  padding-left:60px;
+}
 }
 .sal-hero-img{
   width:340px;
