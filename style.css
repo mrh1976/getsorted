@@ -207,7 +207,7 @@ a{text-decoration:none}
   max-width:var(--max);margin:0 auto;
   padding:40px var(--pad) 0;
   display:grid;
-  grid-template-columns:1fr 240px 280px;
+  grid-template-columns:1fr 320px 280px;
   gap:0;
   height:calc(100vh - 68px);min-height:600px;max-height:900px;
   position:relative;z-index:2;
@@ -252,14 +252,12 @@ a{text-decoration:none}
   z-index:3;
   position:relative;
   align-self:flex-end;
+  margin-top:-80px;
 }
 .sal-hero-img{
-  width:220px;
+  width:340px;
   height:auto;
-  max-height:680px;
   display:block;
-  object-fit:contain;
-  object-position:bottom center;
 }
 
 /* ── Speech bubble column ── */
@@ -273,18 +271,19 @@ a{text-decoration:none}
 .sal-bubble{
   position:relative;
   width:100%;
-  max-width:260px;
+  max-width:300px;
 }
 .bubble-img{
   width:100%;
   height:auto;
   display:block;
+  transform:scaleX(-1);
 }
 .bubble-content{
   position:absolute;
   top:9%;
-  left:15%;
-  right:5%;
+  left:5%;
+  right:15%;
   bottom:14%;
   display:flex;
   flex-direction:column;
@@ -292,6 +291,7 @@ a{text-decoration:none}
   align-items:center;
   text-align:center;
   padding:10px 12px;
+  transform:scaleX(-1);
 }
 .bubble-stat-num{
   font-family:var(--impact);
