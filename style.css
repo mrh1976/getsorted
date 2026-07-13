@@ -574,7 +574,7 @@ a{text-decoration:none}
 /* ── Contact form ── */
 .contact-form{display:flex;flex-direction:column;gap:10px;}
 .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.cf-input{width:100%;padding:13px 16px;border:none;background:rgba(255,255,255,.40);color:#fff;font-family:var(--body);font-size:14px;outline:none;transition:background .2s;}
+.cf-input{width:100%;padding:13px 16px;border:none;background:rgba(255,255,255,.50);color:#fff;font-family:var(--body);font-size:14px;outline:none;transition:background .2s;}
 .cf-input::placeholder{color:rgba(255,255,255,.45)}
 .cf-input:focus{background:rgba(255,255,255,.2)}
 .cf-textarea{height:90px;resize:vertical}
