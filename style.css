@@ -647,7 +647,7 @@ a{text-decoration:none}
     align-items:center;
     justify-content:center;
     width:100%;
-    padding:32px var(--pad) 0;
+    padding:10px var(--pad) 0;
     margin-top:0;
     align-self:auto;
   }
@@ -669,6 +669,7 @@ a{text-decoration:none}
     z-index:5;
     align-self:auto;
     overflow:visible;
+    margin-top:-180px;
   }
 
   /* Mobile bubble */
@@ -691,11 +692,11 @@ a{text-decoration:none}
     justify-content:center;
     padding:12px;
   }
-  .bubble-stat-num{font-size:2.8rem;}
+  .bubble-stat-num{font-size:4.5rem;}
   .bubble-stat-label{font-size:.85rem;line-height:1;margin-bottom:0;}
 
   /* Mobile Sal */
-  .sal-hero-img{width:260px;max-width:none;}
+  .sal-hero-img{width:360px;max-width:none;}
 
   /* Rest of page */
   .section{padding:72px 0}
@@ -730,11 +731,11 @@ a{text-decoration:none}
   .hero-hed{font-size:clamp(32px,9vw,48px) !important;line-height:.95}
   .hero-subhed{font-size:clamp(18px,5vw,24px)}
   .hero-body{font-size:14px}
-  .hero-left{padding:28px var(--pad) 40px;}
+  .hero-left{padding:28px var(--pad) 40px;margin-top:-180px;}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
-  .sal-hero-img{width:200px;}
-  .bubble-stat-num{font-size:2.8rem;}
+  .sal-hero-img{width:280px;}
+  .bubble-stat-num{font-size:4rem;}
   .bubble-stat-label{font-size:.85rem;line-height:1;}
   .sit-grid{grid-template-columns:1fr}
   .scard{padding:32px 24px}
