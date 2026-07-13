@@ -745,10 +745,10 @@ a{text-decoration:none}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
   .sal-hero-img{width:340px;max-width:none;}
-  .bubble-mobile{width:280px;}
+  .bubble-mobile{width:340px;}
   /* Keep the container in sync with the smaller bubble image at
      this breakpoint too, same reasoning as the 960px rule above. */
-  .sal-bubble{max-width:280px;}
+  .sal-bubble{max-width:340px;}
   .bubble-stat-num{font-size:4rem;}
   .bubble-stat-label{font-size:1rem;line-height:1;}
   .sit-grid{grid-template-columns:1fr}
