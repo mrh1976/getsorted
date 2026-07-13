@@ -721,7 +721,7 @@ a{text-decoration:none}
   .hero-sal-wrap{margin-top:0;}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
-  .sal-mobile-img{width:620px;max-width:none;}
+  .sal-mobile-img{width:800px;max-width:none;}
   .sit-grid{grid-template-columns:1fr}
   .scard{padding:32px 24px}
   .steps{grid-template-columns:1fr}
