@@ -211,12 +211,11 @@
    gets appended to the end of <body> when opened, not nested in the
    form at all). Not scoped under .xfo-giveaway-form on purpose since
    the injected list lives outside that container. */
-.sib-sms-select,
-.sib-sms-select__trigger,
-.sib-sms-select__button,
-.sib-sms-select__flag,
-.sib-sms-select__list,
-.sib-sms-select-trigger{
+/* Only .sib-sms-select__list is confirmed to actually exist (seen directly
+   in DevTools). The other guessed class names got removed here since one
+   of them (.sib-sms-select) turned out to be the wrapper around the real
+   input too, which hid the whole phone field, not just the flag. */
+.sib-sms-select__list{
   display:none !important;
 }
 .xfo-giveaway-form .sib-form-block{padding:5px 0 !important}
