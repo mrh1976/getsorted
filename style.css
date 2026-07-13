@@ -683,6 +683,13 @@ a{text-decoration:none}
   height:auto;
   transform:none;
 }
+.bubble-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.bubble-mobile{display:none;}
+   
   .bubble-tagline,.bubble-rule{display:none;}
   .bubble-content{
     top:8%;
