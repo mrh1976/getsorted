@@ -12,15 +12,11 @@
   background:var(--navy);
   position:relative;
   overflow:hidden;
-  padding:64px 0 0;
+  padding:56px 0 0;
 }
 .xfo-hero-glow{
   position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 50% 60% at 75% 30%,rgba(232,100,12,.10) 0%,transparent 60%);
-}
-.xfo-hero-top{
-  max-width:var(--max);margin:0 auto;padding:56px var(--pad) 40px;
-  position:relative;z-index:2;
 }
 .xfo-partner-badge{
   display:inline-flex;align-items:center;gap:12px;
@@ -36,25 +32,24 @@
 }
 .xfo-hero-hed{
   font-family:var(--impact);
-  font-size:clamp(38px,5.5vw,72px);
+  font-size:clamp(34px,4.5vw,60px);
   line-height:.95;letter-spacing:-.5px;
-  color:var(--white);margin-bottom:16px;
-  max-width:760px;
+  color:var(--white);margin-bottom:14px;
 }
 .xfo-hero-hed em{font-style:normal;color:var(--orange)}
 .xfo-hero-sub{
-  font-size:16px;line-height:1.65;color:var(--gray);
-  max-width:480px;
+  font-size:15px;line-height:1.6;color:var(--gray);
+  margin-bottom:24px;
 }
 
 .xfo-hero-inner{
   max-width:var(--max);margin:0 auto;padding:0 var(--pad) 0;
-  display:grid;grid-template-columns:1fr 560px;gap:24px;
-  align-items:end;
+  display:grid;grid-template-columns:1fr 480px;gap:24px;
+  align-items:start;
   position:relative;z-index:2;
   overflow:visible;
 }
-.xfo-hero-left{display:flex;flex-direction:column;gap:2px;max-width:360px}
+.xfo-hero-left{display:flex;flex-direction:column;gap:2px;max-width:400px;padding-top:8px}
 
 /* ── Compact hero form card ── */
 .xfo-hero-form-card{
@@ -89,11 +84,11 @@
   letter-spacing:.2px;text-align:right;
 }
 
-/* ── Sal, pointing (placeholder art until pointing pose exists) ── */
+/* ── Sal, pointing at the belt ── */
 .xfo-hero-sal-wrap{
-  display:flex;align-items:flex-end;justify-content:center;
+  display:flex;align-items:flex-start;justify-content:center;
 }
-.xfo-hero-sal-img{width:100%;max-width:560px;height:auto;display:block;margin-bottom:-4px}
+.xfo-hero-sal-img{width:100%;max-width:480px;height:auto;display:block}
 
 /* ============================================================
    ABOUT / PRIZE SPLIT
@@ -228,7 +223,7 @@
 .xfo-giveaway-form input.input::placeholder{color:var(--gray) !important}
 .xfo-giveaway-form .entry__specification{display:none !important}
 .xfo-giveaway-form .sib-sms-input-wrapper{display:flex;gap:6px}
-.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{display:none}
+.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{display:none !important}
 .xfo-giveaway-form .sib-sms-input-wrapper .entry__field:last-child{flex:1}
 .xfo-giveaway-form .sib-form-block{padding:5px 0 !important}
 .xfo-giveaway-form .sib-form-block__button{
@@ -254,7 +249,7 @@
   .xfo-split-inner{grid-template-columns:1fr}
 }
 @media(max-width:600px){
-  .xfo-hero-top{padding-top:40px}
+  .xfo-hero{padding-top:40px}
   .xfo-hero-hed{font-size:clamp(32px,9vw,48px)}
   .xfo-hero-left{max-width:100%}
   .xfo-split-card{padding:36px 28px}
