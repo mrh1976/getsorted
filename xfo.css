@@ -49,17 +49,18 @@
 
 .xfo-hero-inner{
   max-width:var(--max);margin:0 auto;padding:0 var(--pad) 0;
-  display:grid;grid-template-columns:1fr 380px;gap:40px;
+  display:grid;grid-template-columns:1fr 560px;gap:24px;
   align-items:end;
   position:relative;z-index:2;
+  overflow:visible;
 }
-.xfo-hero-left{display:flex;flex-direction:column;gap:2px;max-width:400px}
+.xfo-hero-left{display:flex;flex-direction:column;gap:2px;max-width:360px}
 
 /* ── Compact hero form card ── */
 .xfo-hero-form-card{
   background:#fff;
   border-radius:4px 4px 0 0;
-  padding:22px 24px;
+  padding:18px 20px;
   box-shadow:0 24px 60px rgba(0,0,0,.35);
 }
 .xfo-hero-form-fine{
@@ -92,7 +93,7 @@
 .xfo-hero-sal-wrap{
   display:flex;align-items:flex-end;justify-content:center;
 }
-.xfo-hero-sal-img{width:100%;max-width:340px;height:auto;display:block}
+.xfo-hero-sal-img{width:100%;max-width:560px;height:auto;display:block;margin-bottom:-4px}
 
 /* ============================================================
    ABOUT / PRIZE SPLIT
@@ -227,7 +228,7 @@
 .xfo-giveaway-form input.input::placeholder{color:var(--gray) !important}
 .xfo-giveaway-form .entry__specification{display:none !important}
 .xfo-giveaway-form .sib-sms-input-wrapper{display:flex;gap:6px}
-.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{flex:0 0 78px}
+.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{display:none}
 .xfo-giveaway-form .sib-sms-input-wrapper .entry__field:last-child{flex:1}
 .xfo-giveaway-form .sib-form-block{padding:5px 0 !important}
 .xfo-giveaway-form .sib-form-block__button{
