@@ -566,7 +566,7 @@ a{text-decoration:none}
 .cta-close-hed{font-family:var(--impact);font-size:clamp(56px,9vw,104px);color:#fff;line-height:.88;letter-spacing:-1px;margin-bottom:20px;}
 .cta-close-body{font-size:17px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:36px;max-width:380px}
 .cta-close-right{padding:0 var(--pad) 0 48px;max-width:calc(var(--max)/2 + var(--pad));}
-.cal-wrap{background:rgba(0,0,0,.12);padding:36px 32px}
+.cal-wrap{background:rgba(0,0,0,.30);padding:36px 32px}
 .cal-label{font-family:var(--semi);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:16px}
 .cal-title{font-family:var(--impact);font-size:30px;color:#fff;margin-bottom:6px;line-height:1.05;letter-spacing:.3px}
 .cal-sub{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:28px;line-height:1.5}
