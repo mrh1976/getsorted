@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GetSorted x XFO Outdoor War | Win a $1,000 Prize Package</title>
+  <meta name="description" content="GetSorted is proud to sponsor XFO Outdoor War. Enter for a chance to win a $1,000 prize package. Drawing August 10, 2026.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css?v=27">
+  <link rel="stylesheet" href="xfo.css?v=1">
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+</head>
+<body>
+
+<!-- HEADER (same as homepage) -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="GetSorted Home">
+      <img src="../images/sorted_logo.png" alt="GetSorted">
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="/#how">How It Works</a>
+      <a href="/#services">Services</a>
+      <a href="/#guide">Free Guide</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+      <a href="/#contact" class="btn btn-primary">Book a Free Call</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="/#how" class="mobile-nav-link">How It Works</a>
+  <a href="/#services" class="mobile-nav-link">Services</a>
+  <a href="/#guide" class="mobile-nav-link">Free Guide</a>
+  <a href="/blog/" class="mobile-nav-link">Blog</a>
+  <a href="/#about" class="mobile-nav-link">About</a>
+  <a href="/#contact" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
+</div>
+
+<!-- XFO HERO -->
+<section class="xfo-hero">
+  <div class="xfo-hero-glow"></div>
+  <div class="xfo-hero-inner">
+    <div class="xfo-hero-copy">
+      <div class="xfo-partner-badge">
+        <img src="images/xfo-logo.png" alt="XFO Outdoor War">
+        <span>Official Giveaway Partner</span>
+      </div>
+      <h1 class="xfo-hero-hed">Win a <em>$1,000</em> prize package.</h1>
+      <p class="xfo-hero-sub">GetSorted is teaming up with XFO Outdoor War to give one lucky entrant a $1,000 prize package. Entry takes 30 seconds. No purchase necessary.</p>
+      <div class="xfo-hero-meta">
+        <div class="xfo-meta-item">
+          <span class="xfo-meta-label">Event</span>
+          <span class="xfo-meta-value">Sideouts &middot; Island Lake, IL</span>
+        </div>
+        <div class="xfo-meta-item">
+          <span class="xfo-meta-label">Date</span>
+          <span class="xfo-meta-value">August 8, 2026</span>
+        </div>
+        <div class="xfo-meta-item">
+          <span class="xfo-meta-label">Winner Announced</span>
+          <span class="xfo-meta-value">August 10, 2026</span>
+        </div>
+      </div>
+      <a href="#enter" class="btn btn-primary">Enter to Win</a>
+    </div>
+    <div class="xfo-hero-img-wrap">
+      <img src="images/salxfo.png" alt="Sal, GetSorted's car buying expert, geared up for XFO Outdoor War" class="xfo-hero-img">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT XFO / ABOUT THE PRIZE -->
+<section class="xfo-split">
+  <div class="xfo-split-inner">
+    <div class="xfo-split-card">
+      <div class="xfo-split-tag">What Is XFO Outdoor War</div>
+      <h2 class="xfo-split-title">Chicagoland's outdoor action event.</h2>
+      <p class="xfo-split-body">
+        [Placeholder — replace with real copy about XFO Outdoor War: what the event is, who it's for, and why it's worth attending. Two to three sentences works well here.]
+      </p>
+      <span class="xfo-placeholder-note">Needs real copy</span>
+    </div>
+    <div class="xfo-split-card orange">
+      <div class="xfo-split-tag">What You Could Win</div>
+      <h2 class="xfo-split-title">A $1,000 prize package.</h2>
+      <p class="xfo-split-body">
+        [Placeholder — replace with what's actually inside the $1,000 package: specific items, gear, gift cards, or services. Listing 3–4 concrete things here builds more trust than a single dollar figure.]
+      </p>
+      <span class="xfo-placeholder-note">Needs real copy</span>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION BRIEFING — entry rules -->
+<section class="xfo-briefing-section">
+  <div class="wrap">
+    <div class="xfo-briefing-head">
+      <p class="xfo-briefing-eyebrow">The Fine Print</p>
+      <h2 class="xfo-briefing-hed">How the winner gets picked.</h2>
+    </div>
+    <div class="xfo-briefing-card">
+      <div class="xfo-briefing-stamp">Read Before Entering</div>
+      <div class="xfo-briefing-item">
+        <span class="xfo-briefing-num">01</span>
+        <p class="xfo-briefing-text"><strong>One random winner</strong> will be selected on <strong>Monday, August 10, 2026</strong>.</p>
+      </div>
+      <div class="xfo-briefing-item">
+        <span class="xfo-briefing-num">02</span>
+        <p class="xfo-briefing-text">The winner will be contacted by <strong>both email and text message</strong> using the info submitted below.</p>
+      </div>
+      <div class="xfo-briefing-item">
+        <span class="xfo-briefing-num">03</span>
+        <p class="xfo-briefing-text">The winner has <strong>24 hours</strong> to reply and claim the prize.</p>
+      </div>
+      <div class="xfo-briefing-item">
+        <span class="xfo-briefing-num">04</span>
+        <p class="xfo-briefing-text">No reply within 24 hours forfeits the prize, and a <strong>new winner will be drawn</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTER FORM -->
+<section class="xfo-enter-section" id="enter">
+  <div class="xfo-enter-inner">
+    <div>
+      <p class="xfo-enter-eyebrow">Enter Now</p>
+      <h2 class="xfo-enter-hed">Two fields.<br>Thirty seconds.</h2>
+      <p class="xfo-enter-body">Enter your phone number and email below. We'll text and email the winner directly on August 10, no extra steps, no spam.</p>
+    </div>
+
+    <div class="xfo-giveaway-form sib-form">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="error-message" class="sib-form-message-panel" style="font-family:var(--body); font-size:14px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; padding:14px 18px; margin-bottom:16px;">
+          Your entry could not be saved. Please try again.
+        </div>
+        <div id="success-message" class="sib-form-message-panel" style="font-family:var(--body); font-size:14px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; padding:14px 18px; margin-bottom:16px;">
+          You're entered! Good luck.
+        </div>
+
+        <div id="sib-container" class="sib-container--large sib-container--vertical">
+          <form id="sib-form" method="POST" action="https://41220950.sibforms.com/serve/MUIFAFbLW7DvP9PR-oW-pKOcGZ1xQrLacz28ow3KgML0Xsa9fgVgxcq0kQ07J0mvT_KSTa0HEJJcy58i1LCkTjN-7zRTaj6siwwiatcJVURHwPT4zfMxZ80D10xsmkh6Gki_GAgIYwZCrrbittSJuX8PFYqo6_JgeJBcPxwqEu_6BfrxlTuCY1A3w82Mn15POKqlN_C-v2nD1k2ozA==" data-type="subscription">
+
+            <div class="sib-sms-field sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <label class="entry__label" for="SMS" data-required="*">Phone Number</label>
+                  <div class="sib-sms-input-wrapper" style="direction:ltr">
+                    <div class="sib-sms-input" data-placeholder="SMS" data-required="true" data-country-code="US" data-value="" data-attributename="SMS">
+                      <div class="entry__field">
+                        <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
+                          <option value="+1" selected>+1 US</option>
+                        </select>
+                      </div>
+                      <div class="entry__field" style="width:100%">
+                        <input type="tel" class="input" id="SMS" name="SMS" autocomplete="off" placeholder="(312) 555-0100" data-required="true" required />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+                <label class="entry__error entry__error--secondary"></label>
+                <label class="entry__specification">We'll only text you about this giveaway. Msg &amp; data rates may apply. Reply STOP to opt out.</label>
+              </div>
+            </div>
+
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <label class="entry__label" for="EMAIL" data-required="*">Email Address</label>
+                  <div class="entry__field">
+                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="you@email.com" data-required="true" required />
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+            </div>
+
+            <div class="sib-form-block" style="text-align:left">
+              <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                  <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                </svg>
+                ENTER TO WIN
+              </button>
+            </div>
+
+            <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none">
+            <input type="hidden" name="locale" value="en">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (same as homepage) -->
+<footer id="site-footer">
+  <div class="footer-main">
+    <div>
+      <div class="footer-logo-wrap">
+        <img src="../images/sorted_logo.png" alt="GetSorted">
+      </div>
+      <p class="footer-tagline">Chicago's car buying service. We level the playing field so you never leave money on the table.</p>
+      <div class="footer-contact">
+        <a href="mailto:getsortedautos@gmail.com">getsortedautos@gmail.com</a>
+        <a href="tel:+13129457770">(312) 945-7770</a>
+        <a href="#">Chicago, IL</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-label">Services</div>
+      <a href="/#services">Consult $99</a>
+      <a href="/#services">Deal Review $199</a>
+      <a href="/#services">Full Negotiation $899</a>
+      <a href="/#guide">Free Guide</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-label">How It Works</div>
+      <a href="/#how">The Process</a>
+      <a href="/#about">About GetSorted</a>
+      <a href="/#contact">Book a Free Call</a>
+      <a href="/blog/">The Blog</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      &copy; 2026 GetSorted &middot; Chicago, IL
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
+  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+  window.INVALID_NUMBER = "The information provided is invalid. Please review the field format and try again.";
+  window.INVALID_DATE = "Please enter a valid date";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
+  window.translation = {
+    common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected',
+      selectedOption: '{quantity} selected',
+      selectedOptions: '{quantity} selected',
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+
+  // Hamburger
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      var isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileNav.style.maxHeight = isOpen ? '500px' : '0px';
+      mobileNav.style.visibility = isOpen ? 'visible' : 'hidden';
+    });
+    mobileNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        setTimeout(function() {
+          mobileNav.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          mobileNav.style.maxHeight = '0px';
+          mobileNav.style.visibility = 'hidden';
+        }, 150);
+      });
+    });
+  }
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+</body>
+</html>
