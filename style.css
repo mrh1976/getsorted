@@ -670,29 +670,30 @@ a{text-decoration:none}
     margin-top:-280px;
   }
 
-  /* Mobile bubble — full width so text matches desktop scale */
+  /* Mobile bubble */
   .sal-bubble{
-    width:100vw;
-    max-width:100vw;
+    width:90vw;
+    max-width:500px;
     filter:drop-shadow(0 6px 18px rgba(0,0,0,.25));
   }
   .bubble-img{
-    width:100vw;
+    content:url('images/speechbubblemobile.png');
+    width:100%;
     max-width:none;
-    transform:rotate(90deg) scaleX(-1);
-    transform-origin:center center;
+    height:auto;
+    transform:none;
   }
   .bubble-tagline,.bubble-rule{display:none;}
   .bubble-content{
-    top:5%;
-    left:10%;
-    right:5%;
-    bottom:10%;
+    top:8%;
+    left:8%;
+    right:10%;
+    bottom:24%;
     justify-content:center;
     padding:12px;
   }
-  .bubble-stat-num{font-size:7rem;}
-  .bubble-stat-label{font-size:1.5rem;line-height:1;margin-bottom:0;}
+  .bubble-stat-num{font-size:5rem;}
+  .bubble-stat-label{font-size:1.1rem;line-height:1;margin-bottom:0;}
 
   /* Mobile Sal */
   .sal-hero-img{width:480px;max-width:none;}
