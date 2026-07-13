@@ -626,6 +626,7 @@ a{text-decoration:none}
   .header-nav{display:none !important}
   .hamburger{display:flex !important}
 
+  /* ── Hero: stack vertically bubble / Sal / copy ── */
   .hero{padding-bottom:0;min-height:auto;}
   .hero-stat-mobile{display:none;}
   .hero-inner{
@@ -638,6 +639,7 @@ a{text-decoration:none}
     gap:0;
   }
 
+  /* Reorder: bubble top, Sal middle, copy bottom */
   .hero-bubble-wrap{
     order:1;
     display:flex !important;
@@ -670,26 +672,16 @@ a{text-decoration:none}
     margin-top:-280px;
   }
 
-  /* Mobile bubble */
-  .sal-bubble{
-  width:140px;
-  max-width:140px;
-  filter:drop-shadow(0 6px 18px rgba(0,0,0,.25));
-}
-.bubble-img{
-  content:url('images/speechbubblemobile.png');
-  width:140px;
-  max-width:none;
-  height:auto;
-  transform:none;
-}
-.bubble-img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-.bubble-mobile{display:none;}
-   
+  /* Hide desktop bubble, show mobile bubble */
+  .bubble-desktop{display:none;}
+  .bubble-mobile{
+    display:block;
+    width:280px;
+    max-width:none;
+    height:auto;
+    transform:none;
+  }
+
   .bubble-tagline,.bubble-rule{display:none;}
   .bubble-content{
     top:8%;
@@ -705,6 +697,7 @@ a{text-decoration:none}
   /* Mobile Sal */
   .sal-hero-img{width:480px;max-width:none;}
 
+  /* Rest of page */
   .section{padding:72px 0}
   .section-sm{padding:56px 0}
   .dealer-cards,.hide-grid,.svc-grid,.t-grid{grid-template-columns:1fr}
@@ -742,10 +735,9 @@ a{text-decoration:none}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
   .sal-hero-img{width:340px;max-width:none;}
-  .sal-bubble{width:100vw;max-width:100vw;}
-  .bubble-img{width:100vw;max-width:none;}
-  .bubble-stat-num{font-size:6rem;}
-  .bubble-stat-label{font-size:1.3rem;line-height:1;}
+  .bubble-mobile{width:240px;}
+  .bubble-stat-num{font-size:4rem;}
+  .bubble-stat-label{font-size:1rem;line-height:1;}
   .sit-grid{grid-template-columns:1fr}
   .scard{padding:32px 24px}
   .steps{grid-template-columns:1fr}
