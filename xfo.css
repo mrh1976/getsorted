@@ -70,63 +70,22 @@
 .xfo-hero-sal-img{width:100%;max-width:620px;height:auto;display:block}
 
 /* ============================================================
-   ABOUT / PRIZE SPLIT
+   MISSION BRIEFING (rules card) — the signature element, now
+   reused for Event / Prize / Rules, all three stacked. Framed
+   like a briefing dossier: stamped corner tag, dashed seal
+   border. Alternating background keeps three stacked navy
+   sections from blurring into one.
 ============================================================ */
-.xfo-split{background:var(--white)}
-.xfo-split-inner{
-  display:grid;grid-template-columns:1fr 1fr;gap:2px;
-  margin-top:0;
-}
-.xfo-split-card{background:var(--off);padding:48px 44px}
-.xfo-split-card.orange{background:var(--orange);position:relative;overflow:hidden}
-.xfo-split-sal{
-  position:absolute;
-  right:-10px;bottom:-14px;
-  width:150px;height:auto;
-  opacity:.95;
-  pointer-events:none;
-}
-.xfo-split-tag{
-  font-family:var(--semi);font-weight:700;font-size:10px;
-  letter-spacing:2px;text-transform:uppercase;color:var(--orange);
-  margin-bottom:16px;
-}
-.xfo-split-card.orange .xfo-split-tag{color:rgba(255,255,255,.8)}
-.xfo-split-title{
-  font-family:var(--impact);font-size:32px;color:var(--navy);
-  line-height:1.02;margin-bottom:16px;letter-spacing:.2px;
-}
-.xfo-split-card.orange .xfo-split-title{color:#fff}
-.xfo-split-body{font-size:15px;line-height:1.75;color:var(--mid)}
-.xfo-split-card.orange .xfo-split-body{color:rgba(255,255,255,.9)}
-.xfo-placeholder-note{
-  display:inline-block;margin-top:16px;
-  font-family:var(--semi);font-weight:700;font-size:10px;
-  letter-spacing:1px;text-transform:uppercase;
-  color:rgba(11,31,58,.4);
-  border:1px dashed rgba(11,31,58,.25);
-  padding:5px 10px;
-}
-.xfo-split-card.orange .xfo-placeholder-note{
-  color:rgba(255,255,255,.65);
-  border-color:rgba(255,255,255,.4);
-}
-
-/* ============================================================
-   MISSION BRIEFING (rules card) — the signature element.
-   Framed like a briefing dossier: stamped corner tag, dashed
-   seal border, monospace-leaning label type. Ties to the
-   "Outdoor War" theme without going full camo everywhere.
-============================================================ */
-.xfo-briefing-section{background:var(--navy);padding:100px 0}
-.xfo-briefing-head{text-align:center;max-width:600px;margin:0 auto 48px}
+.xfo-briefing-section{background:var(--navy);padding:80px 0}
+.xfo-briefing-section.alt{background:var(--navy-mid)}
+.xfo-briefing-head{text-align:center;max-width:600px;margin:0 auto 40px}
 .xfo-briefing-eyebrow{
   font-family:var(--semi);font-weight:700;font-size:11px;
   letter-spacing:3px;text-transform:uppercase;color:var(--orange);
   margin-bottom:14px;
 }
 .xfo-briefing-hed{
-  font-family:var(--impact);font-size:clamp(32px,4.5vw,52px);
+  font-family:var(--impact);font-size:clamp(30px,4vw,46px);
   color:var(--white);line-height:1;letter-spacing:-.3px;
 }
 .xfo-briefing-card{
@@ -136,6 +95,7 @@
   position:relative;
   padding:44px 40px;
 }
+.xfo-briefing-section.alt .xfo-briefing-card{background:var(--navy)}
 .xfo-briefing-stamp{
   position:absolute;top:-14px;right:32px;
   background:var(--orange);color:#fff;
@@ -146,17 +106,20 @@
 }
 .xfo-briefing-item{
   display:flex;gap:20px;
-  padding:20px 0;
+  padding:18px 0;
   border-top:1px solid rgba(255,255,255,.08);
 }
 .xfo-briefing-item:first-child{border-top:none;padding-top:0}
 .xfo-briefing-num{
-  font-family:var(--impact);font-size:15px;color:var(--orange);
-  letter-spacing:1px;flex-shrink:0;padding-top:2px;
-  min-width:26px;
+  font-family:var(--semi);font-weight:700;font-size:11px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);
+  flex-shrink:0;padding-top:3px;
+  min-width:68px;
 }
 .xfo-briefing-text{font-size:15px;line-height:1.7;color:var(--gray)}
 .xfo-briefing-text strong{color:var(--white)}
+.xfo-briefing-text a{color:var(--orange);text-decoration:underline}
+.xfo-briefing-text a:hover{color:var(--orange-lt)}
 
 /* ============================================================
    BACK-TO-TOP CTA BAND
@@ -235,14 +198,13 @@
   .xfo-hero-inner{grid-template-columns:1fr;padding-bottom:40px}
   .xfo-hero-left{max-width:400px;margin:0 auto}
   .xfo-hero-sal-wrap{order:2;max-width:260px;margin:24px auto 0}
-  .xfo-split-inner{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .xfo-hero{padding-top:40px}
   .xfo-hero-hed{font-size:clamp(32px,9vw,48px)}
   .xfo-hero-left{max-width:100%}
-  .xfo-split-card{padding:36px 28px}
   .xfo-briefing-card{padding:32px 24px}
-  .xfo-briefing-section{padding:64px 0}
+  .xfo-briefing-section{padding:56px 0}
+  .xfo-briefing-item{flex-direction:column;gap:4px}
   .xfo-cta-band{padding:40px 0}
 }
