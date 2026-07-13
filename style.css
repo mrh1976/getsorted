@@ -690,7 +690,7 @@ a{text-decoration:none}
   /* Container must match the mobile bubble image width so the
      percentage-based .bubble-content text box lines up with the
      actual bubble graphic instead of overflowing past its edge. */
-  .sal-bubble{max-width:320px;}
+  .sal-bubble{max-width:380px;}
 
   .bubble-tagline,.bubble-rule{display:none;}
   .bubble-content{
