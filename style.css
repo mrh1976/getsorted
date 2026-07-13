@@ -266,10 +266,6 @@ a{text-decoration:none}
    pointing pose and the speech bubble entirely. */
 .sal-mobile-img{display:none;}
 
-/* Waist stat box — replaces the speech bubble on mobile/tablet.
-   Hidden on desktop by default. */
-.sal-waist-stat{display:none;}
-
 /* ── Speech bubble column ── */
 .hero-bubble-wrap{
   display:flex;
@@ -355,37 +351,6 @@ a{text-decoration:none}
   margin-top:4px;
 }
 .bubble-footer-tag{display:none;}
-
-/* ── Waist stat box (mobile/tablet only) ── */
-.sal-waist-stat{
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  position:absolute;
-  left:50%;
-  top:58%;
-  transform:translateX(-50%);
-  background:var(--white);
-  padding:14px 22px 16px;
-  border-radius:4px;
-  box-shadow:0 10px 28px rgba(0,0,0,.35);
-  width:200px;
-  z-index:4;
-}
-.sal-waist-num{
-  font-family:var(--impact);
-  font-size:2.6rem;
-  color:var(--orange);
-  line-height:1;
-}
-.sal-waist-label{
-  font-family:var(--semi);
-  font-weight:700;
-  font-size:.85rem;
-  color:var(--navy);
-  line-height:1.25;
-  margin-top:4px;
-}
 
 /* ── Mobile cycling stat (keep for mobile fallback) ── */
 .hero-stat-mobile{display:none;text-align:center;padding:48px var(--pad) 8px;min-height:200px;}
@@ -719,9 +684,6 @@ a{text-decoration:none}
     height:auto;
   }
 
-  /* Show the waist stat box in place of the speech bubble */
-  .sal-waist-stat{display:flex;}
-
   /* Rest of page */
   .section{padding:72px 0}
   .section-sm{padding:56px 0}
@@ -760,13 +722,6 @@ a{text-decoration:none}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
   .sal-mobile-img{width:300px;max-width:none;}
-  .sal-waist-stat{
-    width:170px;
-    padding:12px 18px 14px;
-    top:56%;
-  }
-  .sal-waist-num{font-size:2.1rem;}
-  .sal-waist-label{font-size:.75rem;}
   .sit-grid{grid-template-columns:1fr}
   .scard{padding:32px 24px}
   .steps{grid-template-columns:1fr}
