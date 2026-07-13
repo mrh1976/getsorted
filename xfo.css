@@ -18,20 +18,16 @@
   position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 50% 60% at 75% 30%,rgba(232,100,12,.10) 0%,transparent 60%);
 }
-.xfo-hero-inner{
-  max-width:var(--max);margin:0 auto;padding:0 var(--pad);
-  display:grid;grid-template-columns:1fr 420px;gap:56px;
-  align-items:center;
+.xfo-hero-top{
+  max-width:var(--max);margin:0 auto;padding:56px var(--pad) 40px;
   position:relative;z-index:2;
-  padding-top:56px;padding-bottom:56px;
 }
-.xfo-hero-copy{padding-bottom:0}
 .xfo-partner-badge{
   display:inline-flex;align-items:center;gap:12px;
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12);
   padding:8px 16px 8px 8px;
-  margin-bottom:28px;
+  margin-bottom:24px;
 }
 .xfo-partner-badge img{height:28px;width:auto;display:block}
 .xfo-partner-badge span{
@@ -40,46 +36,63 @@
 }
 .xfo-hero-hed{
   font-family:var(--impact);
-  font-size:clamp(38px,5vw,68px);
+  font-size:clamp(38px,5.5vw,72px);
   line-height:.95;letter-spacing:-.5px;
-  color:var(--white);margin-bottom:20px;
+  color:var(--white);margin-bottom:16px;
+  max-width:760px;
 }
 .xfo-hero-hed em{font-style:normal;color:var(--orange)}
 .xfo-hero-sub{
-  font-size:17px;line-height:1.7;color:var(--gray);
-  max-width:460px;margin-bottom:32px;
-}
-.xfo-hero-meta{display:flex;gap:32px;flex-wrap:wrap}
-.xfo-meta-item{display:flex;flex-direction:column}
-.xfo-meta-label{
-  font-family:var(--semi);font-weight:700;font-size:10px;
-  letter-spacing:2px;text-transform:uppercase;color:var(--orange);
-  margin-bottom:4px;
-}
-.xfo-meta-value{
-  font-family:var(--impact);font-size:20px;color:var(--white);
-  letter-spacing:.3px;line-height:1.15;
+  font-size:16px;line-height:1.65;color:var(--gray);
+  max-width:480px;
 }
 
-/* ── Hero form card — the conversion surface ── */
+.xfo-hero-inner{
+  max-width:var(--max);margin:0 auto;padding:0 var(--pad) 0;
+  display:grid;grid-template-columns:1fr 380px;gap:40px;
+  align-items:end;
+  position:relative;z-index:2;
+}
+.xfo-hero-left{display:flex;flex-direction:column;gap:2px;max-width:400px}
+
+/* ── Compact hero form card ── */
 .xfo-hero-form-card{
   background:#fff;
-  border-radius:4px;
-  padding:36px 32px;
+  border-radius:4px 4px 0 0;
+  padding:22px 24px;
   box-shadow:0 24px 60px rgba(0,0,0,.35);
 }
-.xfo-hero-form-tag{
-  font-family:var(--semi);font-weight:700;font-size:11px;
-  letter-spacing:2px;text-transform:uppercase;color:var(--orange);
-  margin-bottom:8px;
+.xfo-hero-form-fine{
+  font-size:10px;line-height:1.5;color:var(--gray);
+  margin-top:10px;
 }
-.xfo-hero-form-title{
-  font-family:var(--impact);font-size:26px;color:var(--navy);
-  line-height:1.05;margin-bottom:8px;letter-spacing:.2px;
+
+/* ── Prize/event details card, stacked directly under the form ── */
+.xfo-hero-meta-card{
+  background:var(--navy-mid);
+  border-radius:0 0 4px 4px;
+  padding:18px 24px;
+  display:flex;flex-direction:column;gap:10px;
 }
-.xfo-hero-form-sub{
-  font-size:13px;line-height:1.55;color:var(--mid);margin-bottom:22px;
+.xfo-hero-meta-row{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:12px;
 }
+.xfo-meta-label{
+  font-family:var(--semi);font-weight:700;font-size:9px;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);
+  flex-shrink:0;
+}
+.xfo-meta-value{
+  font-family:var(--impact);font-size:14px;color:var(--white);
+  letter-spacing:.2px;text-align:right;
+}
+
+/* ── Sal, pointing (placeholder art until pointing pose exists) ── */
+.xfo-hero-sal-wrap{
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.xfo-hero-sal-img{width:100%;max-width:340px;height:auto;display:block}
 
 /* ============================================================
    ABOUT / PRIZE SPLIT
@@ -185,22 +198,22 @@
 .xfo-giveaway-form{max-width:100%}
 .xfo-giveaway-form #sib-form-container{background:transparent}
 .xfo-giveaway-form #sib-container{
-  background:#fff !important;
+  background:transparent !important;
   border:none !important;
-  border-radius:4px !important;
-  box-shadow:0 20px 60px rgba(11,31,58,.12);
+  border-radius:0 !important;
+  box-shadow:none !important;
   max-width:100% !important;
-  padding:40px 36px !important;
+  padding:0 !important;
   text-align:left !important;
   font-family:var(--body) !important;
 }
 .xfo-giveaway-form .sib-form{background:transparent !important}
-.xfo-giveaway-form .form__entry{margin-bottom:16px}
+.xfo-giveaway-form .form__entry{margin-bottom:10px}
 .xfo-giveaway-form .entry__label{
   font-family:var(--semi) !important;font-weight:700 !important;
-  font-size:11px !important;letter-spacing:2px !important;
+  font-size:9px !important;letter-spacing:1.5px !important;
   text-transform:uppercase !important;color:var(--navy) !important;
-  margin-bottom:8px !important;display:block;
+  margin-bottom:5px !important;display:block;
 }
 .xfo-giveaway-form input.input,
 .xfo-giveaway-form select.input{
@@ -208,42 +221,41 @@
   border:1.5px solid var(--gray-lt) !important;
   border-radius:2px !important;
   color:var(--text) !important;
-  font-family:var(--body) !important;font-size:14px !important;
-  padding:13px 16px !important;width:100% !important;outline:none !important;
+  font-family:var(--body) !important;font-size:13px !important;
+  padding:9px 12px !important;width:100% !important;outline:none !important;
 }
 .xfo-giveaway-form input.input::placeholder{color:var(--gray) !important}
-.xfo-giveaway-form .entry__specification{
-  font-size:11px !important;color:var(--gray) !important;
-  margin-top:4px !important;font-family:var(--body) !important;
-}
-.xfo-giveaway-form .sib-sms-input-wrapper{display:flex;gap:8px}
-.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{flex:0 0 90px}
+.xfo-giveaway-form .entry__specification{display:none !important}
+.xfo-giveaway-form .sib-sms-input-wrapper{display:flex;gap:6px}
+.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{flex:0 0 78px}
 .xfo-giveaway-form .sib-sms-input-wrapper .entry__field:last-child{flex:1}
-.xfo-giveaway-form .sib-form-block{padding:8px 0 !important}
+.xfo-giveaway-form .sib-form-block{padding:5px 0 !important}
 .xfo-giveaway-form .sib-form-block__button{
   background:var(--orange) !important;color:#fff !important;
   font-family:var(--semi) !important;font-weight:700 !important;
-  font-size:13px !important;letter-spacing:1.5px !important;
+  font-size:12px !important;letter-spacing:1.2px !important;
   text-transform:uppercase !important;border-radius:2px !important;
-  border:none !important;width:100%;padding:15px 24px !important;
+  border:none !important;width:100%;padding:11px 20px !important;
   cursor:pointer;transition:background .2s,transform .15s;
 }
 .xfo-giveaway-form .sib-form-block__button:hover{
   background:var(--orange-lt) !important;transform:translateY(-1px);
 }
-.xfo-giveaway-form .entry__error{font-size:12px !important}
+.xfo-giveaway-form .entry__error{font-size:11px !important}
 
 /* ============================================================
    RESPONSIVE
 ============================================================ */
 @media(max-width:960px){
-  .xfo-hero-inner{grid-template-columns:1fr;padding-top:40px;padding-bottom:40px}
+  .xfo-hero-inner{grid-template-columns:1fr;padding-bottom:40px}
+  .xfo-hero-left{max-width:400px;margin:0 auto}
+  .xfo-hero-sal-wrap{order:2;max-width:260px;margin:24px auto 0}
   .xfo-split-inner{grid-template-columns:1fr}
-  .xfo-hero-meta{gap:24px}
 }
 @media(max-width:600px){
-  .xfo-hero-hed{font-size:clamp(36px,10vw,52px)}
-  .xfo-hero-form-card{padding:28px 24px}
+  .xfo-hero-top{padding-top:40px}
+  .xfo-hero-hed{font-size:clamp(32px,9vw,48px)}
+  .xfo-hero-left{max-width:100%}
   .xfo-split-card{padding:36px 28px}
   .xfo-briefing-card{padding:32px 24px}
   .xfo-briefing-section{padding:64px 0}
