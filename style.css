@@ -647,7 +647,7 @@ a{text-decoration:none}
     align-items:center;
     justify-content:center;
     width:100%;
-    padding:5px var(--pad) 0;
+    padding:32px var(--pad) 0;
     margin-top:0;
     align-self:auto;
   }
@@ -669,10 +669,9 @@ a{text-decoration:none}
     z-index:5;
     align-self:auto;
     overflow:visible;
-     margin-top:-180px
   }
 
-  /* Mobile bubble — rotated so tail points down toward Sal */
+  /* Mobile bubble */
   .sal-bubble{
     max-width:280px;
     filter:drop-shadow(0 6px 18px rgba(0,0,0,.25));
@@ -691,13 +690,12 @@ a{text-decoration:none}
     bottom:10%;
     justify-content:center;
     padding:12px;
-    transform-origin:center center;
   }
-  .bubble-stat-num{font-size:6rem;}
-  .bubble-stat-label{font-size:1.5rem;line-height:1.2;margin-bottom:0;}
+  .bubble-stat-num{font-size:2.8rem;}
+  .bubble-stat-label{font-size:.85rem;line-height:1;margin-bottom:0;}
 
   /* Mobile Sal */
-  .sal-hero-img{width:360px;max-width:none;}
+  .sal-hero-img{width:260px;max-width:none;}
 
   /* Rest of page */
   .section{padding:72px 0}
@@ -736,8 +734,8 @@ a{text-decoration:none}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
   .sal-hero-img{width:200px;}
-  .bubble-stat-num{font-size:2.2rem;}
-  .bubble-stat-label{font-size:.78rem;}
+  .bubble-stat-num{font-size:2.8rem;}
+  .bubble-stat-label{font-size:.85rem;line-height:1;}
   .sit-grid{grid-template-columns:1fr}
   .scard{padding:32px 24px}
   .steps{grid-template-columns:1fr}
@@ -786,7 +784,6 @@ a{text-decoration:none}
 @media(prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important}
 }
-
 /* ============================================================
    BLOG
 ============================================================ */
