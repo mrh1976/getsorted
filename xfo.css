@@ -204,6 +204,21 @@
 .xfo-giveaway-form .sib-sms-input-wrapper{display:flex;gap:6px}
 .xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{display:none !important}
 .xfo-giveaway-form .sib-sms-input-wrapper .entry__field:last-child{flex:1}
+
+/* Brevo's main.js injects its OWN country-picker widget at runtime —
+   separate DOM elements, not the plain <select> above. These target
+   that injected widget (trigger button + the dropdown list, which
+   gets appended to the end of <body> when opened, not nested in the
+   form at all). Not scoped under .xfo-giveaway-form on purpose since
+   the injected list lives outside that container. */
+.sib-sms-select,
+.sib-sms-select__trigger,
+.sib-sms-select__button,
+.sib-sms-select__flag,
+.sib-sms-select__list,
+.sib-sms-select-trigger{
+  display:none !important;
+}
 .xfo-giveaway-form .sib-form-block{padding:5px 0 !important}
 .xfo-giveaway-form .sib-form-block__button{
   background:var(--orange) !important;color:#fff !important;
