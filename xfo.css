@@ -202,22 +202,18 @@
 .xfo-giveaway-form input.input::placeholder{color:var(--gray) !important}
 .xfo-giveaway-form .entry__specification{display:none !important}
 .xfo-giveaway-form .sib-sms-input-wrapper{display:flex;gap:6px}
-.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:first-child{display:none !important}
-.xfo-giveaway-form .sib-sms-input-wrapper .entry__field:last-child{flex:1}
 
-/* Brevo's main.js injects its OWN country-picker widget at runtime —
-   separate DOM elements, not the plain <select> above. These target
-   that injected widget (trigger button + the dropdown list, which
-   gets appended to the end of <body> when opened, not nested in the
-   form at all). Not scoped under .xfo-giveaway-form on purpose since
-   the injected list lives outside that container. */
-/* Only .sib-sms-select__list is confirmed to actually exist (seen directly
-   in DevTools). The other guessed class names got removed here since one
-   of them (.sib-sms-select) turned out to be the wrapper around the real
-   input too, which hid the whole phone field, not just the flag. */
-.sib-sms-select__list{
-  display:none !important;
-}
+/* CONFIRMED via DevTools element picker — this is the real structure
+   Brevo's main.js builds at runtime:
+     .sib-sms-select (flex row, whole widget)
+       .sib-sms-select__title (flag icon + "United States" text) — hide this
+       .sib-sms-select__number-input (the real phone input) — must stay visible
+   The earlier .sib-sms-select rule hid the parent, taking the real
+   input down with it. Targeting only __title fixes that. */
+.xfo-giveaway-form .sib-sms-select__title{display:none !important}
+.xfo-giveaway-form .sib-sms-select__number-input{flex:1 !important;width:100% !important}
+.sib-sms-select__list{display:none !important}
+
 .xfo-giveaway-form .sib-form-block{padding:5px 0 !important}
 .xfo-giveaway-form .sib-form-block__button{
   background:var(--orange) !important;color:#fff !important;
