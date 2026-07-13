@@ -54,34 +54,13 @@
 /* ── Compact hero form card ── */
 .xfo-hero-form-card{
   background:#fff;
-  border-radius:4px 4px 0 0;
+  border-radius:4px;
   padding:18px 20px;
   box-shadow:0 24px 60px rgba(0,0,0,.35);
 }
 .xfo-hero-form-fine{
   font-size:10px;line-height:1.5;color:var(--gray);
   margin-top:10px;
-}
-
-/* ── Prize/event details card, stacked directly under the form ── */
-.xfo-hero-meta-card{
-  background:var(--navy-mid);
-  border-radius:0 0 4px 4px;
-  padding:18px 24px;
-  display:flex;flex-direction:column;gap:10px;
-}
-.xfo-hero-meta-row{
-  display:flex;align-items:baseline;justify-content:space-between;
-  gap:12px;
-}
-.xfo-meta-label{
-  font-family:var(--semi);font-weight:700;font-size:9px;
-  letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);
-  flex-shrink:0;
-}
-.xfo-meta-value{
-  font-family:var(--impact);font-size:14px;color:var(--white);
-  letter-spacing:.2px;text-align:right;
 }
 
 /* ── Sal, pointing at the belt ── */
