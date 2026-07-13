@@ -312,7 +312,9 @@
   // script sometimes shows the error panel anyway. This watches the
   // actual network response for the real answer and corrects the
   // display to match reality, running after Brevo's script so it has
-  // the final say.
+  // the final say. It also hides the form and clears the fields on
+  // success, instead of leaving the submitted phone/email sitting
+  // there behind the success message.
   (function () {
     var origOpen = XMLHttpRequest.prototype.open;
     XMLHttpRequest.prototype.open = function (method, url) {
@@ -322,8 +324,16 @@
             setTimeout(function () {
               var err = document.getElementById('error-message');
               var succ = document.getElementById('success-message');
+              var form = document.getElementById('sib-form');
               if (err) err.style.display = 'none';
               if (succ) succ.style.display = 'block';
+              if (form) {
+                var sms = form.querySelector('#SMS');
+                var email = form.querySelector('#EMAIL');
+                if (sms) sms.value = '';
+                if (email) email.value = '';
+                form.style.display = 'none';
+              }
             }, 400);
           }
         });
