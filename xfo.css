@@ -12,7 +12,7 @@
   background:var(--navy);
   position:relative;
   overflow:hidden;
-  padding:56px 0 0;
+  padding:56px 0 64px;
 }
 .xfo-hero-glow{
   position:absolute;inset:0;pointer-events:none;
@@ -49,25 +49,25 @@
   position:relative;z-index:2;
   overflow:visible;
 }
-.xfo-hero-left{display:flex;flex-direction:column;gap:2px;max-width:400px;padding-top:8px}
+.xfo-hero-left{display:flex;flex-direction:column;gap:2px;max-width:460px;padding-top:8px}
 
 /* ── Compact hero form card ── */
 .xfo-hero-form-card{
   background:#fff;
   border-radius:4px;
-  padding:18px 20px;
+  padding:16px 20px;
   box-shadow:0 24px 60px rgba(0,0,0,.35);
 }
 .xfo-hero-form-fine{
-  font-size:10px;line-height:1.5;color:var(--gray);
-  margin-top:10px;
+  font-size:10px;line-height:1.4;color:var(--gray);
+  margin-top:6px;
 }
 
 /* ── Sal, pointing at the belt ── */
 .xfo-hero-sal-wrap{
   display:flex;align-items:flex-start;justify-content:center;
 }
-.xfo-hero-sal-img{width:100%;max-width:560px;height:auto;display:block}
+.xfo-hero-sal-img{width:100%;max-width:480px;height:auto;display:block}
 
 /* ============================================================
    ABOUT / PRIZE SPLIT
@@ -183,12 +183,12 @@
   font-family:var(--body) !important;
 }
 .xfo-giveaway-form .sib-form{background:transparent !important}
-.xfo-giveaway-form .form__entry{margin-bottom:10px}
+.xfo-giveaway-form .form__entry{margin-bottom:6px}
 .xfo-giveaway-form .entry__label{
   font-family:var(--semi) !important;font-weight:700 !important;
   font-size:9px !important;letter-spacing:1.5px !important;
   text-transform:uppercase !important;color:var(--navy) !important;
-  margin-bottom:5px !important;display:block;
+  margin-bottom:4px !important;display:block;
 }
 .xfo-giveaway-form input.input,
 .xfo-giveaway-form select.input{
