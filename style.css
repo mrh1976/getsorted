@@ -672,17 +672,17 @@ a{text-decoration:none}
 
   /* Mobile bubble */
   .sal-bubble{
-    width:90vw;
-    max-width:500px;
-    filter:drop-shadow(0 6px 18px rgba(0,0,0,.25));
-  }
-  .bubble-img{
-    content:url('images/speechbubblemobile.png');
-    width:100%;
-    max-width:none;
-    height:auto;
-    transform:none;
-  }
+  width:320px;
+  max-width:320px;
+  filter:drop-shadow(0 6px 18px rgba(0,0,0,.25));
+}
+.bubble-img{
+  content:url('images/speechbubblemobile.png');
+  width:320px;
+  max-width:none;
+  height:auto;
+  transform:none;
+}
   .bubble-tagline,.bubble-rule{display:none;}
   .bubble-content{
     top:8%;
