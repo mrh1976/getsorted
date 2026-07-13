@@ -681,7 +681,7 @@ a{text-decoration:none}
   .bubble-desktop{display:none;}
   .bubble-mobile{
     display:block;
-    width:320px;
+    width:380px;
     max-width:none;
     height:auto;
     transform:none;
