@@ -47,98 +47,109 @@
 <!-- XFO HERO -->
 <section class="xfo-hero">
   <div class="xfo-hero-glow"></div>
+
+  <!-- Top: full-width headline -->
+  <div class="xfo-hero-top">
+    <div class="xfo-partner-badge">
+      <img src="images/xfo-logo.png" alt="XFO Outdoor War">
+      <span>Official Giveaway Partner</span>
+    </div>
+    <h1 class="xfo-hero-hed">Win a <em>$1,000</em> prize package.</h1>
+    <p class="xfo-hero-sub">GetSorted is teaming up with XFO Outdoor War to give one lucky entrant a $1,000 prize package. No purchase necessary.</p>
+  </div>
+
+  <!-- Below: form + details (left) / Sal pointing (right) -->
   <div class="xfo-hero-inner">
-    <div class="xfo-hero-copy">
-      <div class="xfo-partner-badge">
-        <img src="images/xfo.png" alt="XFO Outdoor War">
-        <span>Official Giveaway Partner</span>
+    <div class="xfo-hero-left">
+
+      <!-- FORM — compact, no extra copy -->
+      <div class="xfo-hero-form-card" id="enter">
+        <div class="xfo-giveaway-form sib-form">
+          <div id="sib-form-container" class="sib-form-container">
+            <div id="error-message" class="sib-form-message-panel" style="font-family:var(--body); font-size:13px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; padding:10px 14px; margin-bottom:12px;">
+              Your entry could not be saved. Please try again.
+            </div>
+            <div id="success-message" class="sib-form-message-panel" style="font-family:var(--body); font-size:13px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; padding:10px 14px; margin-bottom:12px;">
+              You're entered! Good luck.
+            </div>
+
+            <div id="sib-container" class="sib-container--large sib-container--vertical">
+              <form id="sib-form" method="POST" action="https://41220950.sibforms.com/serve/MUIFAFbLW7DvP9PR-oW-pKOcGZ1xQrLacz28ow3KgML0Xsa9fgVgxcq0kQ07J0mvT_KSTa0HEJJcy58i1LCkTjN-7zRTaj6siwwiatcJVURHwPT4zfMxZ80D10xsmkh6Gki_GAgIYwZCrrbittSJuX8PFYqo6_JgeJBcPxwqEu_6BfrxlTuCY1A3w82Mn15POKqlN_C-v2nD1k2ozA==" data-type="subscription">
+
+                <div class="sib-sms-field sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" for="SMS" data-required="*">Phone Number</label>
+                      <div class="sib-sms-input-wrapper" style="direction:ltr">
+                        <div class="sib-sms-input" data-placeholder="SMS" data-required="true" data-country-code="US" data-value="" data-attributename="SMS">
+                          <div class="entry__field">
+                            <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
+                              <option value="+1" selected>+1 US</option>
+                            </select>
+                          </div>
+                          <div class="entry__field" style="width:100%">
+                            <input type="tel" class="input" id="SMS" name="SMS" autocomplete="off" placeholder="(312) 555-0100" data-required="true" required />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary"></label>
+                    <label class="entry__error entry__error--secondary"></label>
+                  </div>
+                </div>
+
+                <div class="sib-input sib-form-block">
+                  <div class="form__entry entry_block">
+                    <div class="form__label-row">
+                      <label class="entry__label" for="EMAIL" data-required="*">Email Address</label>
+                      <div class="entry__field">
+                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="you@email.com" data-required="true" required />
+                      </div>
+                    </div>
+                    <label class="entry__error entry__error--primary"></label>
+                  </div>
+                </div>
+
+                <div class="sib-form-block" style="text-align:left">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+                      <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                    </svg>
+                    ENTER TO WIN
+                  </button>
+                </div>
+
+                <p class="xfo-hero-form-fine">We'll only text/email you about this giveaway. Msg &amp; data rates may apply. Reply STOP to opt out.</p>
+
+                <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none">
+                <input type="hidden" name="locale" value="en">
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1 class="xfo-hero-hed">Win a <em>$1,000</em> prize package.</h1>
-      <p class="xfo-hero-sub">GetSorted is teaming up with XFO Outdoor War to give one lucky entrant a $1,000 prize package. Entry takes 30 seconds. No purchase necessary.</p>
-      <div class="xfo-hero-meta">
-        <div class="xfo-meta-item">
+
+      <!-- PRIZE / EVENT DETAILS -->
+      <div class="xfo-hero-meta-card">
+        <div class="xfo-hero-meta-row">
           <span class="xfo-meta-label">Event</span>
           <span class="xfo-meta-value">Sideouts &middot; Island Lake, IL</span>
         </div>
-        <div class="xfo-meta-item">
+        <div class="xfo-hero-meta-row">
           <span class="xfo-meta-label">Date</span>
           <span class="xfo-meta-value">August 8, 2026</span>
         </div>
-        <div class="xfo-meta-item">
+        <div class="xfo-hero-meta-row">
           <span class="xfo-meta-label">Winner Announced</span>
           <span class="xfo-meta-value">August 10, 2026</span>
         </div>
       </div>
+
     </div>
 
-    <!-- FORM — this is the whole point of the page, so it lives in the hero -->
-    <div class="xfo-hero-form-card" id="enter">
-      <p class="xfo-hero-form-tag">Enter Now</p>
-      <h2 class="xfo-hero-form-title">Two fields. Thirty seconds.</h2>
-      <p class="xfo-hero-form-sub">We'll text and email the winner directly on August 10. No spam, no extra steps.</p>
-
-      <div class="xfo-giveaway-form sib-form">
-        <div id="sib-form-container" class="sib-form-container">
-          <div id="error-message" class="sib-form-message-panel" style="font-family:var(--body); font-size:13px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px; padding:12px 16px; margin-bottom:14px;">
-            Your entry could not be saved. Please try again.
-          </div>
-          <div id="success-message" class="sib-form-message-panel" style="font-family:var(--body); font-size:13px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; border-radius:3px; padding:12px 16px; margin-bottom:14px;">
-            You're entered! Good luck.
-          </div>
-
-          <div id="sib-container" class="sib-container--large sib-container--vertical">
-            <form id="sib-form" method="POST" action="https://41220950.sibforms.com/serve/MUIFAFbLW7DvP9PR-oW-pKOcGZ1xQrLacz28ow3KgML0Xsa9fgVgxcq0kQ07J0mvT_KSTa0HEJJcy58i1LCkTjN-7zRTaj6siwwiatcJVURHwPT4zfMxZ80D10xsmkh6Gki_GAgIYwZCrrbittSJuX8PFYqo6_JgeJBcPxwqEu_6BfrxlTuCY1A3w82Mn15POKqlN_C-v2nD1k2ozA==" data-type="subscription">
-
-              <div class="sib-sms-field sib-form-block">
-                <div class="form__entry entry_block">
-                  <div class="form__label-row">
-                    <label class="entry__label" for="SMS" data-required="*">Phone Number</label>
-                    <div class="sib-sms-input-wrapper" style="direction:ltr">
-                      <div class="sib-sms-input" data-placeholder="SMS" data-required="true" data-country-code="US" data-value="" data-attributename="SMS">
-                        <div class="entry__field">
-                          <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
-                            <option value="+1" selected>+1 US</option>
-                          </select>
-                        </div>
-                        <div class="entry__field" style="width:100%">
-                          <input type="tel" class="input" id="SMS" name="SMS" autocomplete="off" placeholder="(312) 555-0100" data-required="true" required />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <label class="entry__error entry__error--primary"></label>
-                  <label class="entry__error entry__error--secondary"></label>
-                  <label class="entry__specification">We'll only text you about this giveaway. Msg &amp; data rates may apply. Reply STOP to opt out.</label>
-                </div>
-              </div>
-
-              <div class="sib-input sib-form-block">
-                <div class="form__entry entry_block">
-                  <div class="form__label-row">
-                    <label class="entry__label" for="EMAIL" data-required="*">Email Address</label>
-                    <div class="entry__field">
-                      <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" value="" placeholder="you@email.com" data-required="true" required />
-                    </div>
-                  </div>
-                  <label class="entry__error entry__error--primary"></label>
-                </div>
-              </div>
-
-              <div class="sib-form-block" style="text-align:left">
-                <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
-                  <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                    <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                  </svg>
-                  ENTER TO WIN
-                </button>
-              </div>
-
-              <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none">
-              <input type="hidden" name="locale" value="en">
-            </form>
-          </div>
-        </div>
-      </div>
+    <!-- SAL — placeholder pose until a pointing-pose version exists -->
+    <div class="xfo-hero-sal-wrap">
+      <img src="images/salxfo.png" alt="Sal, GetSorted's car buying expert, geared up for XFO Outdoor War" class="xfo-hero-sal-img">
     </div>
   </div>
 </section>
