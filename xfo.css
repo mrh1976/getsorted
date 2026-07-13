@@ -44,7 +44,7 @@
 
 .xfo-hero-inner{
   max-width:var(--max);margin:0 auto;padding:0 var(--pad) 0;
-  display:grid;grid-template-columns:1fr 480px;gap:24px;
+  display:grid;grid-template-columns:1fr 620px;gap:24px;
   align-items:start;
   position:relative;z-index:2;
   overflow:visible;
@@ -55,7 +55,7 @@
 .xfo-hero-form-card{
   background:#fff;
   border-radius:4px;
-  padding:14px 16px;
+  padding:12px 14px;
   box-shadow:0 24px 60px rgba(0,0,0,.35);
 }
 .xfo-hero-form-fine{
@@ -67,7 +67,7 @@
 .xfo-hero-sal-wrap{
   display:flex;align-items:flex-start;justify-content:center;
 }
-.xfo-hero-sal-img{width:100%;max-width:480px;height:auto;display:block}
+.xfo-hero-sal-img{width:100%;max-width:620px;height:auto;display:block}
 
 /* ============================================================
    ABOUT / PRIZE SPLIT
