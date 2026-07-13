@@ -662,7 +662,7 @@ a{text-decoration:none}
     align-items:flex-end;
     justify-content:center;
     padding:0;
-    margin-top:-60px;
+    margin-top:-20px;
     align-self:auto;
     overflow:visible;
   }
@@ -674,14 +674,14 @@ a{text-decoration:none}
     z-index:5;
     align-self:auto;
     overflow:visible;
-    margin-top:-280px;
+    margin-top:-160px;
   }
 
   /* Hide desktop bubble, show mobile bubble */
   .bubble-desktop{display:none;}
   .bubble-mobile{
     display:block;
-    width:280px;
+    width:320px;
     max-width:none;
     height:auto;
     transform:none;
@@ -690,7 +690,7 @@ a{text-decoration:none}
   /* Container must match the mobile bubble image width so the
      percentage-based .bubble-content text box lines up with the
      actual bubble graphic instead of overflowing past its edge. */
-  .sal-bubble{max-width:280px;}
+  .sal-bubble{max-width:320px;}
 
   .bubble-tagline,.bubble-rule{display:none;}
   .bubble-content{
@@ -740,15 +740,15 @@ a{text-decoration:none}
   .hero-hed{font-size:clamp(32px,9vw,48px) !important;line-height:.95}
   .hero-subhed{font-size:clamp(18px,5vw,24px)}
   .hero-body{font-size:14px}
-  .hero-left{padding:28px var(--pad) 40px;margin-top:-280px;}
-  .hero-sal-wrap{margin-top:-60px;}
+  .hero-left{padding:28px var(--pad) 40px;margin-top:-160px;}
+  .hero-sal-wrap{margin-top:-20px;}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
   .sal-hero-img{width:340px;max-width:none;}
-  .bubble-mobile{width:240px;}
+  .bubble-mobile{width:280px;}
   /* Keep the container in sync with the smaller bubble image at
      this breakpoint too, same reasoning as the 960px rule above. */
-  .sal-bubble{max-width:240px;}
+  .sal-bubble{max-width:280px;}
   .bubble-stat-num{font-size:4rem;}
   .bubble-stat-label{font-size:1rem;line-height:1;}
   .sit-grid{grid-template-columns:1fr}
