@@ -717,11 +717,11 @@ a{text-decoration:none}
   .hero-hed{font-size:clamp(32px,9vw,48px) !important;line-height:.95}
   .hero-subhed{font-size:clamp(18px,5vw,24px)}
   .hero-body{font-size:14px}
-  .hero-left{padding:28px var(--pad) 40px;margin-top:30px;}
+  .hero-left{padding:28px var(--pad) 40px;margin-top:-100px;}
   .hero-sal-wrap{margin-top:0;}
   .hero-ctas{flex-direction:column}
   .hero-ctas .btn{text-align:center}
-  .sal-mobile-img{width:800px;max-width:none;}
+  .sal-mobile-img{width:400px;max-width:none;}
   .sit-grid{grid-template-columns:1fr}
   .scard{padding:32px 24px}
   .steps{grid-template-columns:1fr}
