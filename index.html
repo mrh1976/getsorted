@@ -44,6 +44,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=27">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -83,7 +85,7 @@
       <a href="#guide">Free Guide</a>
       <a href="/blog/">Blog</a>
       <a href="#about">About</a>
-      <a href="#contact" class="btn btn-primary">Book a Free Call</a>
+      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free Call</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -98,7 +100,7 @@
   <a href="#guide" class="mobile-nav-link">Free Guide</a>
   <a href="/blog/" class="mobile-nav-link">Blog</a>
   <a href="#about" class="mobile-nav-link">About</a>
-  <a href="#contact" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
+  <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
 </div>
 
 <!-- HERO -->
@@ -128,7 +130,7 @@
       <p class="hero-subhed">We make the process simple and negotiate for you.</p>
       <p class="hero-body">You show up when the deal is done and pick up the keys.It's that simple.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Book a Free 15-Min Call</a>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free 15-Min Call</a>
         <a href="#guide" class="btn btn-secondary">Get the Free Guide</a>
       </div>
     </div>
@@ -457,6 +459,17 @@
     <h2 class="sec-hed">People who got sorted.</h2>
     <div class="t-slider-wrap">
       <div class="t-track" id="tTrack">
+       
+        <div class="tcard">
+          <div class="tsavings">$7,200<span>saved</span></div>
+          <div class="tmark">"</div>
+          <p class="tbody">I can’t recommend GetSorted Autos enough. The entire process was stress free and they negotiated the best deal I could find on my new Jeep Wrangler. If you’re looking to skip the hassle of dealership shopping, GetSorted is the way to go.</p>
+          <div class="tname">Jacy P.</div>
+          <div class="tdetail">2026 Jeep Wrangler · Elmhurst, IL</div>
+        
+        
+        
+        
         <div class="tcard">
           <div class="tsavings">$4,800<span>saved</span></div>
           <div class="tmark">"</div>
@@ -478,15 +491,7 @@
           <div class="tname">James R.</div>
           <div class="tdetail">2024 Cadillac Escalade · Chicago, IL</div>
         </div>
-        <!-- PLACEHOLDER — swap for Jacy's actual words before publishing -->
-        <div class="tcard">
-          <div class="tsavings">Wrangler<span>leased</span></div>
-          <div class="tmark">"</div>
-          <p class="tbody">[Placeholder — replace with Jacy's actual quote. Facts to work from: 2026 Jeep Wrangler Sport S, leased at CDJR of Chicago, landed around $336/month.]</p>
-          <div class="tname">Jacy P.</div>
-          <div class="tdetail">2026 Jeep Wrangler Sport S · Chicago, IL</div>
-        </div>
-      </div>
+     
       <div class="t-arrows">
         <button class="t-arrow" id="tPrev" aria-label="Previous testimonial">&larr;</button>
         <button class="t-arrow" id="tNext" aria-label="Next testimonial">&rarr;</button>
@@ -575,7 +580,7 @@
       <div class="footer-col-label">How It Works</div>
       <a href="#how">The Process</a>
       <a href="#about">About GetSorted</a>
-      <a href="#contact">Book a Free Call</a>
+      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;">Book a Free Call</a>
       <a href="#guide">Download the Guide</a>
       <a href="/blog/">The Blog</a>
     </div>
