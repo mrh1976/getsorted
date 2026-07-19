@@ -68,10 +68,6 @@
     ]
   }
   </script>
-
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  
 </head>
 <body>
 
@@ -87,7 +83,7 @@
       <a href="#guide">Free Guide</a>
       <a href="/blog/">Blog</a>
       <a href="#about">About</a>
-      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free Call</a>
+      <a href="#contact" class="btn btn-primary">Book a Free Call</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -102,7 +98,7 @@
   <a href="#guide" class="mobile-nav-link">Free Guide</a>
   <a href="/blog/" class="mobile-nav-link">Blog</a>
   <a href="#about" class="mobile-nav-link">About</a>
-  <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free Call</a>
+  <a href="#contact" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
 </div>
 
 <!-- HERO -->
@@ -130,9 +126,9 @@
       <p class="eyebrow">Chicago Car Buying Service</p>
       <h1 class="hero-hed">Buying a car <em>is painful.</em> But it doesn't have to be.</h1>
       <p class="hero-subhed">We make the process simple and negotiate for you.</p>
-      <p class="hero-body">You show up when the deal is done and pick up the keys. It's that simple.</p>
+      <p class="hero-body">You show up when the deal is done and pick up the keys.It's that simple.</p>
       <div class="hero-ctas">
-       <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free 15-Min Call</a>
+        <a href="#contact" class="btn btn-primary">Book a Free 15-Min Call</a>
         <a href="#guide" class="btn btn-secondary">Get the Free Guide</a>
       </div>
     </div>
@@ -459,28 +455,43 @@
   <div class="wrap">
     <p class="eyebrow">Real results</p>
     <h2 class="sec-hed">People who got sorted.</h2>
-    <div class="t-grid">
-      <div class="tcard">
-        <div class="tsavings">$4,800<span>saved</span></div>
-        <div class="tmark">"</div>
-        <p class="tbody">I thought I was a good negotiator. Then I saw what GetSorted got me on my X5 lease versus what I had agreed to. The money factor alone was costing me $80 a month. I had no idea that was even something you could push back on.</p>
-        <div class="tname">Dave K.</div>
-        <div class="tdetail">2024 BMW X5 · Northbrook, IL</div>
+    <div class="t-slider-wrap">
+      <div class="t-track" id="tTrack">
+        <div class="tcard">
+          <div class="tsavings">$4,800<span>saved</span></div>
+          <div class="tmark">"</div>
+          <p class="tbody">I thought I was a good negotiator. Then I saw what GetSorted got me on my X5 lease versus what I had agreed to. The money factor alone was costing me $80 a month. I had no idea that was even something you could push back on.</p>
+          <div class="tname">Dave K.</div>
+          <div class="tdetail">2024 BMW X5 · Northbrook, IL</div>
+        </div>
+        <div class="tcard">
+          <div class="tsavings">$3,200<span>saved</span></div>
+          <div class="tmark">"</div>
+          <p class="tbody">We were ready to sign and something felt off. GetSorted called within an hour. They had loaded $1,800 in accessories we never asked for and the trade was $1,400 below market. We walked out with a completely different deal.</p>
+          <div class="tname">Sarah and Tom M.</div>
+          <div class="tdetail">2025 Honda Pilot · Naperville, IL</div>
+        </div>
+        <div class="tcard">
+          <div class="tsavings">$6,100<span>saved</span></div>
+          <div class="tmark">"</div>
+          <p class="tbody">Three dealers gave me the same runaround. GetSorted had a competitive deal within 48 hours. I never set foot in a showroom until the car was ready for pickup. That alone was worth it.</p>
+          <div class="tname">James R.</div>
+          <div class="tdetail">2024 Cadillac Escalade · Chicago, IL</div>
+        </div>
+        <!-- PLACEHOLDER — swap for Jacy's actual words before publishing -->
+        <div class="tcard">
+          <div class="tsavings">Wrangler<span>leased</span></div>
+          <div class="tmark">"</div>
+          <p class="tbody">[Placeholder — replace with Jacy's actual quote. Facts to work from: 2026 Jeep Wrangler Sport S, leased at CDJR of Chicago, landed around $336/month.]</p>
+          <div class="tname">Jacy P.</div>
+          <div class="tdetail">2026 Jeep Wrangler Sport S · Chicago, IL</div>
+        </div>
       </div>
-      <div class="tcard">
-        <div class="tsavings">$3,200<span>saved</span></div>
-        <div class="tmark">"</div>
-        <p class="tbody">We were ready to sign and something felt off. GetSorted called within an hour. They had loaded $1,800 in accessories we never asked for and the trade was $1,400 below market. We walked out with a completely different deal.</p>
-        <div class="tname">Sarah and Tom M.</div>
-        <div class="tdetail">2025 Honda Pilot · Naperville, IL</div>
+      <div class="t-arrows">
+        <button class="t-arrow" id="tPrev" aria-label="Previous testimonial">&larr;</button>
+        <button class="t-arrow" id="tNext" aria-label="Next testimonial">&rarr;</button>
       </div>
-      <div class="tcard">
-        <div class="tsavings">$6,100<span>saved</span></div>
-        <div class="tmark">"</div>
-        <p class="tbody">Three dealers gave me the same runaround. GetSorted had a competitive deal within 48 hours. I never set foot in a showroom until the car was ready for pickup. That alone was worth it.</p>
-        <div class="tname">James R.</div>
-        <div class="tdetail">2024 Cadillac Escalade · Chicago, IL</div>
-      </div>
+      <div class="t-dots" id="tDots"></div>
     </div>
   </div>
 </section>
@@ -719,6 +730,48 @@
       fetch('/', { method: 'POST', body: data })
         .then(function() { contactForm.style.display = 'none'; cfSuccess.style.display = 'block'; })
         .catch(function() { contactForm.style.display = 'none'; cfSuccess.style.display = 'block'; });
+    });
+  }
+
+  // Testimonial slider
+  var tTrack = document.getElementById('tTrack');
+  var tPrev = document.getElementById('tPrev');
+  var tNext = document.getElementById('tNext');
+  var tDots = document.getElementById('tDots');
+  if (tTrack && tDots) {
+    var tCards = tTrack.querySelectorAll('.tcard');
+    tCards.forEach(function(card, i) {
+      var dot = document.createElement('button');
+      dot.className = 't-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+      dot.addEventListener('click', function() {
+        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      });
+      tDots.appendChild(dot);
+    });
+    var tDotEls = tDots.querySelectorAll('.t-dot');
+
+    function scrollByCard(dir) {
+      var cardWidth = tCards[0].getBoundingClientRect().width + 20; // width + gap
+      tTrack.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+    }
+    if (tPrev) tPrev.addEventListener('click', function() { scrollByCard(-1); });
+    if (tNext) tNext.addEventListener('click', function() { scrollByCard(1); });
+
+    // Update active dot based on scroll position
+    var tScrollTimeout;
+    tTrack.addEventListener('scroll', function() {
+      clearTimeout(tScrollTimeout);
+      tScrollTimeout = setTimeout(function() {
+        var trackLeft = tTrack.getBoundingClientRect().left;
+        var closestIndex = 0;
+        var closestDist = Infinity;
+        tCards.forEach(function(card, i) {
+          var dist = Math.abs(card.getBoundingClientRect().left - trackLeft);
+          if (dist < closestDist) { closestDist = dist; closestIndex = i; }
+        });
+        tDotEls.forEach(function(d, i) { d.classList.toggle('active', i === closestIndex); });
+      }, 100);
     });
   }
 
