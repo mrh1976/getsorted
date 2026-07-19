@@ -11,29 +11,26 @@
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The GetSorted Blog | Car Buying Tips & Dealer Insights | Chicago</title>
-  <meta name="description" content="Real talk on car buying, leasing, and negotiation from a Chicago car buying concierge. No fluff, no dealer-speak, just what actually saves you money.">
+  <title>The GetSorted Blog | Everything Dealers Hope You Never Read</title>
+  <meta name="description" content="Real dealer tactics, broken down line by line. Finance office markups, four square worksheets, market adjustments, and everything else dealers hope you never learn about.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://getsorted.autos/blog/">
-
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://getsorted.autos/blog/">
-  <meta property="og:title" content="The GetSorted Blog | Car Buying Tips & Dealer Insights">
-  <meta property="og:description" content="Real talk on car buying, leasing, and negotiation from a Chicago car buying concierge.">
+  <meta property="og:title" content="The GetSorted Blog | Everything Dealers Hope You Never Read">
+  <meta property="og:description" content="Real dealer tactics, broken down line by line.">
   <meta property="og:image" content="https://getsorted.autos/images/og-image.png">
   <meta property="og:site_name" content="GetSorted">
-
+  <meta property="og:locale" content="en_US">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css?v=23">
+  <link rel="stylesheet" href="../style.css?v=28">
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- HEADER (same as homepage) -->
 <header id="site-header">
   <div class="header-inner">
     <a href="/" class="header-logo" aria-label="GetSorted Home">
@@ -42,9 +39,10 @@
     <nav class="header-nav" aria-label="Primary">
       <a href="/#how">How It Works</a>
       <a href="/#services">Services</a>
+      <a href="/#guide">Free Guide</a>
       <a href="/blog/">Blog</a>
       <a href="/#about">About</a>
-      <a href="/#contact" class="btn btn-primary">Book a Free Call</a>
+      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free Call</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -55,61 +53,68 @@
 <div class="mobile-nav" id="mobileNav">
   <a href="/#how" class="mobile-nav-link">How It Works</a>
   <a href="/#services" class="mobile-nav-link">Services</a>
+  <a href="/#guide" class="mobile-nav-link">Free Guide</a>
   <a href="/blog/" class="mobile-nav-link">Blog</a>
   <a href="/#about" class="mobile-nav-link">About</a>
-  <a href="/#contact" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
+  <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
 </div>
 
 <!-- BLOG HERO -->
 <section class="blog-hero">
-  <p class="eyebrow">The GetSorted Blog</p>
-  <h1>Everything dealers hope you never read.</h1>
-  <p>Straight answers on buying, leasing, and negotiating a car. No fluff. No dealer-speak. Just what actually saves you money.</p>
+  <div class="wrap">
+    <p class="eyebrow">The GetSorted Blog</p>
+    <h1>Everything dealers hope you never read.</h1>
+    <p>Real tactics, broken down line by line. No theory, no fluff, just what actually happens between "I'm interested" and "where do I sign."</p>
+  </div>
 </section>
 
 <!-- POST GRID -->
-<section class="section" style="padding-top:0">
+<section style="background:var(--white)">
   <div class="wrap">
     <div class="post-grid">
 
-<!-- POST 2 -->
-      <a href="dealer-finance-office-markup.html" class="post-card">
+      <!-- Featured: newest post -->
+      <a href="https://getsorted.autos/blog/dealer-market-adjustment-adm-markup" class="post-card featured">
         <div class="post-card-img">
-          <img src="../blog/images/Finance_Office_Blog.png" alt="Sal the finance manager behind his desk">
-          <div class="post-card-tag">Dealership Tactics</div>
+          <img src="images/ADM_Markup_Blog.png" alt="Dealer market adjustment markup sticker">
+        </div>
+        <div class="post-card-body">
+          <div class="post-card-date">July 24, 2026 · 5 min read</div>
+          <h3 class="post-card-title">Market Adjustment. Additional Dealer Markup. Whatever They Call It, Here's What It Actually Is.</h3>
+          <p class="post-card-excerpt">That second sticker next to the window sticker adding hundreds or thousands to the price? Here's why it's legal, and what to actually say about it.</p>
+          <span class="post-card-read">Read the full story →</span>
+        </div>
+      </a>
+
+      <a href="https://getsorted.autos/blog/dealer-finance-office-markup" class="post-card">
+        <div class="post-card-img">
+          <img src="images/Finance_Office_Blog.png" alt="What Happens in the Finance Office Should Be Illegal">
         </div>
         <div class="post-card-body">
           <div class="post-card-date">July 1, 2026 · 10 min read</div>
-          <div class="post-card-title">What Happens in the Finance Office Should Be Illegal. Here's What They're Doing to You.</div>
+          <h3 class="post-card-title">What Happens in the Finance Office Should Be Illegal. Here's What They're Doing to You.</h3>
           <p class="post-card-excerpt">The finance manager marked up your loan, sold you a warranty at triple cost, and owed you zero legal obligation to tell the truth. Here is exactly how it works.</p>
           <span class="post-card-read">Read the full story →</span>
         </div>
       </a>
 
-      
-      <!-- POST 1 -->
-      <a href="car-dealer-four-square-worksheet-trick.html" class="post-card">
+      <a href="https://getsorted.autos/blog/car-dealer-four-square-worksheet-trick" class="post-card">
         <div class="post-card-img">
-          <img src="../blog/images/4squareworksheet.png" alt="Real four square worksheet from a car deal">
-          <div class="post-card-tag">Negotiation</div>
+          <img src="images/4squareworksheet.png" alt="Marked-up four square worksheet from a real car deal">
         </div>
         <div class="post-card-body">
           <div class="post-card-date">June 22, 2026 · 5 min read</div>
-          <div class="post-card-title">The Four Square Worksheet Is Designed to Confuse You. Here's Proof.</div>
+          <h3 class="post-card-title">The Four Square Worksheet Is Designed to Confuse You. Here's Proof.</h3>
           <p class="post-card-excerpt">We got our hands on a real, marked-up four square worksheet from an actual deal. Here's what it reveals about how dealers move numbers around without you noticing.</p>
           <span class="post-card-read">Read the full story →</span>
         </div>
       </a>
 
-
-      
-      <!-- Additional posts will stack below as they're published -->
-
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (same as homepage) -->
 <footer id="site-footer">
   <div class="footer-main">
     <div>
@@ -134,7 +139,8 @@
       <div class="footer-col-label">How It Works</div>
       <a href="/#how">The Process</a>
       <a href="/#about">About GetSorted</a>
-      <a href="/#contact">Book a Free Call</a>
+      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;">Book a Free Call</a>
+      <a href="/#guide">Download the Guide</a>
       <a href="/blog/">The Blog</a>
     </div>
     <div class="footer-col">
@@ -145,10 +151,10 @@
       <a href="/#services">Trade-In Strategy</a>
       <a href="/#services">Lease-End Decisions</a>
     </div>
- </div>
+  </div>
   <div class="footer-bottom">
     <div class="footer-legal">
-      © 2026 GetSorted · Chicago, IL
+      &copy; 2026 GetSorted &middot; Chicago, IL
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
     </div>
@@ -201,5 +207,7 @@
     });
   }
 </script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
