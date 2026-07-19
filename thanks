@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're All Set | GetSorted</title>
+  <meta name="description" content="Thanks for reaching out to GetSorted. We'll be in touch within one business day.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://getsorted.autos/thanks">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=27">
+
+  <!-- Google Ads conversion tracking goes here once you have your Conversion ID/Label -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-XXXXXXXXX');
+    gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXX'});
+  </script>
+  -->
+</head>
+<body>
+
+<!-- HEADER (same as homepage) -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="GetSorted Home">
+      <img src="images/sorted_logo.png" alt="GetSorted">
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a href="/#how">How It Works</a>
+      <a href="/#services">Services</a>
+      <a href="/#guide">Free Guide</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#about">About</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="/#how" class="mobile-nav-link">How It Works</a>
+  <a href="/#services" class="mobile-nav-link">Services</a>
+  <a href="/#guide" class="mobile-nav-link">Free Guide</a>
+  <a href="/blog/" class="mobile-nav-link">Blog</a>
+  <a href="/#about" class="mobile-nav-link">About</a>
+</div>
+
+<!-- THANK YOU HERO -->
+<section class="hero" style="min-height:calc(100vh - 68px);display:flex;align-items:center;">
+  <div class="hero-glow"></div>
+  <div class="wrap" style="position:relative;z-index:2;text-align:center;max-width:640px;">
+    <p class="eyebrow" style="justify-content:center;display:flex;">You're All Set</p>
+    <h1 class="hero-hed" style="font-size:clamp(38px,6vw,64px);">We got it.<br><em>Talk soon.</em></h1>
+    <p class="hero-body" style="max-width:520px;margin-left:auto;margin-right:auto;">
+      Thanks for reaching out. We'll review what you sent and be in touch within one business day to set up a time that works for you.
+    </p>
+    <p class="hero-body" style="max-width:520px;margin-left:auto;margin-right:auto;font-size:14px;color:var(--gray);">
+      In the meantime, if you want a head start, the free guide below covers the seven ways a dealership makes money on your deal, worth a read before your next test drive.
+    </p>
+    <div class="hero-ctas" style="justify-content:center;margin-top:8px;">
+      <a href="/#guide" class="btn btn-primary">Get the Free Guide</a>
+      <a href="/blog/" class="btn btn-secondary">Read the Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (same as homepage) -->
+<footer id="site-footer">
+  <div class="footer-main">
+    <div>
+      <div class="footer-logo-wrap">
+        <img src="images/sorted_logo.png" alt="GetSorted">
+      </div>
+      <p class="footer-tagline">Chicago's car buying service. We level the playing field so you never leave money on the table.</p>
+      <div class="footer-contact">
+        <a href="mailto:getsortedautos@gmail.com">getsortedautos@gmail.com</a>
+        <a href="tel:+13129457770">(312) 945-7770</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-label">Services</div>
+      <a href="/#services">Consult $99</a>
+      <a href="/#services">Deal Review $199</a>
+      <a href="/#services">Full Negotiation $899</a>
+      <a href="/#guide">Free Guide</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-label">How It Works</div>
+      <a href="/#how">The Process</a>
+      <a href="/#about">About GetSorted</a>
+      <a href="/blog/">The Blog</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      &copy; 2026 GetSorted &middot; Chicago, IL
+    </div>
+  </div>
+</footer>
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      var isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileNav.style.maxHeight = isOpen ? '500px' : '0px';
+      mobileNav.style.visibility = isOpen ? 'visible' : 'hidden';
+    });
+  }
+</script>
+</body>
+</html>
