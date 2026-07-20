@@ -29,15 +29,22 @@
     .lp-header .wrap{display:flex;align-items:center;justify-content:center}
     .lp-header img{width:180px;height:auto}
 
-    .lp-hero{background:var(--navy);padding:56px 0 64px;position:relative;overflow:hidden}
+    .lp-hero{background:var(--navy);padding:48px 0 0;position:relative;overflow:hidden}
     .lp-hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 60% at 75% 20%,rgba(232,100,12,.10) 0%,transparent 60%)}
-    .lp-hero-inner{position:relative;z-index:2;text-align:center;max-width:720px;margin:0 auto}
-    .lp-hero-hed{font-family:var(--impact);font-size:clamp(34px,5vw,58px);line-height:.98;color:var(--white);letter-spacing:-.3px;margin-bottom:16px}
+    .lp-hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:1.1fr 380px;gap:32px;align-items:end}
+    .lp-hero-copy{padding-bottom:48px;text-align:left}
+    .lp-hero-hed{font-family:var(--impact);font-size:clamp(32px,4.5vw,52px);line-height:1;color:var(--white);letter-spacing:-.3px;margin-bottom:16px}
     .lp-hero-hed em{font-style:normal;color:var(--orange)}
-    .lp-hero-sub{font-size:17px;color:var(--gray);line-height:1.6;max-width:520px;margin:0 auto}
-
-    .lp-trust-bar{background:var(--orange);padding:16px 0;text-align:center}
-    .lp-trust-bar p{font-family:var(--semi);font-weight:700;font-size:14px;letter-spacing:.3px;color:#fff}
+    .lp-hero-sub{font-size:16px;color:var(--gray);line-height:1.6;max-width:440px;margin-bottom:24px}
+    .lp-guarantee-badge{
+      display:inline-flex;align-items:center;gap:14px;
+      background:rgba(255,255,255,.06);border:1px solid rgba(232,100,12,.4);
+      padding:14px 20px;
+    }
+    .lp-guarantee-badge-num{font-family:var(--impact);font-size:34px;color:var(--orange);line-height:1;white-space:nowrap}
+    .lp-guarantee-badge-text{font-family:var(--semi);font-weight:700;font-size:13px;color:#fff;line-height:1.35;text-align:left}
+    .lp-hero-img-wrap{display:flex;align-items:flex-end;justify-content:center}
+    .lp-hero-img{width:100%;max-width:340px;height:auto;display:block}
 
     .lp-cal-section{background:var(--off);padding:56px 0}
     .lp-cal-wrap{max-width:720px;margin:0 auto;background:#fff;border-radius:4px;box-shadow:0 20px 60px rgba(11,31,58,.12);overflow:hidden}
@@ -79,6 +86,11 @@
     .lp-footer p{font-size:12px;color:rgba(138,154,176,.6)}
 
     @media(max-width:760px){
+      .lp-hero-inner{grid-template-columns:1fr;padding-bottom:0}
+      .lp-hero-copy{text-align:center;padding-bottom:16px}
+      .lp-hero-sub{margin-left:auto;margin-right:auto}
+      .lp-guarantee-badge{display:flex;text-align:center}
+      .lp-hero-img-wrap{max-width:220px;margin:0 auto}
       .lp-steps-grid{grid-template-columns:1fr}
       .lp-testi-grid{grid-template-columns:1fr}
       .calendly-inline-widget{height:820px}
@@ -97,16 +109,20 @@
 <!-- HERO -->
 <section class="lp-hero">
   <div class="lp-hero-glow"></div>
-  <div class="wrap lp-hero-inner">
-    <h1 class="lp-hero-hed">Buying a car is painful. <em>We negotiate it for you.</em></h1>
-    <p class="lp-hero-sub">Chicago-based. You tell us what you're looking for, we handle the research and the negotiation, you show up when the deal is done to pick up the keys.</p>
+  <div class="lp-hero-inner">
+    <div class="lp-hero-copy">
+      <h1 class="lp-hero-hed">Buying a car is painful. <em>We negotiate it for you.</em></h1>
+      <p class="lp-hero-sub">Chicago-based. You tell us what you're looking for, we handle the research and the negotiation, you show up when the deal is done to pick up the keys.</p>
+      <div class="lp-guarantee-badge">
+        <span class="lp-guarantee-badge-num">$199</span>
+        <span class="lp-guarantee-badge-text">Guaranteed savings, or the review is free. Flat fee. No commission, ever.</span>
+      </div>
+    </div>
+    <div class="lp-hero-img-wrap">
+      <img src="images/sal-leaning.png" alt="Sal, GetSorted's car buying expert" class="lp-hero-img">
+    </div>
   </div>
 </section>
-
-<!-- TRUST BAR -->
-<div class="lp-trust-bar">
-  <p>Flat fee. No commission. If we don't find at least $199 in savings, you don't pay.</p>
-</div>
 
 <!-- CALENDLY INLINE -->
 <section class="lp-cal-section" id="book">
@@ -199,6 +215,10 @@
     <p class="eyebrow" style="text-align:center;justify-content:center;display:flex">Questions</p>
     <h2 class="sec-hed" style="text-align:center;margin-bottom:0">Before you book.</h2>
     <div class="lp-faq-list">
+      <div class="lp-faq-item">
+        <div class="lp-faq-q">What does this actually cost?</div>
+        <div class="lp-faq-a">Depends on how much help you need, from a $99 quick consult up to $899 for full negotiation from start to finish. We'll figure out the right fit on the free call, no pressure to pick anything before then.</div>
+      </div>
       <div class="lp-faq-item">
         <div class="lp-faq-q">Do I need to already have a deal on the table?</div>
         <div class="lp-faq-a">No. Some clients come to us before they've even picked a car. Others have a deal in hand and just want a second opinion before they sign. Either way works.</div>
