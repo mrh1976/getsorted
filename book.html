@@ -30,9 +30,9 @@
     .lp-header img{width:180px;height:auto}
 
     .lp-hero{background:var(--navy);padding:48px 0 0;position:relative;overflow:hidden}
-    .lp-hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 60% at 75% 20%,rgba(232,100,12,.10) 0%,transparent 60%)}
     .lp-hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:1.1fr 380px;gap:32px;align-items:end}
-    .lp-hero-copy{padding-bottom:48px;text-align:left}
+    .lp-hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 45% 55% at 82% 55%,rgba(232,100,12,.14) 0%,transparent 65%)}
+    .lp-hero-copy{padding-bottom:48px;text-align:left;position:relative;z-index:2}
     .lp-hero-hed{font-family:var(--impact);font-size:clamp(32px,4.5vw,52px);line-height:1;color:var(--white);letter-spacing:-.3px;margin-bottom:16px}
     .lp-hero-hed em{font-style:normal;color:var(--orange)}
     .lp-hero-sub{font-size:16px;color:var(--gray);line-height:1.6;max-width:440px;margin-bottom:24px}
@@ -41,17 +41,28 @@
       background:rgba(255,255,255,.06);border:1px solid rgba(232,100,12,.4);
       padding:14px 20px;
     }
-    .lp-guarantee-badge-num{font-family:var(--impact);font-size:34px;color:var(--orange);line-height:1;white-space:nowrap}
-    .lp-guarantee-badge-text{font-family:var(--semi);font-weight:700;font-size:13px;color:#fff;line-height:1.35;text-align:left}
-    .lp-hero-img-wrap{display:flex;align-items:flex-end;justify-content:center}
-    .lp-hero-img{width:100%;max-width:340px;height:auto;display:block}
+    .lp-guarantee-badge-label{font-family:var(--impact);font-size:20px;color:#fff;line-height:1;margin-bottom:6px;letter-spacing:.3px}
+    .lp-guarantee-badge-num{font-family:var(--impact);font-size:26px;color:var(--orange);line-height:1;white-space:nowrap}
+    .lp-guarantee-badge-text{font-family:var(--semi);font-weight:600;font-size:13px;color:var(--gray);line-height:1.35;text-align:left}
+    .lp-hero-img-wrap{display:flex;align-items:flex-end;justify-content:center;position:relative;z-index:2}
+    .lp-hero-img{width:100%;max-width:340px;height:auto;display:block;position:relative;z-index:2}
+    /* Platform Sal appears to be resting his arm on — his art has no implied surface on its own */
+    .lp-hero-platform{
+      position:absolute;
+      bottom:64px;right:8%;
+      width:150px;height:14px;
+      background:var(--orange);
+      opacity:.18;
+      filter:blur(1px);
+      z-index:1;
+    }
 
     .lp-cal-section{background:var(--off);padding:56px 0}
     .lp-cal-wrap{max-width:720px;margin:0 auto;background:#fff;border-radius:4px;box-shadow:0 20px 60px rgba(11,31,58,.12);overflow:hidden}
     .lp-cal-head{background:var(--navy);padding:24px 32px;text-align:center}
     .lp-cal-head p{font-family:var(--semi);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
     .lp-cal-head h2{font-family:var(--impact);font-size:26px;color:#fff;letter-spacing:.2px}
-    .calendly-inline-widget{min-width:280px;height:680px}
+    .calendly-inline-widget{min-width:280px;height:1050px}
 
     .lp-steps{padding:72px 0;background:var(--white)}
     .lp-steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px}
@@ -67,7 +78,7 @@
     .lp-guarantee p.body{color:var(--gray);font-size:15px;line-height:1.6}
 
     .lp-testi{padding:72px 0;background:var(--off)}
-    .lp-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+    .lp-testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
 
     .lp-cred{padding:56px 0;background:var(--white);text-align:center}
     .lp-cred p{max-width:640px;margin:0 auto;font-size:16px;color:var(--mid);line-height:1.7}
@@ -108,17 +119,20 @@
 
 <!-- HERO -->
 <section class="lp-hero">
-  <div class="lp-hero-glow"></div>
   <div class="lp-hero-inner">
+    <div class="lp-hero-glow"></div>
     <div class="lp-hero-copy">
       <h1 class="lp-hero-hed">Buying a car is painful. <em>We negotiate it for you.</em></h1>
       <p class="lp-hero-sub">Chicago-based. You tell us what you're looking for, we handle the research and the negotiation, you show up when the deal is done to pick up the keys.</p>
       <div class="lp-guarantee-badge">
-        <span class="lp-guarantee-badge-num">$199</span>
-        <span class="lp-guarantee-badge-text">Guaranteed savings, or the review is free. Flat fee. No commission, ever.</span>
+        <div>
+          <div class="lp-guarantee-badge-label">RISK-FREE</div>
+          <div class="lp-guarantee-badge-text"><span class="lp-guarantee-badge-num">$199</span> Deal Review. Find less than that in savings? It's free.</div>
+        </div>
       </div>
     </div>
     <div class="lp-hero-img-wrap">
+      <div class="lp-hero-platform"></div>
       <img src="images/sal-leaning.png" alt="Sal, GetSorted's car buying expert" class="lp-hero-img">
     </div>
   </div>
@@ -178,6 +192,20 @@
     <h2 class="sec-hed" style="margin-bottom:0">People who got sorted.</h2>
     <div class="lp-testi-grid">
       <div class="tcard">
+        <div class="tsavings">$7,200<span>saved</span></div>
+        <div class="tmark">"</div>
+        <p class="tbody">I can't recommend GetSorted Autos enough. The entire process was stress free and they negotiated the best deal I could find on my new Jeep Wrangler. If you're looking to skip the hassle of dealership shopping, GetSorted is the way to go.</p>
+        <div class="tname">Jacy P.</div>
+        <div class="tdetail">2026 Jeep Wrangler · Elmhurst, IL</div>
+      </div>
+      <div class="tcard">
+        <div class="tsavings">$6,100<span>saved</span></div>
+        <div class="tmark">"</div>
+        <p class="tbody">I never set foot in a showroom until the car was ready for pickup. That alone was worth it.</p>
+        <div class="tname">James R.</div>
+        <div class="tdetail">2024 Cadillac Escalade · Chicago, IL</div>
+      </div>
+      <div class="tcard">
         <div class="tsavings">$4,800<span>saved</span></div>
         <div class="tmark">"</div>
         <p class="tbody">The money factor alone was costing me $80 a month. I had no idea that was even something you could push back on.</p>
@@ -190,13 +218,6 @@
         <p class="tbody">They had loaded $1,800 in accessories we never asked for and the trade was $1,400 below market. We walked out with a completely different deal.</p>
         <div class="tname">Sarah and Tom M.</div>
         <div class="tdetail">2025 Honda Pilot · Naperville, IL</div>
-      </div>
-      <div class="tcard">
-        <div class="tsavings">$6,100<span>saved</span></div>
-        <div class="tmark">"</div>
-        <p class="tbody">I never set foot in a showroom until the car was ready for pickup. That alone was worth it.</p>
-        <div class="tname">James R.</div>
-        <div class="tdetail">2024 Cadillac Escalade · Chicago, IL</div>
       </div>
     </div>
   </div>
