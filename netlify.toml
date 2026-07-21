@@ -12,3 +12,8 @@
   from = "/terms"
   to = "/terms.html"
   status = 200
+
+[[redirects]]
+  from = "/car-buying-concierge-chicago"
+  to = "/car-buying-concierge-chicago.html"
+  status = 200
