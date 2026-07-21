@@ -18,7 +18,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=28">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -29,33 +29,63 @@
     .lp-header .wrap{display:flex;align-items:center;justify-content:center}
     .lp-header img{width:180px;height:auto}
 
-    .lp-hero{background:var(--navy);padding:48px 0 0;position:relative;overflow:hidden}
-    .lp-hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:1.1fr 380px;gap:32px;align-items:end}
-    .lp-hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 45% 55% at 82% 55%,rgba(232,100,12,.14) 0%,transparent 65%)}
-    .lp-hero-copy{padding-bottom:48px;text-align:left;position:relative;z-index:2}
-    .lp-hero-hed{font-family:var(--impact);font-size:clamp(32px,4.5vw,52px);line-height:1;color:var(--white);letter-spacing:-.3px;margin-bottom:16px}
+    .lp-hero{background:var(--navy);padding:40px 0 0;position:relative;overflow:hidden}
+    .lp-hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:1fr 560px;gap:24px;align-items:center}
+    .lp-hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 45% 55% at 78% 50%,rgba(232,100,12,.12) 0%,transparent 65%)}
+    .lp-hero-copy{text-align:left;position:relative;z-index:2;padding:24px 0 40px}
+    .lp-hero-hed{
+      font-family:var(--impact);
+      font-size:clamp(44px,6.5vw,86px);
+      line-height:.92;color:var(--white);
+      letter-spacing:-1px;margin-bottom:18px;
+      text-transform:uppercase;
+    }
     .lp-hero-hed em{font-style:normal;color:var(--orange)}
-    .lp-hero-sub{font-size:16px;color:var(--gray);line-height:1.6;max-width:440px;margin-bottom:24px}
-    .lp-guarantee-badge{
+    /* Handwritten-style accent line on a dark plate */
+    .lp-hero-accent{
+      display:inline-block;
+      background:rgba(0,0,0,.35);
+      padding:8px 18px;
+      margin-bottom:20px;
+      font-family:'Caveat',cursive;
+      font-weight:500;
+      font-size:clamp(24px,2.6vw,34px);
+      color:var(--white);
+      line-height:1.1;
+    }
+    .lp-hero-accent u{text-decoration:none;border-bottom:3px solid var(--orange);padding-bottom:2px}
+    .lp-hero-sub{font-size:16px;color:var(--gray);line-height:1.55;max-width:440px;margin-bottom:26px}
+    .lp-hero-cta{
       display:inline-flex;align-items:center;gap:14px;
-      background:rgba(255,255,255,.06);border:1px solid rgba(232,100,12,.4);
-      padding:14px 20px;
+      background:var(--orange);color:#fff;
+      font-family:var(--semi);font-weight:700;
+      font-size:15px;letter-spacing:1.5px;text-transform:uppercase;
+      padding:18px 34px;border:none;cursor:pointer;
+      transition:background .2s,transform .15s;
     }
-    .lp-guarantee-badge-label{font-family:var(--impact);font-size:20px;color:#fff;line-height:1;margin-bottom:6px;letter-spacing:.3px}
-    .lp-guarantee-badge-num{font-family:var(--impact);font-size:26px;color:var(--orange);line-height:1;white-space:nowrap}
-    .lp-guarantee-badge-text{font-family:var(--semi);font-weight:600;font-size:13px;color:var(--gray);line-height:1.35;text-align:left}
-    .lp-hero-img-wrap{display:flex;align-items:flex-end;justify-content:center;position:relative;z-index:2}
-    .lp-hero-img{width:100%;max-width:340px;height:auto;display:block;position:relative;z-index:2}
-    /* Platform Sal appears to be resting his arm on — his art has no implied surface on its own */
-    .lp-hero-platform{
-      position:absolute;
-      bottom:64px;right:8%;
-      width:150px;height:14px;
-      background:var(--orange);
-      opacity:.18;
-      filter:blur(1px);
-      z-index:1;
+    .lp-hero-cta:hover{background:var(--orange-lt);transform:translateY(-1px)}
+    .lp-hero-trustline{
+      font-family:var(--semi);font-weight:600;
+      font-size:16px;color:var(--gray);
+      margin-top:20px;
     }
+    .lp-hero-img-wrap{display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+    .lp-hero-img{width:100%;max-width:560px;height:auto;display:block}
+
+    /* Icon strip below hero */
+    .lp-iconstrip{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:26px 0}
+    .lp-iconstrip-inner{
+      max-width:var(--max);margin:0 auto;padding:0 var(--pad);
+      display:grid;grid-template-columns:repeat(3,1fr);
+    }
+    .lp-iconstrip-item{
+      display:flex;align-items:center;justify-content:center;gap:14px;
+      padding:8px 16px;
+      border-right:1px solid rgba(255,255,255,.1);
+    }
+    .lp-iconstrip-item:last-child{border-right:none}
+    .lp-iconstrip-item svg{width:30px;height:30px;stroke:var(--orange);fill:none;stroke-width:1.8;flex-shrink:0}
+    .lp-iconstrip-item span{font-size:17px;color:var(--gray);line-height:1.2}
 
     .lp-cal-section{background:var(--off);padding:56px 0}
     .lp-cal-wrap{max-width:720px;margin:0 auto;background:#fff;border-radius:4px;box-shadow:0 20px 60px rgba(11,31,58,.12);overflow:hidden}
@@ -96,15 +126,17 @@
     .lp-footer{background:var(--navy);padding:24px 0;border-top:1px solid rgba(255,255,255,.08);text-align:center}
     .lp-footer p{font-size:12px;color:rgba(138,154,176,.6)}
 
-    @media(max-width:760px){
-      .lp-hero-inner{grid-template-columns:1fr;padding-bottom:0}
-      .lp-hero-copy{text-align:center;padding-bottom:16px}
+    @media(max-width:900px){
+      .lp-hero-inner{grid-template-columns:1fr;gap:0}
+      .lp-hero-copy{text-align:center;padding:16px 0 24px}
       .lp-hero-sub{margin-left:auto;margin-right:auto}
-      .lp-guarantee-badge{display:flex;text-align:center}
-      .lp-hero-img-wrap{max-width:220px;margin:0 auto}
+      .lp-hero-img-wrap{max-width:440px;margin:0 auto}
+      .lp-iconstrip-inner{grid-template-columns:1fr;gap:2px}
+      .lp-iconstrip-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);justify-content:flex-start;padding:14px 8px}
+      .lp-iconstrip-item:last-child{border-bottom:none}
       .lp-steps-grid{grid-template-columns:1fr}
       .lp-testi-grid{grid-template-columns:1fr}
-      .calendly-inline-widget{height:820px}
+      .calendly-inline-widget{height:1150px}
     }
   </style>
 </head>
@@ -122,21 +154,35 @@
   <div class="lp-hero-inner">
     <div class="lp-hero-glow"></div>
     <div class="lp-hero-copy">
-      <h1 class="lp-hero-hed">Buying a car is painful. <em>We negotiate it for you.</em></h1>
+      <h1 class="lp-hero-hed">Buying a car<br>is <em>painful.</em></h1>
+      <div class="lp-hero-accent">We handle the <u>entire</u> process.</div>
       <p class="lp-hero-sub">Chicago-based. You tell us what you're looking for, we handle the research and the negotiation, you show up when the deal is done to pick up the keys.</p>
-      <div class="lp-guarantee-badge">
-        <div>
-          <div class="lp-guarantee-badge-label">RISK-FREE</div>
-          <div class="lp-guarantee-badge-text"><span class="lp-guarantee-badge-num">$199</span> Deal Review. Find less than that in savings? It's free.</div>
-        </div>
-      </div>
+      <a href="#book" class="lp-hero-cta">Book a Free Call &nbsp;&rarr;</a>
+      <p class="lp-hero-trustline">Local Experts. Real Savings. No Stress.</p>
     </div>
     <div class="lp-hero-img-wrap">
-      <div class="lp-hero-platform"></div>
-      <img src="images/sal-leaning.png" alt="Sal, GetSorted's car buying expert" class="lp-hero-img">
+      <img src="images/sal-deal-review.png" alt="Sal leaning on a $199 Deal Review card, 100% risk-free, if we don't find at least $199 in savings it's free" class="lp-hero-img">
     </div>
   </div>
 </section>
+
+<!-- ICON STRIP -->
+<div class="lp-iconstrip">
+  <div class="lp-iconstrip-inner">
+    <div class="lp-iconstrip-item">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
+      <span>Market Research &amp; Pricing</span>
+    </div>
+    <div class="lp-iconstrip-item">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-2.5 2.5a2 2 0 01-3-3L8 14"/><path d="M13 7l2.5-2.5a2 2 0 013 3L16 10"/><line x1="9" y1="15" x2="15" y2="9"/></svg>
+      <span>Expert Negotiation</span>
+    </div>
+    <div class="lp-iconstrip-item">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><line x1="11" y1="11" x2="20" y2="20"/><line x1="17" y1="17" x2="15" y2="19"/></svg>
+      <span>You Pick Up the Keys</span>
+    </div>
+  </div>
+</div>
 
 <!-- CALENDLY INLINE -->
 <section class="lp-cal-section" id="book">
