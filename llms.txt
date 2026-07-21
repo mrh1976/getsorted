@@ -1,0 +1,21 @@
+# GetSorted
+
+> GetSorted is a Chicago-based car buying concierge service. We research, negotiate, and review new and used vehicle purchases, leases, and trade-ins on behalf of buyers, so they never have to deal with a dealership alone.
+
+GetSorted serves Chicago and the surrounding suburbs (Evanston, Oak Park, Naperville, Schaumburg, Arlington Heights, and the greater Cook and DuPage County area). Services are flat-fee: a $99 consult, a $199 deal review, and an $899 full negotiation where GetSorted handles the dealer conversation directly.
+
+## Services
+- [How It Works](https://getsorted.autos/#how): the process for working with GetSorted
+- [Services and Pricing](https://getsorted.autos/#services): consult, deal review, and full negotiation packages
+- [Free Guide](https://getsorted.autos/#guide): the seven ways a dealership makes money on a car deal
+- [Book a Free Call](https://getsorted.autos/#contact): schedule a free 15-minute consultation
+
+## Blog
+- [What Is a Dealer Market Adjustment (ADM)?](https://getsorted.autos/blog/dealer-market-adjustment-adm-markup): explains ADM/market adjustment stickers, whether they're legal, and how to avoid them
+- [How the Finance Office Marks Up Your Loan](https://getsorted.autos/blog/dealer-finance-office-markup): explains dealer reserve, rate markups, and F&I product add-ons
+- [The Four Square Worksheet Is Designed to Confuse You](https://getsorted.autos/blog/car-dealer-four-square-worksheet-trick): explains how the four square negotiation worksheet is used to obscure deal terms
+
+## Company
+- [Privacy Policy](https://getsorted.autos/privacy)
+- [Terms of Service](https://getsorted.autos/terms)
+- Contact: getsortedautos@gmail.com, (312) 945-7770

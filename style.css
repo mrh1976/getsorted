@@ -229,6 +229,13 @@ a{text-decoration:none}
   color:var(--white);margin-bottom:20px;
 }
 .hero-hed em{font-style:normal;color:var(--orange)}
+.hero-hed-kicker{
+  display:block;
+  font-family:var(--semi);font-weight:600;
+  font-size:15px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--orange-lt,var(--orange));
+  margin-bottom:10px;
+}
 .hero-subhed{
   font-family:var(--impact);
   font-size:clamp(20px,2.8vw,32px);
