@@ -359,28 +359,6 @@ a{text-decoration:none}
 }
 .bubble-footer-tag{display:none;}
 
-/* ── Mobile cycling stat (keep for mobile fallback) ── */
-.hero-stat-mobile{display:none;text-align:center;padding:48px var(--pad) 8px;min-height:200px;}
-.hero-stat-mobile .sc-num{
-  font-family:Impact,sans-serif;
-  font-size:clamp(120px,28vw,180px);
-  color:#E8640C;line-height:.88;letter-spacing:-2px;
-  margin-bottom:16px;opacity:0;white-space:nowrap;
-}
-.hero-stat-mobile .sc-label{
-  font-family:Impact,sans-serif;
-  font-size:clamp(20px,5vw,28px);
-  color:var(--white);line-height:1.2;margin-bottom:8px;opacity:0;
-}
-.hero-stat-mobile .sc-source{
-  font-family:'Barlow Semi Condensed',sans-serif;font-weight:600;
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--gray);opacity:0;margin-bottom:20px;
-}
-.hero-stat-mobile .sc-dots{display:flex;gap:8px;justify-content:center;}
-.sc-dot{width:8px;height:8px;border-radius:50%;background:var(--gray);transition:background .3s,transform .3s;}
-.sc-dot.active{background:var(--orange);transform:scale(1.5);}
-
 /* ============================================================
    PROOF BAND
 ============================================================ */
@@ -682,7 +660,6 @@ a{text-decoration:none}
 
   /* ── Hero: stack vertically bubble / Sal / copy ── */
   .hero{padding-bottom:0;min-height:auto;}
-  .hero-stat-mobile{display:none;}
   .hero-inner{
     display:flex;
     flex-direction:column;
