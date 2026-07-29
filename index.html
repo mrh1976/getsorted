@@ -133,19 +133,6 @@
 <section class="hero">
   <div class="hero-glow"></div>
 
-  <!-- Mobile stat strip — hidden on desktop, shown on tablet/mobile -->
-  <div class="hero-stat-mobile" id="heroStatMobile">
-    <div class="sc-num" id="scNumMobile"></div>
-    <div class="sc-label" id="scLabelMobile"></div>
-    <div class="sc-source" id="scSourceMobile"></div>
-    <div class="sc-dots">
-      <span class="sc-dot active" id="mob-dot-0"></span>
-      <span class="sc-dot" id="mob-dot-1"></span>
-      <span class="sc-dot" id="mob-dot-2"></span>
-      <span class="sc-dot" id="mob-dot-3"></span>
-    </div>
-  </div>
-
   <!-- Desktop 3-column hero -->
   <div class="hero-inner">
 
@@ -655,82 +642,6 @@
 </footer>
 
 <script>
-  var stats = [
-    { val: 87,   prefix: '',  suffix: '%', label: 'of Americans dislike the car buying process',      source: 'Gallup / Harris Poll' },
-    { val: 61,   prefix: '',  suffix: '%', label: 'felt taken advantage of by their dealership',       source: 'Harris Poll' },
-    { val: 1117, prefix: '$', suffix: '',  label: 'average amount overpaid just to avoid negotiating', source: 'Indiana University / Cornell' },
-    { val: 95,   prefix: '',  suffix: '%', label: 'of buyers choose not to negotiate at all',          source: 'Indiana University / Cornell' }
-  ];
-
-  var current = 0;
-  var COUNT_DUR = 2000;
-  var HOLD      = 3500;
-  var FADE_OUT  = 700;
-  var FADE_IN   = 600;
-
-  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-
-  function fadeSet(el, opacity, dur) {
-    if (!el) return;
-    el.style.transition = 'opacity ' + dur + 'ms ease';
-    el.style.opacity = String(opacity);
-  }
-
-  function countUpEl(el, target, prefix, suffix, done) {
-    if (!el) { if (done) done(); return; }
-    var start = null;
-    var digits = target.toString().length;
-    var from = Math.pow(10, digits - 1);
-    function step(ts) {
-      if (!start) start = ts;
-      var p = Math.min((ts - start) / COUNT_DUR, 1);
-      var val = Math.floor(from + easeOut(p) * (target - from));
-      el.textContent = prefix + val.toLocaleString() + suffix;
-      if (p < 1) { requestAnimationFrame(step); }
-      else { el.textContent = prefix + target.toLocaleString() + suffix; if (done) done(); }
-    }
-    requestAnimationFrame(step);
-  }
-
-  function setDots(dotList, i) {
-    dotList.forEach(function(d, idx) { if (d) d.classList.toggle('active', idx === i); });
-  }
-
-  // Mobile elements only — desktop now uses static bubble
-  var numElM   = document.getElementById('scNumMobile');
-  var labelElM = document.getElementById('scLabelMobile');
-  var sourceElM= document.getElementById('scSourceMobile');
-  var dotsM    = ['mob-dot-0','mob-dot-1','mob-dot-2','mob-dot-3'].map(function(id){ return document.getElementById(id); });
-  var mobileEls = [numElM, labelElM, sourceElM];
-
-  function showStat(i) {
-    var s = stats[i];
-    setDots(dotsM, i);
-    mobileEls.forEach(function(el) { if (el) el.style.opacity = '0'; });
-    if (numElM)   numElM.textContent    = s.prefix + '0' + s.suffix;
-    if (labelElM) labelElM.textContent  = s.label;
-    if (sourceElM)sourceElM.textContent = s.source;
-    requestAnimationFrame(function() {
-      fadeSet(numElM, 1, FADE_IN);
-      setTimeout(function() {
-        var mDone = false;
-        function check() {
-          if (!mDone) return;
-          fadeSet(labelElM, 1, FADE_IN);
-          fadeSet(sourceElM, 1, FADE_IN);
-          setTimeout(function() {
-            mobileEls.forEach(function(el) { fadeSet(el, 0, FADE_OUT); });
-            setTimeout(function() {
-              current = (i + 1) % stats.length;
-              showStat(current);
-            }, FADE_OUT + 80);
-          }, HOLD);
-        }
-        countUpEl(numElM, s.val, s.prefix, s.suffix, function(){ mDone = true; check(); });
-      }, FADE_IN + 100);
-    });
-  }
-
   // Hamburger
   var hamburger = document.getElementById('hamburger');
   var mobileNav = document.getElementById('mobileNav');
@@ -810,9 +721,6 @@
     });
   }
 
-  window.addEventListener('load', function() {
-    setTimeout(function() { showStat(0); }, 400);
-  });
 </script>
 </body>
 </html>
