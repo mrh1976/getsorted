@@ -3,8 +3,8 @@
 <head>
 
   <meta name="trustpilot-one-time-domain-verification-id" content="ada157d6-b15d-4e6e-b267-59cee4d73aec"/>
-  
-  
+
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLB2WBCX2J"></script>
 <script>
@@ -44,12 +44,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+
+  <!-- Preload LCP hero images (perf) -->
+  <link rel="preload" as="image" href="images/salmobile.webp" media="(max-width: 960px)">
+  <link rel="preload" as="image" href="images/salhome.webp" media="(min-width: 961px)">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=29">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <!-- Non-blocking font load (perf) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&family=Caveat:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Semi+Condensed:wght@600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="style.css?v=30">
+  <!-- Calendly CSS/JS are loaded on demand (perf) — see loadCalendly() below -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,7 +109,7 @@
 <header id="site-header">
   <div class="header-inner">
     <a href="/" class="header-logo" aria-label="GetSorted Home">
-      <img src="images/sorted_logo.png" alt="GetSorted">
+      <img src="images/sorted_logo.webp" alt="GetSorted" width="220" height="36">
     </a>
     <nav class="header-nav" aria-label="Primary">
       <a href="#how">How It Works</a>
@@ -111,7 +117,7 @@
       <a href="#guide">Free Guide</a>
       <a href="/blog/">Blog</a>
       <a href="#about">About</a>
-      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free Call</a>
+      <a href="" onclick="openCalendly(event)" class="btn btn-primary">Book a Free Call</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -126,7 +132,7 @@
   <a href="#guide" class="mobile-nav-link">Free Guide</a>
   <a href="/blog/" class="mobile-nav-link">Blog</a>
   <a href="#about" class="mobile-nav-link">About</a>
-  <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
+  <a href="" onclick="openCalendly(event)" class="mobile-nav-link mobile-nav-cta">Book a Free Call</a>
 </div>
 
 <!-- HERO -->
@@ -138,26 +144,26 @@
 
     <!-- Left: headline copy -->
     <div class="hero-left">
- 
+
       <h1 class="hero-hed"><span class="hero-hed-kicker">Chicago's Car Buying Concierge:</span> Buying a car <em>is painful.</em> But it doesn't have to be.</h1>
       <p class="hero-subhed">We make the process simple and negotiate for you.</p>
       <p class="hero-body">You show up when the deal is done and pick up the keys.It's that simple.</p>
       <div class="hero-ctas">
-        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;" class="btn btn-primary">Book a Free 15-Min Call</a>
+        <a href="" onclick="openCalendly(event)" class="btn btn-primary">Book a Free 15-Min Call</a>
         <a href="#guide" class="btn btn-secondary">Get the Free Guide</a>
       </div>
     </div>
 
     <!-- Center: Sal standing -->
     <div class="hero-sal-wrap">
-      <img src="images/salhome.png" alt="Sal, GetSorted's car buying expert" class="sal-hero-img sal-desktop-img">
-      <img src="images/salmobile.png" alt="Sal, GetSorted's car buying expert" class="sal-hero-img sal-mobile-img">
+      <img src="images/salhome.webp" alt="Sal, GetSorted's car buying expert" class="sal-hero-img sal-desktop-img" width="500" height="685" fetchpriority="high">
+      <img src="images/salmobile.webp" alt="Sal, GetSorted's car buying expert" class="sal-hero-img sal-mobile-img" width="380" height="515" fetchpriority="high">
     </div>
 
     <!-- Right: speech bubble with stat (desktop only now) -->
     <div class="hero-bubble-wrap">
       <div class="sal-bubble">
-        <img src="images/speechbubble.png" alt="" class="bubble-img bubble-desktop" aria-hidden="true">
+        <img src="images/speechbubble.webp" alt="" class="bubble-img bubble-desktop" aria-hidden="true" width="330" height="437">
         <div class="bubble-content">
           <div class="bubble-stat-num">87%</div>
           <div class="bubble-stat-label">of Americans HATE buying a car.</div>
@@ -435,7 +441,7 @@
     <div class="home-blog-grid">
       <a href="https://getsorted.autos/blog/due-at-signing-lease-payment" class="post-card">
         <div class="post-card-img">
-          <img src="/blog/images/leasingads_blog.png" alt="Is this the worst lease deal in the country right now">
+          <img src="/blog/images/leasingads_blog.webp" alt="Is this the worst lease deal in the country right now" width="720" height="480" loading="lazy" decoding="async">
         </div>
         <div class="post-card-body">
           <div class="post-card-date">July 31, 2026 · 6 min read</div>
@@ -446,7 +452,7 @@
       </a>
       <a href="https://getsorted.autos/blog/we-shopped-nine-dealers-same-lease" class="post-card">
         <div class="post-card-img">
-          <img src="/blog/images/palisade_blog.png" alt="Same car, nine dealers, real lease numbers compared">
+          <img src="/blog/images/palisade_blog.webp" alt="Same car, nine dealers, real lease numbers compared" width="720" height="480" loading="lazy" decoding="async">
         </div>
         <div class="post-card-body">
           <div class="post-card-date">July 27, 2026 · 5 min read</div>
@@ -457,7 +463,7 @@
       </a>
       <a href="https://getsorted.autos/blog/out-the-door-price" class="post-card">
         <div class="post-card-img">
-          <img src="/blog/images/otd_blog.png" alt="What is the out-the-door price">
+          <img src="/blog/images/otd_blog.webp" alt="What is the out-the-door price" width="720" height="480" loading="lazy" decoding="async">
         </div>
         <div class="post-card-body">
           <div class="post-card-date">July 24, 2026 · 6 min read</div>
@@ -577,7 +583,7 @@
   <div class="footer-main">
     <div>
       <div class="footer-logo-wrap">
-        <img src="images/sorted_logo.png" alt="GetSorted">
+        <img src="images/sorted_logo.webp" alt="GetSorted" width="120" height="20" loading="lazy">
       </div>
       <p class="footer-tagline">Chicago's car buying service. We level the playing field so you never leave money on the table.</p>
       <div class="footer-contact">
@@ -597,7 +603,7 @@
       <div class="footer-col-label">How It Works</div>
       <a href="#how">The Process</a>
       <a href="#about">About GetSorted</a>
-      <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});return false;">Book a Free Call</a>
+      <a href="" onclick="openCalendly(event)">Book a Free Call</a>
       <a href="#guide">Download the Guide</a>
       <a href="/blog/">The Blog</a>
     </div>
@@ -721,6 +727,32 @@
     });
   }
 
+  // Lazy-load Calendly (perf): only fetch its CSS/JS the first time someone
+  // clicks a "Book a Free Call" link, instead of on every page load.
+  var calendlyReady = null;
+  function loadCalendly() {
+    if (calendlyReady) return calendlyReady;
+    calendlyReady = new Promise(function(resolve) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://assets.calendly.com/assets/external/widget.css';
+      document.head.appendChild(link);
+
+      var script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      script.onload = resolve;
+      document.head.appendChild(script);
+    });
+    return calendlyReady;
+  }
+  function openCalendly(e) {
+    if (e) e.preventDefault();
+    loadCalendly().then(function() {
+      Calendly.initPopupWidget({url: 'https://calendly.com/getsortedautos/15min'});
+    });
+    return false;
+  }
 </script>
 </body>
 </html>
