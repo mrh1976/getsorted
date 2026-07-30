@@ -5,13 +5,29 @@
   <meta name="trustpilot-one-time-domain-verification-id" content="ada157d6-b15d-4e6e-b267-59cee4d73aec"/>
 
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLB2WBCX2J"></script>
+  <!-- Google tag (gtag.js) — deferred until idle/interaction to keep it off the critical path (perf) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-FLB2WBCX2J');
+
+  function loadGTM() {
+    if (window.__gtmLoaded) return;
+    window.__gtmLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FLB2WBCX2J';
+    document.head.appendChild(s);
+  }
+  ['scroll','mousemove','touchstart','keydown'].forEach(function(evt) {
+    window.addEventListener(evt, loadGTM, { once: true, passive: true });
+  });
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGTM, { timeout: 4000 });
+  } else {
+    setTimeout(loadGTM, 4000);
+  }
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
